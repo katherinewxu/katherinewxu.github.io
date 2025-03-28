@@ -3,7 +3,6 @@ layout: home
 title: "Welcome"
 permalink: /
 author_profile: true
-show_excerpts: false
 entries_layout: none
 ---
 
