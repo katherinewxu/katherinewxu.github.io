@@ -11,7 +11,7 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-# remote_theme           : "mmistakes/minimal-mistakes"
+remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -117,7 +117,7 @@ author:
   avatar           : "/assets/images/KatherineXu 2 (1).jpg"
   bio              : "B.S. Symbolic Systems (AI Concentration)"
   location         : "Stanford University"
-  email            : 
+  email            : "kwx04@stanford.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
