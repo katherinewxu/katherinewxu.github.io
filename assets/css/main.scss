@@ -7,3 +7,13 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+/* Disable all hover effects on the page */
+*:hover {
+  filter: none !important;
+  opacity: 1 !important;
+  background: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}

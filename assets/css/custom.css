@@ -1,75 +1,70 @@
 /* Sidebar container */
 .sidebar.sticky {
-  flex: 0 0 250px; /* fixed width (or adjust as needed) */
-  padding: 0 20px; /* internal left/right padding */
+  flex: 0 0 300px; /* Increased width */
+  padding: 0 20px;
   background: none !important;
   border: none !important;
   box-shadow: none !important;
-  /* Remove the margin if it’s not working as expected */
 }
 
+/* Override the default max-width so the content can stretch to the full width */
+.page__content .wrapper,
+.page__inner {
+  max-width: 100% !important; 
+  margin: 0 !important;
+  padding: 0 20px !important; /* Optional: add side padding for breathing room */
+}
 
-/* Author avatar: make perfectly circular and crisp */
+/* Author avatar: make larger and rectangular instead of circular */
 .author__avatar img {
-  width: 180px !important;
-  height: 180px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
+  width: 220px !important;      /* Increased width */
+  height: 150px !important;     /* Fixed height for a rectangular shape */
+  border-radius: 0 !important;   /* Remove circular shape */
+  object-fit: cover !important;  /* Ensures the image fills the space nicely */
   display: block !important;
-  margin: 0 auto 15px auto !important;
+  margin: 0 auto 15px auto !important; /* Centered horizontally with bottom margin */
   box-shadow: none !important;
   filter: none !important;
   opacity: 1 !important;
   transition: none !important;
 }
 
-/* Full override on avatar container link and image */
+/* Disable hover effects on the avatar and its link */
 .sidebar .author__avatar a,
-.sidebar .author__avatar a:hover {
-  background: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-  opacity: 1 !important;
-  transition: none !important;
-}
-
-/* Full override on image itself */
+.sidebar .author__avatar a:hover,
+.sidebar .author__avatar a:focus,
+.sidebar .author__avatar a:active,
 .sidebar .author__avatar a img,
 .sidebar .author__avatar a:hover img,
-.sidebar .author__avatar img:hover {
+.sidebar .author__avatar a:focus img,
+.sidebar .author__avatar a:active img,
+.sidebar .author__avatar img:hover,
+.sidebar .author__avatar img:focus,
+.sidebar .author__avatar img:active {
   filter: none !important;
   opacity: 1 !important;
-  transition: none !important;
+  background: transparent !important;
   box-shadow: none !important;
+  transition: none !important;
 }
 
-
-
-
-
-
-/* Name styling */
-.author__name {
-  text-align: center;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 5px;
+/* Remove any pseudo-element overlays on the avatar link */
+.sidebar .author__avatar a::before,
+.sidebar .author__avatar a::after {
+  content: none !important;
+  display: none !important;
+  background: transparent !important;
 }
 
-/* Bio styling */
-.author__bio {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #444;
-  margin: 0 15px 15px 15px;
-  line-height: 1.4;
+/* (Optional) If you want to disable hover effects globally on this page,
+   uncomment the block below. Use with caution as it disables hover on all elements.
+ 
+*:hover {
+  filter: none !important;
+  opacity: 1 !important;
+  background: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
 }
-
-/* Location and contact items left-aligned */
-.author__location,
-.author__urls-wrapper {
-  text-align: left;
-  font-size: 0.9rem;
-  margin-left: 15px;
-}
-
+*/
