@@ -121,13 +121,13 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:katherinewxu@stanford.edu"
+      url: "mailto:katherinewxu@stanford.edu"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/katherinewxu"
+      url: "https://github.com/katherinewxu"
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
-      # url: "https://linkedin/katherinewxu"
+      url: "https://linkedin.com/in/katherinewxu"
 
 # Site Footer
 footer:
@@ -199,6 +199,18 @@ kramdown:
 sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      css: "/assets/css/custom.css"
 
 
 
