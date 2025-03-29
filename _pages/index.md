@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: archive
 title: "Welcome"
 permalink: /
 author_profile: true
