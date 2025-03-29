@@ -1,10 +1,13 @@
 /* Sidebar container */
 .sidebar.sticky {
+  flex: 0 0 250px; /* fixed width (or adjust as needed) */
+  padding: 0 20px; /* internal left/right padding */
   background: none !important;
   border: none !important;
   box-shadow: none !important;
-  padding: 0 !important;
+  /* Remove the margin if it’s not working as expected */
 }
+
 
 /* Author avatar: make perfectly circular and crisp */
 .author__avatar img {
