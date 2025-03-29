@@ -1,18 +1,72 @@
-/* Force circular image and kill all effects */
+/* Sidebar container */
+.sidebar.sticky {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Author avatar: make perfectly circular and crisp */
 .author__avatar img {
-  width: 200px !important;
-  height: 200px !important;
-  object-fit: cover !important;
+  width: 180px !important;
+  height: 180px !important;
   border-radius: 50% !important;
-  margin: 0 auto !important;
+  object-fit: cover !important;
   display: block !important;
+  margin: 0 auto 15px auto !important;
   box-shadow: none !important;
   filter: none !important;
   opacity: 1 !important;
   transition: none !important;
 }
 
-.author__avatar img:hover {
+/* Full override on avatar container link and image */
+.sidebar .author__avatar a,
+.sidebar .author__avatar a:hover {
+  background: none !important;
+  box-shadow: none !important;
   filter: none !important;
   opacity: 1 !important;
+  transition: none !important;
 }
+
+/* Full override on image itself */
+.sidebar .author__avatar a img,
+.sidebar .author__avatar a:hover img,
+.sidebar .author__avatar img:hover {
+  filter: none !important;
+  opacity: 1 !important;
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+
+
+
+
+
+/* Name styling */
+.author__name {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Bio styling */
+.author__bio {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0 15px 15px 15px;
+  line-height: 1.4;
+}
+
+/* Location and contact items left-aligned */
+.author__location,
+.author__urls-wrapper {
+  text-align: left;
+  font-size: 0.9rem;
+  margin-left: 15px;
+}
+
