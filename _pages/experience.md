@@ -11,15 +11,15 @@ classes: [ "wide" ]
     <span style="color:#52ADC8"><b>🤖 Stanford Artificial Intelligence Laboratory — Research Assistant</b></span><br>
     <sup>
       <i>2024 - Present</i><br>
-      Collaborated with the PAC group under Prof. Fei-Fei Li and Prof. Ehsan Adeli to develop multi-view pose estimation and deep learning models for activity recognition and clinical fall-risk prediction in older adults.
+      Collaborated with the PAC group under Prof. Fei-Fei Li and Prof. Ehsan Adeli to develop multi-view pose estimation and deep learning models for activity recognition and clinical applications in older adults.
     </sup>
   </div>
 
   <div style="margin-bottom: 40px;">
     <span style="color:#52ADC8"><b>📊 Hoover Institute — Hoover Student Fellow</b></span><br>
     <sup>
-      <i>2024 - Present</i><br>
-      Conducted statistical analysis with R on policy datasets and aided in social science research with Dr. Suhani Jalota.
+      <i>2024 - 2025</i><br>
+      Conducted private sector outreach, organized a summit, performed employment data analysis, helped design chatbot interventions, and co-authored a report for the Hoover Institution’s Future of Work for Women Initiative to identify scalable solutions for increasing female labor force participation in India with Dr. Suhani Jalota. <a href="https://web.cvent.com/event/24eef138-6dfc-4527-a2b6-36d46f385b74/summary" target="_blank">[Summit Website]</a> <a href="https://drive.google.com/file/d/1bQMj-MB6fuVnWkklKRNRsVPcd2lSiQq5/view" target="_blank">[Report]</a> 
     </sup>
   </div>
 

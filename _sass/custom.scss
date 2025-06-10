@@ -1,0 +1,32 @@
+.author__avatar img,
+img.u-photo {
+  width: 200px !important;
+  height: auto !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+/* Remove sidebar dimming effect */
+.sidebar.sticky {
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  
+  /* Also ensure profile image and author section is clear */
+  .author__avatar,
+  .author__avatar img,
+  img.u-photo {
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  
+  .author__avatar:hover,
+  img.u-photo:hover {
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  

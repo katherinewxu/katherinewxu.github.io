@@ -21,7 +21,7 @@ title                    : "Katherine Wang Xu"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Katherine Wang Xu"
-description              : "B.S. Symbolic Systems (AI Concentration)"
+description              : "M.S. Computer Science, B.S. Symbolic Systems (AI Concentration)"
 url                      : "https://katherinewxu.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "katherinewxu/katherinewxu.github.io"
@@ -115,7 +115,7 @@ analytics:
 author:
   name             : "Katherine Wang Xu"
   avatar           : "/assets/images/KatherineXu 2 (1).jpg"
-  bio              : "B.S. Symbolic Systems (AI Concentration)"
+  bio              : "M.S. Computer Science (AI Concentration), B.S. Symbolic Systems (AI Concentration)"
   location         : "Stanford University"
   links:
     - label: "Email"
