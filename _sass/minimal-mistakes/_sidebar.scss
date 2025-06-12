@@ -121,28 +121,44 @@
    Author profile and links
    ========================================================================== */
 
-.author__avatar {
-  display: table-cell;
-  vertical-align: top;
-  width: 36px;
-  height: 36px;
-
-  @include breakpoint($large) {
+   .author__avatar {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     display: block;
-    width: auto;
-    height: auto;
-  }
-
-  img {
-    max-width: 110px;
-    border-radius: 50%;
-
-    @include breakpoint($large) {
-      padding: 5px;
-      border: 1px solid $border-color;
+  
+    img {
+      display: block;
+      width: 100%;
+      height: auto !important;         // ✅ override all inherited heights
+      max-width: none !important;      // ✅ let it expand
+      max-height: none !important;     // ✅ ensure full visibility
+      object-fit: unset !important;    // ✅ don’t crop
+      border-radius: 12px;
+      margin: 0 auto;
+      padding: 0;
+      border: none;
     }
   }
-}
+
+  .author__avatar {
+    height: auto !important;         // 🔥 This line is what fixes the div's height
+    min-height: unset !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+
+
+  .author__avatar img {
+    height: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    object-fit: contain !important;
+    display: block;
+  }
+  
+  
 
 .author__content {
   display: table-cell;
@@ -183,7 +199,10 @@
     margin-bottom: 20px;
   }
 }
-
+.sidebar .author__avatar {
+  max-height: none;
+  overflow: visible;
+}
 .author__urls-wrapper {
   position: relative;
   display: table-cell;
@@ -346,4 +365,21 @@
     width: initial;
     margin-inline-end: initial;
   }
+}
+
+div.author__avatar {
+  height: auto !important;
+  max-height: none !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  display: block !important;
+}
+
+div.author__avatar img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto;
 }

@@ -2,6 +2,9 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 search: false
 ---
+$primary-color: #1b5e20; // dark green
+$link-color: $primary-color;
+$action-color: $primary-color;
 
 @charset "utf-8";
 @import "custom";
@@ -18,4 +21,18 @@ search: false
   box-shadow: none !important;
   transform: none !important;
   transition: none !important;
+}
+
+/* Reduce line spacing for compact-text pages */
+.compact-text {
+  .page__content p,
+  .page__content li {
+    line-height: 1.4;       // default is ~1.7
+    margin-bottom: 0.5rem;  // reduce spacing between paragraphs/items
+  }
+
+  .page__content h3 {
+    margin-top: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
 }
