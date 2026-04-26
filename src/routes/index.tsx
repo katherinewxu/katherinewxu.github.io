@@ -2,25 +2,68 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Katherine Xu" },
+      {
+        name: "description",
+        content:
+          "Katherine Xu — Stanford student in Symbolic Systems and Computer Science, researching AI for human benefit.",
+      },
+      { property: "og:title", content: "Katherine Xu" },
+      {
+        property: "og:description",
+        content:
+          "Stanford student in Symbolic Systems (AI) and CS, researching AI for human benefit at Stanford Vision and Learning Lab.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="min-h-screen bg-background px-6 py-16 md:py-24">
+      <article className="prose-academic mx-auto max-w-2xl text-foreground">
+        <h1>Katherine Xu</h1>
+
+        <p>
+          I am a student at Stanford University pursuing a B.S. in Symbolic Systems
+          (
+          <a
+            href="https://symsys.stanford.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            What's SymSys?
+          </a>
+          ) with a concentration in AI and concurrently pursuing an M.S. in Computer
+          Science (AI), advised by Professor Jerry Cain and Professor Ehsan Adeli.
+        </p>
+
+        <p>
+          I'm passionate about finding new ways to use AI to benefit humanity. At
+          Stanford, I'm a student researcher at the Stanford Vision and Learning
+          Lab (SVL), working with Professors Fei-Fei Li and Ehsan Adeli at the{" "}
+          <a
+            href="https://med.stanford.edu/content/sm/pacresearch.html/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Partnership in AI-Assisted Care
+          </a>
+          .
+        </p>
+
+        <p>
+          In my free time, I enjoy exploring the outdoors, sampling the local food
+          scene, curating increasingly niche Spotify playlists, and reading.
+        </p>
+
+        <p>
+          Feel free to reach me at{" "}
+          <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a>.
+        </p>
+      </article>
+    </main>
+  );
 }
