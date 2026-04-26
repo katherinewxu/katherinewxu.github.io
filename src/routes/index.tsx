@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteNav } from "@/components/SiteNav";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen bg-background px-6 py-16 md:py-24">
+      <SiteNav />
       <article className="prose-academic mx-auto max-w-2xl text-foreground">
         <h1>Katherine Xu</h1>
 
