@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PersonalRouteImport } from './routes/personal'
 import { Route as ExperienceRouteImport } from './routes/experience'
+import { Route as BookshelfRouteImport } from './routes/bookshelf'
 import { Route as IndexRouteImport } from './routes/index'
 
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -29,6 +30,11 @@ const ExperienceRoute = ExperienceRouteImport.update({
   path: '/experience',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookshelfRoute = BookshelfRouteImport.update({
+  id: '/bookshelf',
+  path: '/bookshelf',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,12 +43,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bookshelf': typeof BookshelfRoute
   '/experience': typeof ExperienceRoute
   '/personal': typeof PersonalRoute
   '/portfolio': typeof PortfolioRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bookshelf': typeof BookshelfRoute
   '/experience': typeof ExperienceRoute
   '/personal': typeof PersonalRoute
   '/portfolio': typeof PortfolioRoute
@@ -50,20 +58,28 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bookshelf': typeof BookshelfRoute
   '/experience': typeof ExperienceRoute
   '/personal': typeof PersonalRoute
   '/portfolio': typeof PortfolioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/experience' | '/personal' | '/portfolio'
+  fullPaths: '/' | '/bookshelf' | '/experience' | '/personal' | '/portfolio'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/experience' | '/personal' | '/portfolio'
-  id: '__root__' | '/' | '/experience' | '/personal' | '/portfolio'
+  to: '/' | '/bookshelf' | '/experience' | '/personal' | '/portfolio'
+  id:
+    | '__root__'
+    | '/'
+    | '/bookshelf'
+    | '/experience'
+    | '/personal'
+    | '/portfolio'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookshelfRoute: typeof BookshelfRoute
   ExperienceRoute: typeof ExperienceRoute
   PersonalRoute: typeof PersonalRoute
   PortfolioRoute: typeof PortfolioRoute
@@ -92,6 +108,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperienceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bookshelf': {
+      id: '/bookshelf'
+      path: '/bookshelf'
+      fullPath: '/bookshelf'
+      preLoaderRoute: typeof BookshelfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,6 +127,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookshelfRoute: BookshelfRoute,
   ExperienceRoute: ExperienceRoute,
   PersonalRoute: PersonalRoute,
   PortfolioRoute: PortfolioRoute,
