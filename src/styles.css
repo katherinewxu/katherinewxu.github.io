@@ -64,7 +64,9 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.2 0 0);
+  --link: oklch(0.5 0.18 260);
+  --link-hover: oklch(0.45 0.22 25);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -137,8 +139,35 @@
     border-color: var(--color-border);
   }
 
+  html {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "URW Palladio L", Garamond, Georgia, serif;
+    font-size: 18px;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    line-height: 1.6;
+  }
+
+  .prose-academic a {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  .prose-academic a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+
+  .prose-academic p {
+    margin-bottom: 1.1rem;
+  }
+
+  .prose-academic h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
   }
 }
