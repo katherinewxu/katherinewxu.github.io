@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 
 export const Route = createFileRoute("/personal")({
@@ -9,13 +9,13 @@ export const Route = createFileRoute("/personal")({
       {
         name: "description",
         content:
-          "Personal interests, books, music, and writing by Katherine Xu.",
+          "Personal interests, books, and creative pursuits of Katherine Xu.",
       },
       { property: "og:title", content: "Personal — Katherine Xu" },
       {
         property: "og:description",
         content:
-          "Personal interests, books, music, and writing by Katherine Xu.",
+          "Personal interests, books, and creative pursuits of Katherine Xu.",
       },
     ],
   }),
@@ -28,50 +28,57 @@ function Personal() {
       <article className="prose-academic mx-auto max-w-2xl text-foreground">
         <h1>Personal</h1>
 
+        <h2 className="mt-6 text-xl font-semibold tracking-tight">
+          The Outdoors
+        </h2>
         <p>
-          Outside of research and coursework, I spend time exploring the
-          outdoors, sampling the local food scene, curating increasingly niche
-          Spotify playlists, and reading.
+          I grew up in Ohio and have always loved being outdoors — whether it's
+          hiking, backpacking, or just enjoying quiet spaces. At Stanford, I'm
+          a trip leader at the Outdoor Center, guiding backpacking and camping
+          trips to help others explore nature.
         </p>
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">
-          Currently
+          Art &amp; Fashion
         </h2>
-        <ul className="mt-3 list-disc space-y-1 pl-5">
-          <li>Hiking around the Bay Area on weekends.</li>
-          <li>Trying every ramen spot within walking distance of campus.</li>
-          <li>
-            Reading a long novel slowly — the kind that fits in a backpack
-            pocket.
-          </li>
-          <li>Building small tools to make student life a little easier.</li>
-        </ul>
+        <p>
+          I love art and fashion design, and enjoy expressing creativity
+          through visual ideas and tailored pieces. In the winter, I designed
+          a garment showcased in the Stanford FashionX Show.
+        </p>
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">
-          A few favorites
+          Miscellaneous Facts
         </h2>
+        <p>
+          I studied abroad in Songdo, South Korea for seven weeks through a
+          government-sponsored Critical Language Scholarship. I deepened my
+          Korean, formed close friendships, and learned how quickly unfamiliar
+          places can feel like home.
+        </p>
+
+        <h2 className="mt-8 text-xl font-semibold tracking-tight">Books</h2>
+        <p>
+          I love reading. A few favorites are below — for the longer list, see
+          my <Link to="/bookshelf">bookshelf</Link>.
+        </p>
         <ul className="mt-3 list-disc space-y-1 pl-5">
-          <li>
-            <em>Books:</em> short story collections, anything by Italo Calvino,
-            and slow nonfiction about science.
-          </li>
-          <li>
-            <em>Music:</em> ambient electronic, indie folk, and the occasional
-            J-pop deep cut.
-          </li>
-          <li>
-            <em>Places:</em> Lake Tahoe in late spring, Tokyo at night, and the
-            Stanford Dish at sunrise.
-          </li>
+          <li><em>Wuthering Heights</em> — Emily Brontë</li>
+          <li><em>Pachinko</em> — Min Jin Lee</li>
+          <li><em>The Kite Runner</em> — Khaled Hosseini</li>
+          <li><em>Never Let Me Go</em> — Kazuo Ishiguro</li>
+          <li><em>Kim Ji-young, Born 1982</em> — Cho Nam-ju</li>
+          <li><em>When Breath Becomes Air</em> — Paul Kalanithi</li>
+          <li><em>Crying in H Mart</em> — Michelle Zauner</li>
         </ul>
 
-        <h2 className="mt-8 text-xl font-semibold tracking-tight">Say hi</h2>
-        <p>
-          The best way to reach me is by email at{" "}
-          <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a>. I'm always
-          happy to talk about AI, research, food recommendations, or playlist
-          swaps.
-        </p>
+        <footer className="mt-16 border-t border-border pt-6 text-sm text-muted-foreground">
+          © 2025 Katherine Wang Xu ·{" "}
+          <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </footer>
       </article>
     </main>
   );

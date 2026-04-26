@@ -9,13 +9,13 @@ export const Route = createFileRoute("/portfolio")({
       {
         name: "description",
         content:
-          "Selected projects by Katherine Xu in AI, computer vision, and applied machine learning.",
+          "Selected computational projects, teaching, and volunteering by Katherine Xu.",
       },
       { property: "og:title", content: "Portfolio — Katherine Xu" },
       {
         property: "og:description",
         content:
-          "Selected projects by Katherine Xu in AI, computer vision, and applied ML.",
+          "Selected computational projects, teaching, and volunteering by Katherine Xu.",
       },
     ],
   }),
@@ -23,34 +23,70 @@ export const Route = createFileRoute("/portfolio")({
 
 type Project = {
   title: string;
-  href?: string;
-  period: string;
-  description: string;
-  tags: string[];
+  blurb: string;
+  topics: string;
 };
 
 const projects: Project[] = [
   {
-    title: "AI-Assisted Clinical Vision",
-    period: "2024",
-    description:
-      "Computer vision pipeline for activity recognition in clinical settings, exploring privacy-preserving representations for hospital environments.",
-    tags: ["Computer Vision", "Healthcare", "PyTorch"],
+    title:
+      "Exploring Deep Segmentation Models for Brain Tumors: CNNs, Transformers, and Promptable Architectures",
+    blurb:
+      "Final project for Stanford's CS 231N: Deep Learning for Computer Vision (Spring 2025). Developed deep learning models for automated brain tumor segmentation using the BraTS 2021 dataset, comparing CNNs, transformers, and promptable architectures for pixel-level tumor detection.",
+    topics:
+      "Medical AI · Computer Vision · Deep Learning · Semantic Segmentation · Healthcare Technology",
   },
   {
-    title: "Symbolic Reasoning with LLMs",
-    period: "2024",
-    description:
-      "Investigating how large language models combine symbolic structure with learned representations on multi-step reasoning benchmarks.",
-    tags: ["NLP", "Reasoning", "LLMs"],
+    title:
+      "Seeing is Believing? A Sociotechnical Evaluation of Saliency Maps for Brain Tumor Segmentation",
+    blurb:
+      "Final poster for Stanford's CS 281: Ethics of Artificial Intelligence (Spring 2025). Benchmarking Grad-CAM, Integrated Gradients, and GradientSHAP across segmentation models, combining quantitative evaluation with clinician + researcher feedback to assess clinical usability.",
+    topics:
+      "Explainable AI · Medical Imaging · Model Interpretability · Human-AI Interaction",
   },
   {
-    title: "Personal Music Recommender",
-    period: "2023",
-    description:
-      "A small recommender that turns my listening history into increasingly niche Spotify playlists using collaborative filtering and audio features.",
-    tags: ["RecSys", "Spotify API", "Python"],
+    title: "Robust Brand Logo Detection Under Adversarial Conditions",
+    blurb:
+      "Final report for Stanford's CS 131: Computer Vision (Winter 2025). Built a custom CNN with adversarial training to detect Coca-Cola logos under blur, noise, and occlusion. Achieved +13% accuracy over YOLOv8 with extensive data augmentation.",
+    topics:
+      "Computer Vision · Adversarial Robustness · Object Detection · Data Augmentation",
   },
+  {
+    title: "Heap Allocator",
+    blurb:
+      "Final project for Stanford's CS 107 (Winter 2025). Implemented a full implicit + explicit free list allocator in C, including malloc, free, and realloc. Built debugging utilities (validate_heap, dump_heap) and stress-tested on real allocation traces.",
+    topics:
+      "Systems Programming · Memory Management · C · Performance Optimization",
+  },
+  {
+    title:
+      "What's in the noise? Musical Genre Classification using Neural Networks",
+    blurb:
+      "Final project for Stanford's CS 129 (Winter 2024). Trained VGG-style CNNs, GRUs, and LSTMs on mel spectrograms from GTZAN, incorporating noise, pitch-shift, and time-stretch augmentations for robustness.",
+    topics:
+      "Audio Classification · Deep Learning · CNNs · Music Information Retrieval",
+  },
+  {
+    title:
+      "Protecting Against Propaganda: AI for Misinformation Detection & Critical Thinking",
+    blurb:
+      "Final project for Stanford's CS 197 (Winter 2024). Built a GPT-4–powered browser extension that detects persuasive fallacies in political news, provides real-time annotations, and generates \"extremeness\" scores. Ran a pilot RCT to evaluate behavioral impacts.",
+    topics:
+      "Human-AI Interaction · Politics & Psychology · Media Literacy · Language Models",
+  },
+];
+
+const teaching = [
+  "Fall 2025: CS106A Programming Methodologies — Python, Programming Concepts",
+  "Spring 2025: CS106A through Stanford Code in Place — Python, Programming Concepts",
+];
+
+const volunteering = [
+  "Stanford Women in Computer Science 2025 — Director of Outreach",
+  "ASES Launchpad 2025 — Organizer",
+  "Listen to the Silence 2024 — Workshops Co-Chair",
+  "Black LaiR — CS106A/106B Course Helper",
+  "Stanford Women in Computer Science 2024 — Outreach Intern",
 ];
 
 function Portfolio() {
@@ -59,41 +95,65 @@ function Portfolio() {
       <SiteNav />
       <article className="prose-academic mx-auto max-w-2xl text-foreground">
         <h1>Portfolio</h1>
+
         <p>
-          A selection of projects I've worked on. For source code and more, see
-          my{" "}
-          <a
-            href="https://github.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-          .
+          More on my personal background: I was born in Utah but grew up in
+          Ohio. I will also be studying abroad at the University of Oxford in
+          Winter 2026, where I'll be immersing myself in British life and
+          participating in a yet-to-be-determined tutorial. I enjoy learning
+          guzheng, hiking, fiction, and trying new cuisines.
         </p>
 
-        <ul className="mt-8 space-y-8">
+        <p>
+          Inspired by my interdisciplinary coursework, I am drawn to research
+          leveraging AI for positive change in the world. I aim to better
+          understand technologies and how we interact with them to create AI
+          systems that can support people through healthcare, policy, and
+          overall in meaningful, human-centered ways.
+        </p>
+
+        <p>
+          Below is a collection of works that summarize my academic interests.
+        </p>
+
+        <h2 className="mt-10 text-xl font-semibold tracking-tight">
+          Computational Projects
+        </h2>
+        <ul className="mt-4 space-y-7">
           {projects.map((p, i) => (
             <li key={i}>
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                <h2 className="text-lg font-semibold">
-                  {p.href ? (
-                    <a href={p.href} target="_blank" rel="noopener noreferrer">
-                      {p.title}
-                    </a>
-                  ) : (
-                    p.title
-                  )}
-                </h2>
-                <p className="text-sm text-muted-foreground">{p.period}</p>
-              </div>
-              <p className="mt-1">{p.description}</p>
-              <p className="mt-2 text-sm italic text-muted-foreground">
-                {p.tags.join(" · ")}
+              <p className="font-medium italic">{p.title}</p>
+              <p className="mt-1">{p.blurb}</p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Topics: {p.topics}
               </p>
             </li>
           ))}
         </ul>
+
+        <h2 className="mt-10 text-xl font-semibold tracking-tight">Teaching</h2>
+        <ul className="mt-3 list-disc space-y-1 pl-5">
+          {teaching.map((t, i) => (
+            <li key={i}>{t}</li>
+          ))}
+        </ul>
+
+        <h2 className="mt-10 text-xl font-semibold tracking-tight">
+          Volunteering
+        </h2>
+        <ul className="mt-3 list-disc space-y-1 pl-5">
+          {volunteering.map((v, i) => (
+            <li key={i}>{v}</li>
+          ))}
+        </ul>
+
+        <footer className="mt-16 border-t border-border pt-6 text-sm text-muted-foreground">
+          © 2025 Katherine Wang Xu ·{" "}
+          <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </footer>
       </article>
     </main>
   );
