@@ -78,7 +78,7 @@ function BookCard({ book }: { book: Book }) {
 
 function Bookshelf() {
   return (
-    <main className="font-bookshelf min-h-screen bg-background px-6 py-16 md:py-24">
+    <main className="font-bookshelf min-h-screen px-6 py-16 md:py-24">
       <SiteNav />
 
       <header className="mx-auto mt-4 max-w-5xl text-center">
