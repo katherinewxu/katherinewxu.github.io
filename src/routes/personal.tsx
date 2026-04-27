@@ -23,7 +23,7 @@ export const Route = createFileRoute("/personal")({
 
 function Personal() {
   return (
-    <main className="min-h-screen bg-background px-6 py-16 md:py-24">
+    <main className="min-h-screen px-6 py-16 md:py-24">
       <SiteNav />
       <article className="prose-academic mx-auto max-w-2xl text-foreground">
         <h1>Personal</h1>
@@ -67,18 +67,9 @@ function Personal() {
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">Books</h2>
         <p>
-          I love reading. A few favorites are below — for the longer list, see
-          my <Link to="/bookshelf">bookshelf</Link>.
+          I love reading. For a list of some of my favorites, see my{" "}
+          <Link to="/bookshelf">bookshelf</Link>.
         </p>
-        <ul className="mt-3 list-disc space-y-1 pl-5">
-          <li><em>Wuthering Heights</em> — Emily Brontë</li>
-          <li><em>Pachinko</em> — Min Jin Lee</li>
-          <li><em>The Kite Runner</em> — Khaled Hosseini</li>
-          <li><em>Never Let Me Go</em> — Kazuo Ishiguro</li>
-          <li><em>Kim Ji-young, Born 1982</em> — Cho Nam-ju</li>
-          <li><em>When Breath Becomes Air</em> — Paul Kalanithi</li>
-          <li><em>Crying in H Mart</em> — Michelle Zauner</li>
-        </ul>
 
         <footer className="mt-16 border-t border-border pt-6 text-sm text-muted-foreground">
           © 2025 Katherine Wang Xu ·{" "}
