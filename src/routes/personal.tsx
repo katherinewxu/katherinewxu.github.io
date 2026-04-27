@@ -51,10 +51,11 @@ function Personal() {
           Miscellaneous Facts
         </h2>
         <p>
-          I studied abroad in Songdo, South Korea for seven weeks through a
-          government-sponsored Critical Language Scholarship. I deepened my
-          Korean, formed close friendships, and learned how quickly unfamiliar
-          places can feel like home.
+          More on my personal background: I was born in Utah but grew up in
+          Ohio. I will also study abroad at the University of Oxford in Winter
+          2026, where I'll be immersing myself in British life and participating
+          in a tutorial on Modern Literature and Literary Criticism. I enjoy
+          learning guzheng, hiking, fiction, and trying new cuisines.
         </p>
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">Books</h2>
