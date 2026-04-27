@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
+import { StarField } from "@/components/StarField";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
