@@ -8,6 +8,12 @@ import neverLetMeGo from "@/assets/books/never-let-me-go.jpg";
 import kimJiyoung from "@/assets/books/kim-jiyoung.jpg";
 import whenBreath from "@/assets/books/when-breath-becomes-air.jpg";
 import cryingHMart from "@/assets/books/crying-in-h-mart.jpg";
+import beloved from "@/assets/books/beloved.jpg";
+import paleFire from "@/assets/books/pale-fire.jpg";
+import bellJar from "@/assets/books/bell-jar.jpg";
+import frankenstein from "@/assets/books/frankenstein.jpg";
+import lifeOfPi from "@/assets/books/life-of-pi.jpg";
+import catcherInTheRye from "@/assets/books/catcher-in-the-rye.jpg";
 
 export const Route = createFileRoute("/bookshelf")({
   component: Bookshelf,
@@ -43,6 +49,12 @@ const books: Book[] = [
   { title: "Kim Ji-young, Born 1982", author: "By Cho Nam-ju", cover: kimJiyoung },
   { title: "When Breath Becomes Air", author: "By Paul Kalanithi", cover: whenBreath },
   { title: "Crying in H Mart", author: "By Michelle Zauner", cover: cryingHMart },
+  { title: "Beloved", author: "By Toni Morrison", cover: beloved },
+  { title: "Pale Fire", author: "By Vladimir Nabokov", cover: paleFire },
+  { title: "The Bell Jar", author: "By Sylvia Plath", cover: bellJar },
+  { title: "Frankenstein", author: "By Mary Shelley", cover: frankenstein },
+  { title: "Life of Pi", author: "By Yann Martel", cover: lifeOfPi },
+  { title: "The Catcher in the Rye", author: "By J. D. Salinger", cover: catcherInTheRye },
 ];
 
 function BookCard({ book }: { book: Book }) {
@@ -75,16 +87,7 @@ function Bookshelf() {
           Bookshelf
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground">
-          A running list of books I've loved. Inspired by{" "}
-          <a
-            href="https://brianhie.com/bookshelf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2 decoration-[oklch(0.62_0.08_145)] hover:text-[oklch(0.36_0.08_150)]"
-          >
-            Brian Hie's bookshelf
-          </a>
-          .
+          A running list of books I've loved.
         </p>
       </header>
 
