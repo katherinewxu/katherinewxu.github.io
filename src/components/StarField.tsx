@@ -27,7 +27,7 @@ export function StarField({
   density = 30,
   velocityX = 20,
   velocityY = 25,
-  color = "26, 60, 40", // forest green rgb
+  color = "120, 170, 130", // soft sage green rgb
 }: StarFieldProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
