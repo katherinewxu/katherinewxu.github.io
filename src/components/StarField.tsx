@@ -65,7 +65,7 @@ export function StarField({
             size,
             vx: (velocityX / 60) * speedScale * (Math.random() * 0.6 + 0.7),
             vy: (velocityY / 60) * speedScale * (Math.random() * 0.6 + 0.7),
-            alpha: 0.12 + depth * 0.45,
+            alpha: 0.06 + depth * 0.22,
           });
         }
       }
