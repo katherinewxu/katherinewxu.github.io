@@ -1,6 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 
+import wutheringHeights from "@/assets/books/wuthering-heights.jpg";
+import pachinko from "@/assets/books/pachinko.jpg";
+import kiteRunner from "@/assets/books/kite-runner.jpg";
+import neverLetMeGo from "@/assets/books/never-let-me-go.jpg";
+import kimJiyoung from "@/assets/books/kim-jiyoung.jpg";
+import whenBreath from "@/assets/books/when-breath-becomes-air.jpg";
+import cryingHMart from "@/assets/books/crying-in-h-mart.jpg";
+
 export const Route = createFileRoute("/bookshelf")({
   component: Bookshelf,
   head: () => ({
@@ -24,49 +32,46 @@ export const Route = createFileRoute("/bookshelf")({
 type Book = {
   title: string;
   author: string;
-  cover?: string;
+  cover: string;
 };
 
 const books: Book[] = [
-  { title: "Wuthering Heights", author: "By Emily Brontë" },
-  { title: "Pachinko", author: "By Min Jin Lee" },
-  { title: "The Kite Runner", author: "By Khaled Hosseini" },
-  { title: "Never Let Me Go", author: "By Kazuo Ishiguro" },
-  { title: "Kim Ji-young, Born 1982", author: "By Cho Nam-ju" },
-  { title: "When Breath Becomes Air", author: "By Paul Kalanithi" },
-  { title: "Crying in H Mart", author: "By Michelle Zauner" },
+  { title: "Wuthering Heights", author: "By Emily Brontë", cover: wutheringHeights },
+  { title: "Pachinko", author: "By Min Jin Lee", cover: pachinko },
+  { title: "The Kite Runner", author: "By Khaled Hosseini", cover: kiteRunner },
+  { title: "Never Let Me Go", author: "By Kazuo Ishiguro", cover: neverLetMeGo },
+  { title: "Kim Ji-young, Born 1982", author: "By Cho Nam-ju", cover: kimJiyoung },
+  { title: "When Breath Becomes Air", author: "By Paul Kalanithi", cover: whenBreath },
+  { title: "Crying in H Mart", author: "By Michelle Zauner", cover: cryingHMart },
 ];
 
 function BookCard({ book }: { book: Book }) {
   return (
     <div className="flex flex-col items-center px-4 py-10 text-center">
-      <div className="mb-5 flex h-[260px] w-[180px] items-center justify-center border border-border bg-muted/40 px-3">
-        {book.cover ? (
-          <img
-            src={book.cover}
-            alt={book.title}
-            className="max-h-full max-w-full object-contain"
-          />
-        ) : (
-          <span className="text-sm italic text-muted-foreground">
-            {book.title}
-          </span>
-        )}
+      <div className="mb-5 flex h-[260px] w-[180px] items-center justify-center overflow-hidden bg-muted/30 shadow-[0_2px_10px_-4px_oklch(0.36_0.08_150_/_0.35)]">
+        <img
+          src={book.cover}
+          alt={`${book.title} cover`}
+          className="h-full w-full object-cover"
+          loading="lazy"
+        />
       </div>
-      <h3 className="text-base font-semibold leading-snug">{book.title}</h3>
-      <p className="mt-1 text-sm italic text-foreground/80">{book.author}</p>
+      <h3 className="text-base font-semibold leading-snug text-[oklch(0.36_0.08_150)]">
+        {book.title}
+      </h3>
+      <p className="mt-1 text-sm italic text-foreground/75">{book.author}</p>
     </div>
   );
 }
 
 function Bookshelf() {
   return (
-    <main className="min-h-screen bg-background px-6 py-16 md:py-24">
+    <main className="font-bookshelf min-h-screen bg-background px-6 py-16 md:py-24">
       <SiteNav />
 
       <header className="mx-auto mt-4 max-w-5xl text-center">
         <h1 className="text-4xl font-normal tracking-tight">
-          <span className="italic text-[oklch(0.75_0.15_75)]">Katherine's</span>{" "}
+          <span className="italic text-[oklch(0.45_0.09_150)]">Katherine's</span>{" "}
           Bookshelf
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground">
@@ -75,7 +80,7 @@ function Bookshelf() {
             href="https://brianhie.com/bookshelf"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline underline-offset-2"
+            className="underline underline-offset-2 decoration-[oklch(0.62_0.08_145)] hover:text-[oklch(0.36_0.08_150)]"
           >
             Brian Hie's bookshelf
           </a>
@@ -84,14 +89,9 @@ function Bookshelf() {
       </header>
 
       <section className="mx-auto mt-12 max-w-6xl">
-        <div className="grid grid-cols-1 divide-y divide-border sm:grid-cols-2 sm:divide-y-0 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {books.map((b, i) => (
-            <div
-              key={i}
-              className="border-border sm:border-b sm:[&:nth-child(n+3)]:border-t-0 md:[&:nth-child(n+4)]:border-t-0 lg:[&:nth-child(n+5)]:border-t-0 [&:not(:last-child)]:sm:border-r-0 sm:[&:nth-child(2n)]:border-r-0 md:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(4n)]:border-r-0"
-            >
-              <BookCard book={b} />
-            </div>
+            <BookCard key={i} book={b} />
           ))}
         </div>
       </section>
@@ -99,7 +99,7 @@ function Bookshelf() {
       <div className="mx-auto mt-16 max-w-2xl text-center">
         <Link
           to="/personal"
-          className="text-sm text-[oklch(0.5_0.18_260)] hover:underline"
+          className="text-sm text-[oklch(0.45_0.09_150)] hover:underline"
         >
           ← Back to personal
         </Link>
@@ -107,11 +107,18 @@ function Bookshelf() {
 
       <footer className="mx-auto mt-16 max-w-2xl border-t border-border pt-6 text-center text-sm text-muted-foreground">
         © 2025 Katherine Wang Xu ·{" "}
-        <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
+        <a
+          href="mailto:kwx04@stanford.edu"
+          className="hover:text-[oklch(0.36_0.08_150)]"
+        >
+          kwx04@stanford.edu
+        </a>{" "}
+        ·{" "}
         <a
           href="https://www.linkedin.com/"
           target="_blank"
           rel="noopener noreferrer"
+          className="hover:text-[oklch(0.36_0.08_150)]"
         >
           LinkedIn
         </a>

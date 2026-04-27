@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -170,4 +171,15 @@
     margin-bottom: 1.5rem;
     letter-spacing: -0.01em;
   }
+
+  .font-bookshelf {
+    font-family: "EB Garamond", "Iowan Old Style", Garamond, Georgia, serif;
+    font-feature-settings: "liga", "dlig", "onum";
+  }
+}
+
+:root {
+  --forest: oklch(0.45 0.09 150);
+  --forest-deep: oklch(0.36 0.08 150);
+  --moss: oklch(0.62 0.08 145);
 }
