@@ -16,8 +16,8 @@ export function SiteNav() {
             <Link
               to={l.to}
               activeOptions={{ exact: l.exact }}
-              className="text-foreground hover:underline"
-              activeProps={{ className: "font-semibold underline" }}
+              className="text-foreground hover:text-[oklch(0.36_0.08_150)] hover:underline"
+              activeProps={{ className: "font-semibold underline text-[oklch(0.36_0.08_150)]" }}
             >
               {l.label}
             </Link>
