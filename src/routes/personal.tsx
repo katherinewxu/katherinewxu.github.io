@@ -30,9 +30,9 @@ function Personal() {
 
         <p>
           More on my personal background: I was born in Utah but grew up in
-          Ohio. I will also study abroad at the University of Oxford in Winter
-          2026, where I'll be immersing myself in British life and participating
-          in a tutorial on Modern Literature and Literary Criticism. I enjoy
+          Ohio. I also studied abroad at the University of Oxford in Winter
+          2026, where I immersed myself in British life and participated in a
+          tutorial on Modern Literature and Literary Criticism. I enjoy
           learning guzheng, hiking, fiction, and trying new cuisines.
         </p>
 
