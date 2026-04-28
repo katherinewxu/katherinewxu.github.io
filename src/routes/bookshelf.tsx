@@ -109,7 +109,7 @@ function Bookshelf() {
       </div>
 
       <footer className="mx-auto mt-16 max-w-2xl border-t border-border pt-6 text-center text-sm text-muted-foreground">
-        © 2025 Katherine Wang Xu ·{" "}
+        © 2026 Katherine Wang Xu ·{" "}
         <a
           href="mailto:kwx04@stanford.edu"
           className="hover:text-[oklch(0.36_0.08_150)]"

@@ -72,7 +72,7 @@ function Personal() {
         </p>
 
         <footer className="mt-16 border-t border-border pt-6 text-sm text-muted-foreground">
-          © 2025 Katherine Wang Xu ·{" "}
+          © 2026 Katherine Wang Xu ·{" "}
           <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
           <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
             LinkedIn
