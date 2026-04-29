@@ -89,14 +89,6 @@ function Portfolio() {
         <h1>Portfolio</h1>
 
         <p>
-          More on my personal background: I was born in Utah but grew up in
-          Ohio. I will also be studying abroad at the University of Oxford in
-          Winter 2026, where I'll be immersing myself in British life and
-          participating in a yet-to-be-determined tutorial. I enjoy learning
-          guzheng, hiking, fiction, and trying new cuisines.
-        </p>
-
-        <p>
           Inspired by my interdisciplinary coursework, I am drawn to research
           leveraging AI for positive change in the world. I aim to better
           understand technologies and how we interact with them to create AI
