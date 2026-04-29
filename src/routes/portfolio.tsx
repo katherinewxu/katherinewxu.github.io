@@ -131,6 +131,34 @@ function Portfolio() {
           ))}
         </ul>
 
+        <h2 className="mt-10 text-xl font-semibold tracking-tight">
+          AI Policy/Ethics
+        </h2>
+        <ul className="mt-4 space-y-7">
+          <li>
+            <p className="font-medium italic">
+              Governance of Frontier AI: Monitoring, Institutions, and Policy
+              Transitions
+            </p>
+            <p className="mt-1">
+              Independent research paper examining how to govern frontier AI
+              before catastrophic risks materialize. Develops a three-tiered
+              taxonomy of monitoring indicators (capabilities, behavioral
+              tendencies, and contextual triggers) for early detection of
+              deception, goal misgeneralization, and power-seeking behavior;
+              proposes institutional architectures for cross-lab and
+              cross-border oversight drawing on analogies from the IAEA,
+              NSABB, and Basel Committee; and outlines mechanisms for
+              transitioning from voluntary commitments to binding regulation
+              through audits, compliance cards, and staged oversight regimes.
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Topics: AI Governance · AI Safety · Policy · Institutional
+              Design · Existential Risk
+            </p>
+          </li>
+        </ul>
+
         <h2 className="mt-10 text-xl font-semibold tracking-tight">Teaching</h2>
         <ul className="mt-3 list-disc space-y-1 pl-5">
           {teaching.map((t, i) => (
