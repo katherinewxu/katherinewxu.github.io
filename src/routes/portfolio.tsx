@@ -141,16 +141,25 @@ function Portfolio() {
               Transitions
             </p>
             <p className="mt-1">
-              Independent research paper examining how to govern frontier AI
-              before catastrophic risks materialize. Develops a three-tiered
-              taxonomy of monitoring indicators (capabilities, behavioral
-              tendencies, and contextual triggers) for early detection of
-              deception, goal misgeneralization, and power-seeking behavior;
-              proposes institutional architectures for cross-lab and
-              cross-border oversight drawing on analogies from the IAEA,
-              NSABB, and Basel Committee; and outlines mechanisms for
-              transitioning from voluntary commitments to binding regulation
-              through audits, compliance cards, and staged oversight regimes.
+              Final research paper for the{" "}
+              <a
+                href="https://seri.stanford.edu/resources/courses/courses/courses/courses/courses/2026-seri-summer-fellowship"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                Stanford Existential Risks Initiative (SERI)
+              </a>{" "}
+              Summer 2025. Examines how to govern frontier AI before
+              catastrophic risks materialize. Develops a three-tiered taxonomy
+              of monitoring indicators (capabilities, behavioral tendencies,
+              and contextual triggers) for early detection of deception, goal
+              misgeneralization, and power-seeking behavior; proposes
+              institutional architectures for cross-lab and cross-border
+              oversight drawing on analogies from the IAEA, NSABB, and Basel
+              Committee; and outlines mechanisms for transitioning from
+              voluntary commitments to binding regulation through audits,
+              compliance cards, and staged oversight regimes.
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
               Topics: AI Governance · AI Safety · Policy · Institutional
