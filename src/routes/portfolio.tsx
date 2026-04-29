@@ -37,14 +37,6 @@ const projects: Project[] = [
       "Medical AI · Computer Vision · Deep Learning · Semantic Segmentation · Healthcare Technology",
   },
   {
-    title:
-      "Seeing is Believing? A Sociotechnical Evaluation of Saliency Maps for Brain Tumor Segmentation",
-    blurb:
-      "Final poster for Stanford's CS 281: Ethics of Artificial Intelligence (Spring 2025). Benchmarking Grad-CAM, Integrated Gradients, and GradientSHAP across segmentation models, combining quantitative evaluation with clinician + researcher feedback to assess clinical usability.",
-    topics:
-      "Explainable AI · Medical Imaging · Model Interpretability · Human-AI Interaction",
-  },
-  {
     title: "Robust Brand Logo Detection Under Adversarial Conditions",
     blurb:
       "Final report for Stanford's CS 131: Computer Vision (Winter 2025). Built a custom CNN with adversarial training to detect Coca-Cola logos under blur, noise, and occlusion. Achieved +13% accuracy over YOLOv8 with extensive data augmentation.",
