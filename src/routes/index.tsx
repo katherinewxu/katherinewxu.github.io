@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 
 export const Route = createFileRoute("/")({
@@ -58,7 +58,8 @@ function Index() {
 
         <p>
           In my free time, I enjoy exploring the outdoors, sampling the local food
-          scene, curating increasingly niche Spotify playlists, and reading.
+          scene, curating increasingly niche Spotify playlists, and reading. Some
+          of my favorite books can be found <Link to="/bookshelf">here</Link>.
         </p>
 
         <p>
