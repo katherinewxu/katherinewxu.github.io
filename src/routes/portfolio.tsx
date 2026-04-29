@@ -129,6 +129,23 @@ function Portfolio() {
         <ul className="mt-4 space-y-7">
           <li>
             <p className="font-medium italic">
+              Seeing is Believing? A Sociotechnical Evaluation of Saliency
+              Maps for Brain Tumor Segmentation
+            </p>
+            <p className="mt-1">
+              Final poster for Stanford's CS 281: Ethics of Artificial
+              Intelligence (Spring 2025). Benchmarking Grad-CAM, Integrated
+              Gradients, and GradientSHAP across segmentation models,
+              combining quantitative evaluation with clinician + researcher
+              feedback to assess clinical usability.
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Topics: Explainable AI · Medical Imaging · Model Interpretability
+              · Human-AI Interaction
+            </p>
+          </li>
+          <li>
+            <p className="font-medium italic">
               Governance of Frontier AI: Monitoring, Institutions, and Policy
               Transitions
             </p>
