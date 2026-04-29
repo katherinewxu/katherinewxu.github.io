@@ -29,10 +29,10 @@ type Item = {
   org: string;
   orgUrl?: string;
   period: string;
-  description: React.ReactNode;
+  description: ReactNode;
 };
 
-const ExtLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+const ExtLink = ({ href, children }: { href: string; children: ReactNode }) => (
   <a
     href={href}
     target="_blank"
