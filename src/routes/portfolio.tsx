@@ -214,6 +214,13 @@ function Portfolio() {
         </section>
 
         <h2 className="mt-12 text-xl font-semibold tracking-tight">Teaching</h2>
+        <p className="mt-3 max-w-2xl">
+          I'm passionate about education and believe that great teaching is one
+          of the most powerful tools we have for opening doors. Whether through
+          section, office hours, or course design, I love helping students build
+          confidence in computer science and discover that they belong in this
+          field.
+        </p>
         <ul className="mt-3 list-disc space-y-1 pl-5">
           {teaching.map((t) => (
             <li key={t}>{t}</li>
