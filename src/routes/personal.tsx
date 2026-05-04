@@ -67,15 +67,8 @@ function Personal() {
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">Classes</h2>
         <p>
-          For a list of classes I've taken at Stanford, see{" "}
-          <a
-            href="https://cs.stanford.edu/~suzeva/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            here
-          </a>
-          .
+          For a list of classes I've taken at Stanford, see my{" "}
+          <Link to="/classes">classes page</Link>.
         </p>
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">Books</h2>
