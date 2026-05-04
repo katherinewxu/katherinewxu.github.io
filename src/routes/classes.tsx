@@ -112,7 +112,6 @@ const stanford: { code: string; title: string }[] = [
     title:
       "Shaping America's Future: Exploring the Key Issues on Our Path to the 2024 Elections",
   },
-  { code: "SYMSYS 280", title: "Symbolic Systems Research Seminar" },
 ];
 
 const oxford: { code: string; title: string }[] = [
