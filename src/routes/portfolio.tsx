@@ -190,6 +190,14 @@ function Portfolio() {
           <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
           <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
             LinkedIn
+          </a>{" "}
+          ·{" "}
+          <a
+            href="https://scholar.google.com/citations?hl=en&user=Sli3mxEAAAAJ&view_op=list_works"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google Scholar
           </a>
         </footer>
       </article>

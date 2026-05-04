@@ -124,6 +124,15 @@ function Bookshelf() {
           className="hover:text-[oklch(0.36_0.08_150)]"
         >
           LinkedIn
+        </a>{" "}
+        ·{" "}
+        <a
+          href="https://scholar.google.com/citations?hl=en&user=Sli3mxEAAAAJ&view_op=list_works"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-[oklch(0.36_0.08_150)]"
+        >
+          Google Scholar
         </a>
       </footer>
     </main>
