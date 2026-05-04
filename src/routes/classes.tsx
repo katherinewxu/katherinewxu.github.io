@@ -55,7 +55,6 @@ const stanford: { code: string; title: string }[] = [
     code: "ENGLISH 66",
     title: "'A Model Island': Britain in Historical and Cultural Perspective",
   },
-  { code: "MUSIC 72G", title: "Gu-Zheng Class" },
   // 2024–2025 Winter
   { code: "CS 131", title: "Computer Vision: Foundations and Applications" },
   { code: "CS 107", title: "Computer Organization and Systems" },
