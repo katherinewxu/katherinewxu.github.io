@@ -64,16 +64,7 @@ function Index() {
 
         <p>
           Feel free to reach me at{" "}
-          <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a>. You can
-          also find my publications on{" "}
-          <a
-            href="https://scholar.google.com/citations?hl=en&user=Sli3mxEAAAAJ&view_op=list_works"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Google Scholar
-          </a>
-          .
+          <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a>.
         </p>
       </article>
     </main>
