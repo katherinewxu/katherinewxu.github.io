@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 
@@ -9,22 +10,28 @@ export const Route = createFileRoute("/portfolio")({
       {
         name: "description",
         content:
-          "Selected computational projects, teaching, and volunteering by Katherine Xu.",
+          "Selected computational projects, AI policy work, teaching, and volunteering by Katherine Xu.",
       },
       { property: "og:title", content: "Portfolio — Katherine Xu" },
       {
         property: "og:description",
         content:
-          "Selected computational projects, teaching, and volunteering by Katherine Xu.",
+          "Selected computational projects, AI policy work, teaching, and volunteering by Katherine Xu.",
       },
     ],
   }),
 });
 
+type ProjectCategory = "Computational Projects" | "AI Policy/Ethics";
+type FilterKey = "All" | ProjectCategory;
+
 type Project = {
   title: string;
   blurb: string;
   topics: string;
+  category: ProjectCategory;
+  href?: string;
+  linkLabel?: string;
 };
 
 const projects: Project[] = [
@@ -35,6 +42,7 @@ const projects: Project[] = [
       "Final project for Stanford's CS 231N: Deep Learning for Computer Vision (Spring 2025). Developed deep learning models for automated brain tumor segmentation using the BraTS 2021 dataset, comparing CNNs, transformers, and promptable architectures for pixel-level tumor detection.",
     topics:
       "Medical AI · Computer Vision · Deep Learning · Semantic Segmentation · Healthcare Technology",
+    category: "Computational Projects",
   },
   {
     title: "Robust Brand Logo Detection Under Adversarial Conditions",
@@ -42,6 +50,7 @@ const projects: Project[] = [
       "Final report for Stanford's CS 131: Computer Vision (Winter 2025). Built a custom CNN with adversarial training to detect Coca-Cola logos under blur, noise, and occlusion. Achieved +13% accuracy over YOLOv8 with extensive data augmentation.",
     topics:
       "Computer Vision · Adversarial Robustness · Object Detection · Data Augmentation",
+    category: "Computational Projects",
   },
   {
     title: "Heap Allocator",
@@ -49,6 +58,7 @@ const projects: Project[] = [
       "Final project for Stanford's CS 107 (Winter 2025). Implemented a full implicit + explicit free list allocator in C, including malloc, free, and realloc. Built debugging utilities (validate_heap, dump_heap) and stress-tested on real allocation traces.",
     topics:
       "Systems Programming · Memory Management · C · Performance Optimization",
+    category: "Computational Projects",
   },
   {
     title:
@@ -57,16 +67,39 @@ const projects: Project[] = [
       "Final project for Stanford's CS 129 (Winter 2024). Trained VGG-style CNNs, GRUs, and LSTMs on mel spectrograms from GTZAN, incorporating noise, pitch-shift, and time-stretch augmentations for robustness.",
     topics:
       "Audio Classification · Deep Learning · CNNs · Music Information Retrieval",
+    category: "Computational Projects",
   },
   {
     title:
       "Protecting Against Propaganda: AI for Misinformation Detection & Critical Thinking",
     blurb:
-      "Final project for Stanford's CS 197 (Winter 2024). Built a GPT-4–powered browser extension that detects persuasive fallacies in political news, provides real-time annotations, and generates \"extremeness\" scores. Ran a pilot RCT to evaluate behavioral impacts.",
+      'Final project for Stanford\'s CS 197 (Winter 2024). Built a GPT-4–powered browser extension that detects persuasive fallacies in political news, provides real-time annotations, and generates "extremeness" scores. Ran a pilot RCT to evaluate behavioral impacts.',
     topics:
       "Human-AI Interaction · Politics & Psychology · Media Literacy · Language Models",
+    category: "Computational Projects",
+  },
+  {
+    title:
+      "Seeing is Believing? A Sociotechnical Evaluation of Saliency Maps for Brain Tumor Segmentation",
+    blurb:
+      "Final poster for Stanford's CS 281: Ethics of Artificial Intelligence (Spring 2025). Benchmarking Grad-CAM, Integrated Gradients, and GradientSHAP across segmentation models, combining quantitative evaluation with clinician + researcher feedback to assess clinical usability.",
+    topics:
+      "Explainable AI · Medical Imaging · Model Interpretability · Human-AI Interaction",
+    category: "AI Policy/Ethics",
+  },
+  {
+    title: "Governance of Frontier AI: Monitoring, Institutions, and Policy Transitions",
+    blurb:
+      "Final research paper for the Stanford Existential Risks Initiative (SERI) Summer 2025. Examines how to govern frontier AI before catastrophic risks materialize, proposing risk-monitoring taxonomies, cross-lab oversight architectures, and pathways from voluntary commitments to binding regulation.",
+    topics:
+      "AI Governance · AI Safety · Policy · Institutional Design · Existential Risk",
+    category: "AI Policy/Ethics",
+    href: "https://seri.stanford.edu/resources/courses/courses/courses/courses/courses/2026-seri-summer-fellowship",
+    linkLabel: "SERI",
   },
 ];
+
+const filters: FilterKey[] = ["All", "Computational Projects", "AI Policy/Ethics"];
 
 const teaching = [
   "Fall 2025: CS106A Programming Methodologies — Python, Programming Concepts",
@@ -82,13 +115,20 @@ const volunteering = [
 ];
 
 function Portfolio() {
+  const [activeFilter, setActiveFilter] = useState<FilterKey>("All");
+
+  const visibleProjects = useMemo(() => {
+    if (activeFilter === "All") return projects;
+    return projects.filter((project) => project.category === activeFilter);
+  }, [activeFilter]);
+
   return (
     <main className="min-h-screen px-6 py-16 md:py-24">
       <SiteNav />
-      <article className="prose-academic mx-auto max-w-2xl text-foreground">
+      <article className="prose-academic mx-auto max-w-5xl text-foreground">
         <h1>Portfolio</h1>
 
-        <p>
+        <p className="max-w-2xl">
           Inspired by my interdisciplinary coursework, I am drawn to research
           leveraging AI for positive change in the world. I aim to better
           understand technologies and how we interact with them to create AI
@@ -96,83 +136,85 @@ function Portfolio() {
           overall in meaningful, human-centered ways.
         </p>
 
-        <p>
+        <p className="max-w-2xl">
           Below is a collection of works that summarize my academic interests.
         </p>
 
-        <h2 className="mt-10 text-xl font-semibold tracking-tight">
-          Computational Projects
-        </h2>
-        <ul className="mt-4 space-y-7">
-          {projects.map((p, i) => (
-            <li key={i}>
-              <p className="font-medium italic">{p.title}</p>
-              <p className="mt-1">{p.blurb}</p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Topics: {p.topics}
+        <section className="mt-10 not-prose">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 className="text-xl font-semibold tracking-tight text-foreground">
+                Project Archive
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+                Selected coursework, research, and policy projects.
               </p>
-            </li>
-          ))}
-        </ul>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              {visibleProjects.length} project{visibleProjects.length === 1 ? "" : "s"}
+            </p>
+          </div>
 
-        <h2 className="mt-10 text-xl font-semibold tracking-tight">
-          AI Policy/Ethics
-        </h2>
-        <ul className="mt-4 space-y-7">
-          <li>
-            <p className="font-medium italic">
-              Seeing is Believing? A Sociotechnical Evaluation of Saliency
-              Maps for Brain Tumor Segmentation
-            </p>
-            <p className="mt-1">
-              Final poster for Stanford's CS 281: Ethics of Artificial
-              Intelligence (Spring 2025). Benchmarking Grad-CAM, Integrated
-              Gradients, and GradientSHAP across segmentation models,
-              combining quantitative evaluation with clinician + researcher
-              feedback to assess clinical usability.
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Topics: Explainable AI · Medical Imaging · Model Interpretability
-              · Human-AI Interaction
-            </p>
-          </li>
-          <li>
-            <p className="font-medium italic">
-              Governance of Frontier AI: Monitoring, Institutions, and Policy
-              Transitions
-            </p>
-            <p className="mt-1">
-              Final research paper for the{" "}
-              <a
-                href="https://seri.stanford.edu/resources/courses/courses/courses/courses/courses/2026-seri-summer-fellowship"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
+          <div className="mt-5 flex flex-wrap gap-2">
+            {filters.map((filter) => {
+              const isActive = activeFilter === filter;
+              return (
+                <button
+                  key={filter}
+                  type="button"
+                  onClick={() => setActiveFilter(filter)}
+                  aria-pressed={isActive}
+                  className={[
+                    "min-w-[5.5rem] border px-3 py-1.5 text-sm transition-colors",
+                    isActive
+                      ? "border-foreground bg-foreground text-background"
+                      : "border-border bg-background text-muted-foreground hover:text-foreground",
+                  ].join(" ")}
+                >
+                  {filter}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            {visibleProjects.map((project) => (
+              <article
+                key={project.title}
+                className="flex h-full flex-col border border-border bg-background p-5"
               >
-                Stanford Existential Risks Initiative (SERI)
-              </a>{" "}
-              Summer 2025. Examines how to govern frontier AI before
-              catastrophic risks materialize. Develops a three-tiered taxonomy
-              of monitoring indicators (capabilities, behavioral tendencies,
-              and contextual triggers) for early detection of deception, goal
-              misgeneralization, and power-seeking behavior; proposes
-              institutional architectures for cross-lab and cross-border
-              oversight drawing on analogies from the IAEA, NSABB, and Basel
-              Committee; and outlines mechanisms for transitioning from
-              voluntary commitments to binding regulation through audits,
-              compliance cards, and staged oversight regimes.
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Topics: AI Governance · AI Safety · Policy · Institutional
-              Design · Existential Risk
-            </p>
-          </li>
-        </ul>
+                <p className="text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
+                  {project.category}
+                </p>
+                <h3 className="mt-3 text-[1.35rem] leading-tight font-medium text-foreground">
+                  {project.title}
+                </h3>
+                <p className="mt-3 text-[1rem] leading-7 text-foreground/90">
+                  {project.blurb}
+                </p>
+                <p className="mt-4 text-sm leading-6 text-muted-foreground">
+                  {project.topics}
+                </p>
+                {project.href ? (
+                  <p className="mt-4 text-sm">
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.linkLabel ?? "Related link"}
+                    </a>
+                  </p>
+                ) : null}
+              </article>
+            ))}
+          </div>
+        </section>
 
-        <h2 className="mt-10 text-xl font-semibold tracking-tight">Teaching</h2>
+        <h2 className="mt-12 text-xl font-semibold tracking-tight">Teaching</h2>
         <ul className="mt-3 list-disc space-y-1 pl-5">
-          {teaching.map((t, i) => (
-            <li key={i}>{t}</li>
+          {teaching.map((t) => (
+            <li key={t}>{t}</li>
           ))}
         </ul>
 
@@ -180,15 +222,19 @@ function Portfolio() {
           Volunteering
         </h2>
         <ul className="mt-3 list-disc space-y-1 pl-5">
-          {volunteering.map((v, i) => (
-            <li key={i}>{v}</li>
+          {volunteering.map((v) => (
+            <li key={v}>{v}</li>
           ))}
         </ul>
 
         <footer className="mt-16 border-t border-border pt-6 text-sm text-muted-foreground">
           © 2026 Katherine Wang Xu ·{" "}
           <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             LinkedIn
           </a>{" "}
           ·{" "}
