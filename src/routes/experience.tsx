@@ -113,7 +113,7 @@ const items: Item[] = [
     role: "Undergraduate Researcher",
     org: "Stanford International Genetically Engineered Machine (iGEM)",
     orgUrl: "https://stanford-igem.org/",
-    logoDomain: "stanford-igem.org",
+    logoDomain: "stanford.edu",
     period: "Summer 2024",
     description: (
       <>
