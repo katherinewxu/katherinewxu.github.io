@@ -85,7 +85,6 @@ const stanford: { code: string; title: string }[] = [
     title: "Bioengineering Problems and Experimental Investigation",
   },
   { code: "CS 103", title: "Mathematical Foundations of Computing" },
-  { code: "CS 103ACE", title: "Mathematical Problem-Solving Strategies" },
   {
     code: "PWR 1AH",
     title:
