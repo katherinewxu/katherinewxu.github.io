@@ -57,6 +57,13 @@ function Index() {
         </p>
 
         <p>
+          I'm equally devoted to the humanities — from studying literature and
+          literary criticism at Oxford to thinking through the ethics of AI, I
+          believe the questions worth asking about technology are ultimately
+          questions about people, language, and meaning.
+        </p>
+
+        <p>
           In my free time, I enjoy exploring the outdoors, sampling the local food
           scene, curating increasingly niche Spotify playlists, and reading. Some
           of my favorite books can be found <Link to="/bookshelf">here</Link>.
