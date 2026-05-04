@@ -31,10 +31,6 @@ const stanford: { code: string; title: string }[] = [
   },
   { code: "CS 273B", title: "Deep Learning in Genomics and Biomedicine" },
   { code: "ENGLISH 177B", title: "Contemporary American Short Stories" },
-  {
-    code: "MED 160",
-    title: "Physician Shadowing: Stanford Immersion in Medicine Series (SIMS)",
-  },
   { code: "MUSIC 72G", title: "Gu-Zheng Class" },
   // 2025–2026 Autumn
   { code: "CS 221", title: "Artificial Intelligence: Principles and Techniques" },
@@ -48,12 +44,12 @@ const stanford: { code: string; title: string }[] = [
     title:
       "Augmenting Human Senses: Enhancing Perception with Technology and Bioscience",
   },
-  { code: "MUSIC 72G", title: "Gu-Zheng Class" },
+  // 2025–2026 Winter (Oxford)
+  { code: "CS 205L", title: "Continuous Mathematical Methods with an Emphasis on Machine Learning" },
   // 2024–2025 Spring
   { code: "CS 281", title: "Ethics of Artificial Intelligence" },
   { code: "CS 231N", title: "Deep Learning for Computer Vision" },
   { code: "CS 202", title: "Law for Computer Science Professionals" },
-  { code: "CS 199", title: "Independent Work" },
   { code: "PHIL 81", title: "Philosophy and Literature" },
   {
     code: "ENGLISH 66",
@@ -63,14 +59,12 @@ const stanford: { code: string; title: string }[] = [
   // 2024–2025 Winter
   { code: "CS 131", title: "Computer Vision: Foundations and Applications" },
   { code: "CS 107", title: "Computer Organization and Systems" },
-  { code: "CS 199", title: "Independent Work" },
   { code: "SYMSYS 1", title: "Minds and Machines" },
   { code: "SYMSYS 280", title: "Symbolic Systems Research Seminar" },
   { code: "EARTHSYS 213", title: "Innovation for Climate and Sustainability" },
   { code: "OUTDOOR 106", title: "Outdoor Leadership Practicum" },
   // 2024–2025 Autumn
   { code: "CS 161", title: "Design and Analysis of Algorithms" },
-  { code: "CS 199", title: "Independent Work" },
   { code: "PSYCH 1", title: "Introduction to Psychology" },
   { code: "EMED 126", title: "Wilderness First Responder" },
   { code: "MUSIC 220D", title: "Research in Computer-Generated Music" },
@@ -123,8 +117,6 @@ const stanford: { code: string; title: string }[] = [
 ];
 
 const oxford: { code: string; title: string }[] = [
-  { code: "CS 205L", title: "Continuous Mathematical Methods with an Emphasis on Machine Learning" },
-  { code: "CS 199", title: "Independent Work" },
   { code: "OSPOXFRD 57", title: "The Rise of the Woman Writer 1660-1860" },
   { code: "OSPOXFRD 195A", title: "Oxford Tutorial — Modern Literature and Literary Criticism" },
 ];
