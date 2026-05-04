@@ -22,16 +22,6 @@ export const Route = createFileRoute("/classes")({
 });
 
 const stanford: { code: string; title: string }[] = [
-  // 2025–2026 Spring
-  { code: "CS 224R", title: "Deep Reinforcement Learning" },
-  {
-    code: "CS 235",
-    title:
-      "Computational Methods for Biomedical Image Analysis and Interpretation",
-  },
-  { code: "CS 273B", title: "Deep Learning in Genomics and Biomedicine" },
-  { code: "ENGLISH 177B", title: "Contemporary American Short Stories" },
-  { code: "MUSIC 72G", title: "Gu-Zheng Class" },
   // 2025–2026 Autumn
   { code: "CS 221", title: "Artificial Intelligence: Principles and Techniques" },
   { code: "CS 198", title: "Teaching Computer Science" },
