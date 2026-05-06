@@ -14,6 +14,7 @@ import bellJar from "@/assets/books/bell-jar.jpg";
 import frankenstein from "@/assets/books/frankenstein.jpg";
 import lifeOfPi from "@/assets/books/life-of-pi.jpg";
 import catcherInTheRye from "@/assets/books/catcher-in-the-rye.jpg";
+import fridayBlack from "@/assets/books/friday-black.jpg";
 
 export const Route = createFileRoute("/bookshelf")({
   component: Bookshelf,
@@ -55,6 +56,7 @@ const books: Book[] = [
   { title: "Frankenstein", author: "By Mary Shelley", cover: frankenstein },
   { title: "Life of Pi", author: "By Yann Martel", cover: lifeOfPi },
   { title: "The Catcher in the Rye", author: "By J. D. Salinger", cover: catcherInTheRye },
+  { title: "Friday Black", author: "By Nana Kwame Adjei-Brenyah", cover: fridayBlack },
 ];
 
 function BookCard({ book }: { book: Book }) {
