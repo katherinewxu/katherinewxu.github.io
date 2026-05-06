@@ -59,8 +59,9 @@ function Personal() {
           Miscellaneous Facts
         </h2>
         <p>
-          I studied abroad in Songdo, South Korea for seven weeks through a
-          government-sponsored Critical Language Scholarship. I deepened my
+          During high school, I studied abroad in Songdo, South Korea for
+          seven weeks through a government-sponsored Critical Language
+          Scholarship. I deepened my
           Korean, formed close friendships, and learned how quickly unfamiliar
           places can feel like home.
         </p>
