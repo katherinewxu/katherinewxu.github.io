@@ -213,7 +213,23 @@ function Portfolio() {
           </div>
         </section>
 
-        <h2 className="mt-12 text-xl font-semibold tracking-tight">Teaching</h2>
+        <h2 className="mt-12 text-xl font-semibold tracking-tight">Publications</h2>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            Xu, K. (2025). AI-driven personalized fall prevention for older
+            adults. <em>Proceedings of the AAAI Conference on Artificial
+            Intelligence</em>, 39(28), 29610.{" "}
+            <a
+              href="https://ojs.aaai.org/index.php/AAAI/article/view/35342"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Link
+            </a>
+          </li>
+        </ul>
+
+        <h2 className="mt-10 text-xl font-semibold tracking-tight">Teaching</h2>
         <p className="mt-3 max-w-2xl">
           I'm passionate about education and believe that great teaching is one
           of the most powerful tools we have for opening doors. Whether through
