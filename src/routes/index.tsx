@@ -57,7 +57,7 @@ function Index() {
         </p>
 
         <p>
-          I'm equally devoted to the humanities. From studying literature and
+          I'm also devoted to the humanities. From studying literature and
           literary criticism at Oxford to thinking through the ethics of AI, I
           believe the questions worth asking about technology are ultimately
           questions about people, language, and meaning.
