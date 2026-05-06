@@ -102,8 +102,6 @@ const projects: Project[] = [
 const filters: FilterKey[] = ["All", "Computational Projects", "AI Policy/Ethics"];
 
 const teaching = [
-  "Spring 2026: CS106A Programming Methodologies — Python, Programming Concepts",
-  "Spring 2026: Stanford Code in Place — Head TA",
   "Fall 2025: CS106A Programming Methodologies — Python, Programming Concepts",
   "Spring 2025: CS106A through Stanford Code in Place — Python, Programming Concepts",
 ];
