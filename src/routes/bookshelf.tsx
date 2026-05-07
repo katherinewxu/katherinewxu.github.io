@@ -15,6 +15,14 @@ import frankenstein from "@/assets/books/frankenstein.jpg";
 import lifeOfPi from "@/assets/books/life-of-pi.jpg";
 import catcherInTheRye from "@/assets/books/catcher-in-the-rye.jpg";
 import fridayBlack from "@/assets/books/friday-black.jpg";
+import hamnet from "@/assets/books/hamnet.jpg";
+import theStranger from "@/assets/books/the-stranger.jpg";
+import whyFish from "@/assets/books/why-fish-dont-exist.jpg";
+import educated from "@/assets/books/educated.jpg";
+import masterPetersburg from "@/assets/books/master-of-petersburg.jpg";
+import stLucys from "@/assets/books/st-lucys.jpg";
+import kafkaShore from "@/assets/books/kafka-on-the-shore.jpg";
+import janeEyre from "@/assets/books/jane-eyre.jpg";
 
 export const Route = createFileRoute("/bookshelf")({
   component: Bookshelf,
@@ -57,6 +65,14 @@ const books: Book[] = [
   { title: "Life of Pi", author: "By Yann Martel", cover: lifeOfPi },
   { title: "The Catcher in the Rye", author: "By J. D. Salinger", cover: catcherInTheRye },
   { title: "Friday Black", author: "By Nana Kwame Adjei-Brenyah", cover: fridayBlack },
+  { title: "Hamnet", author: "By Maggie O'Farrell", cover: hamnet },
+  { title: "The Stranger", author: "By Albert Camus", cover: theStranger },
+  { title: "Why Fish Don't Exist", author: "By Lulu Miller", cover: whyFish },
+  { title: "Educated", author: "By Tara Westover", cover: educated },
+  { title: "The Master of Petersburg", author: "By J. M. Coetzee", cover: masterPetersburg },
+  { title: "St. Lucy's Home for Girls Raised by Wolves", author: "By Karen Russell", cover: stLucys },
+  { title: "Kafka on the Shore", author: "By Haruki Murakami", cover: kafkaShore },
+  { title: "Jane Eyre", author: "By Charlotte Brontë", cover: janeEyre },
 ];
 
 function BookCard({ book }: { book: Book }) {
