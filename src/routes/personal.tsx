@@ -60,10 +60,21 @@ function Personal() {
         </h2>
         <p>
           During high school, I studied abroad in Songdo, South Korea for
-          seven weeks through a government-sponsored Critical Language
-          Scholarship. I deepened my
-          Korean, formed close friendships, and learned how quickly unfamiliar
-          places can feel like home.
+          seven weeks through a government-sponsored{" "}
+          <a
+            href="https://www.nsliforyouth.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Critical Language Scholarship (NSLI-Y)
+          </a>
+          . I deepened my Korean, formed close friendships, and learned how
+          quickly unfamiliar places can feel like home.
+        </p>
+        <p>
+          The favicon for this site is a photo I took of Half Dome in Yosemite
+          — one of my favorite places to escape to and a small reminder of
+          how grounding the outdoors can be.
         </p>
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">Classes</h2>
