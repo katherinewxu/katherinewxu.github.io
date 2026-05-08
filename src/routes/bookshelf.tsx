@@ -99,7 +99,7 @@ function Bookshelf() {
     <main className="font-bookshelf min-h-screen pt-8 pb-16 md:pb-24">
       <SiteNav />
 
-      <header className="mx-auto mt-4 max-w-5xl text-center">
+      <header className="mx-auto mt-4 max-w-5xl px-6 text-center">
         <h1 className="text-4xl font-normal tracking-tight">
           <span className="italic text-[oklch(0.45_0.09_150)]">Katherine's</span>{" "}
           Bookshelf
@@ -109,7 +109,7 @@ function Bookshelf() {
         </p>
       </header>
 
-      <section className="mx-auto mt-12 max-w-6xl">
+      <section className="mx-auto mt-12 max-w-6xl px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {books.map((b, i) => (
             <BookCard key={i} book={b} />
@@ -117,7 +117,7 @@ function Bookshelf() {
         </div>
       </section>
 
-      <div className="mx-auto mt-16 max-w-2xl text-center">
+      <div className="mx-auto mt-16 max-w-2xl px-6 text-center">
         <Link
           to="/personal"
           className="text-sm text-[oklch(0.45_0.09_150)] hover:underline"
@@ -126,7 +126,7 @@ function Bookshelf() {
         </Link>
       </div>
 
-      <footer className="mx-auto mt-16 max-w-2xl border-t border-border pt-6 text-center text-sm text-muted-foreground">
+      <footer className="mx-auto mt-16 max-w-2xl border-t border-border px-6 pt-6 text-center text-sm text-muted-foreground">
         © 2026 Katherine Wang Xu ·{" "}
         <a
           href="mailto:kwx04@stanford.edu"
