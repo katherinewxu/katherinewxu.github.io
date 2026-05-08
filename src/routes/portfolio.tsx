@@ -123,9 +123,9 @@ function Portfolio() {
   }, [activeFilter]);
 
   return (
-    <main className="min-h-screen px-6 py-16 md:py-24">
+    <main className="min-h-screen pt-8 pb-16 md:pb-24">
       <SiteNav />
-      <article className="prose-academic mx-auto max-w-5xl text-foreground">
+      <article className="prose-academic mx-auto w-full max-w-6xl px-6 text-foreground">
         <h1>Portfolio</h1>
 
         <p className="max-w-2xl">
