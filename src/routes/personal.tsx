@@ -40,10 +40,12 @@ function Personal() {
           The Outdoors
         </h2>
         <p>
-          I grew up in Ohio and have always loved being outdoors — whether it's
+          I grew up in Ohio and have always loved being outdoors. Whether it's
           hiking, backpacking, or just enjoying quiet spaces. At Stanford, I'm
           a trip leader at the Outdoor Center, guiding backpacking and camping
-          trips to help others explore nature.
+          trips to help others explore nature. (P.S. The favicon for this site
+          is a photo I took of Half Dome in Yosemite, one of California's
+          awesome beauties.)
         </p>
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">
@@ -70,11 +72,6 @@ function Personal() {
           </a>
           . I deepened my Korean, formed close friendships, and learned how
           quickly unfamiliar places can feel like home.
-        </p>
-        <p>
-          The favicon for this site is a photo I took of Half Dome in Yosemite
-          — one of my favorite places to escape to and a small reminder of
-          how grounding the outdoors can be.
         </p>
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">Classes</h2>
