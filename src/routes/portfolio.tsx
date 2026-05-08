@@ -128,7 +128,7 @@ function Portfolio() {
       <article className="prose-academic mx-auto w-full max-w-6xl px-6 text-foreground">
         <h1>Portfolio</h1>
 
-        <p className="max-w-2xl">
+        <p>
           Inspired by my interdisciplinary coursework, I am drawn to research
           leveraging AI for positive change in the world. I aim to better
           understand technologies and how we interact with them to create AI
@@ -136,7 +136,7 @@ function Portfolio() {
           overall in meaningful, human-centered ways.
         </p>
 
-        <p className="max-w-2xl">
+        <p>
           Below is a collection of works that summarize my academic interests.
         </p>
 
