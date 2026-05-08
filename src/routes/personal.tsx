@@ -23,9 +23,9 @@ export const Route = createFileRoute("/personal")({
 
 function Personal() {
   return (
-    <main className="min-h-screen px-6 py-16 md:py-24">
+    <main className="min-h-screen pt-8 pb-16 md:pb-24">
       <SiteNav />
-      <article className="prose-academic mx-auto max-w-2xl text-foreground">
+      <article className="prose-academic mx-auto w-full max-w-3xl px-6 text-foreground">
         <h1>Personal</h1>
 
         <p>
@@ -60,10 +60,21 @@ function Personal() {
         </h2>
         <p>
           During high school, I studied abroad in Songdo, South Korea for
-          seven weeks through a government-sponsored Critical Language
-          Scholarship. I deepened my
-          Korean, formed close friendships, and learned how quickly unfamiliar
-          places can feel like home.
+          seven weeks through a government-sponsored{" "}
+          <a
+            href="https://www.nsliforyouth.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Critical Language Scholarship (NSLI-Y)
+          </a>
+          . I deepened my Korean, formed close friendships, and learned how
+          quickly unfamiliar places can feel like home.
+        </p>
+        <p>
+          The favicon for this site is a photo I took of Half Dome in Yosemite
+          — one of my favorite places to escape to and a small reminder of
+          how grounding the outdoors can be.
         </p>
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">Classes</h2>

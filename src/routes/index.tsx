@@ -23,9 +23,9 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen px-6 py-16 md:py-24">
+    <main className="min-h-screen pt-8 pb-16 md:pb-24">
       <SiteNav />
-      <article className="prose-academic mx-auto max-w-2xl text-foreground">
+      <article className="prose-academic mx-auto w-full max-w-3xl px-6 text-foreground">
         <h1>Katherine Xu</h1>
 
         <p>

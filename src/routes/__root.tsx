@@ -41,6 +41,7 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "icon", type: "image/png", href: "/yosemite.png" },
     ],
   }),
   shellComponent: RootShell,

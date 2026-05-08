@@ -9,8 +9,8 @@ const links: { to: "/" | "/experience" | "/portfolio" | "/personal"; label: stri
 
 export function SiteNav() {
   return (
-    <nav className="mx-auto mb-10 max-w-2xl border-b border-border pb-3 text-base">
-      <ul className="flex flex-wrap gap-x-5 gap-y-2">
+    <nav className="mb-10 w-full border-b border-border pb-3 text-base">
+      <ul className="mx-auto flex max-w-6xl flex-wrap gap-x-5 gap-y-2 px-6">
         {links.map((l) => (
           <li key={l.to}>
             <Link
