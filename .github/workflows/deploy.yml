@@ -32,11 +32,18 @@ jobs:
 
       - name: Build
         run: npm run build
-
+      
+      - name: Show build output
+        run: |
+          echo "Looking for index.html..."
+          find . -maxdepth 5 -type f -name "index.html" -print
+          echo "Top-level folders after build:"
+          find . -maxdepth 2 -type d -print
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./.output/public
+          path: ./dist/client
 
   deploy:
     runs-on: ubuntu-latest
