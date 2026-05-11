@@ -239,6 +239,17 @@ function Portfolio() {
           {teaching.map((t) => (
             <li key={t}>{t}</li>
           ))}
+          <li>
+            Summer 2023: Mobile App Development through{" "}
+            <a
+              href="https://www.kodewithklossy.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Kode with Klossy
+            </a>{" "}
+            — Swift, App Development
+          </li>
         </ul>
 
         <h2 className="mt-10 text-xl font-semibold tracking-tight">
