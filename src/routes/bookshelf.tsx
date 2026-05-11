@@ -23,6 +23,7 @@ import masterPetersburg from "@/assets/books/master-of-petersburg.jpg";
 import stLucys from "@/assets/books/st-lucys.jpg";
 import kafkaShore from "@/assets/books/kafka-on-the-shore.jpg";
 import janeEyre from "@/assets/books/jane-eyre.jpg";
+import aMercy from "@/assets/books/a-mercy.jpg";
 
 export const Route = createFileRoute("/bookshelf")({
   component: Bookshelf,
@@ -73,6 +74,7 @@ const books: Book[] = [
   { title: "St. Lucy's Home for Girls Raised by Wolves", author: "By Karen Russell", cover: stLucys },
   { title: "Kafka on the Shore", author: "By Haruki Murakami", cover: kafkaShore },
   { title: "Jane Eyre", author: "By Charlotte Brontë", cover: janeEyre },
+  { title: "A Mercy", author: "By Toni Morrison", cover: aMercy },
 ];
 
 function BookCard({ book }: { book: Book }) {
