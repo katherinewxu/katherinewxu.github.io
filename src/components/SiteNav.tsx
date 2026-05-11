@@ -13,7 +13,7 @@ export function SiteNav() {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-5 gap-y-2 px-6">
         <Link
           to="/"
-          className="font-semibold text-foreground hover:text-[oklch(0.36_0.08_150)]"
+          className="text-[1.75rem] font-semibold tracking-tight text-[oklch(0.36_0.08_150)] hover:text-[oklch(0.36_0.08_150)]"
         >
           Katherine Wang Xu
         </Link>
