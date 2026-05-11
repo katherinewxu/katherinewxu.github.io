@@ -37,7 +37,7 @@ function Index() {
             What's SymSys?
           </a>
           ) with a concentration in AI and concurrently pursuing an M.S. in Computer
-          Science (AI), advised by Professor{" "}
+          Science (AI), advised by{" "}
           <a
             href="https://www.linkedin.com/in/jerrycainjr/"
             target="_blank"
