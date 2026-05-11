@@ -49,12 +49,14 @@ function Personal() {
         </p>
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">
-          Art &amp; Fashion
+          Creative Expression
         </h2>
         <p>
-          I love art and fashion design, and enjoy expressing creativity
-          through visual ideas and tailored pieces. In the winter, I designed
-          a garment showcased in the Stanford FashionX Show.
+          I love art. In high school I participated in creative writing
+          competitions (preference for short story prose). Also honed oil
+          painting. In the winter of my sophomore year, I designed a garment
+          showcased in the Stanford FashionX Show. Currently learning guzheng
+          to add to my small instrument repertoire (piano and cello).
         </p>
 
         <h2 className="mt-8 text-xl font-semibold tracking-tight">

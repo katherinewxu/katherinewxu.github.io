@@ -228,7 +228,7 @@ function Portfolio() {
         </ul>
 
         <h2 className="mt-10 text-xl font-semibold tracking-tight">Teaching</h2>
-        <p className="mt-3 max-w-2xl">
+        <p className="mt-3">
           I'm passionate about education and believe that great teaching is one
           of the most powerful tools we have for opening doors. Whether through
           section, office hours, or course design, I love helping students build

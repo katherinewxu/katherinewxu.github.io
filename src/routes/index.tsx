@@ -26,8 +26,6 @@ function Index() {
     <main className="min-h-screen pt-8 pb-16 md:pb-24">
       <SiteNav />
       <article className="prose-academic mx-auto w-full max-w-3xl px-6 text-foreground">
-        <h1>Katherine Xu</h1>
-
         <p>
           I am a student at Stanford University pursuing a B.S. in Symbolic Systems
           (
@@ -39,7 +37,23 @@ function Index() {
             What's SymSys?
           </a>
           ) with a concentration in AI and concurrently pursuing an M.S. in Computer
-          Science (AI), advised by Professor Jerry Cain and Professor Ehsan Adeli.
+          Science (AI), advised by Professor{" "}
+          <a
+            href="https://www.linkedin.com/in/jerrycainjr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Jerry Cain
+          </a>{" "}
+          and Professor{" "}
+          <a
+            href="https://stanford.edu/~eadeli/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ehsan Adeli
+          </a>
+          .
         </p>
 
         <p>
