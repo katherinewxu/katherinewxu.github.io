@@ -76,6 +76,20 @@ function Personal() {
           quickly unfamiliar places can feel like home.
         </p>
 
+        <h2 className="mt-8 text-xl font-semibold tracking-tight">
+          Misc. Community &amp; Leadership
+        </h2>
+        <p>
+          <a
+            href="https://resed.stanford.edu/houses/row-houses/hammarskjold"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hammarskjöld International House Co-Operative
+          </a>
+          , Stanford, CA (2026)
+        </p>
+
         <h2 className="mt-8 text-xl font-semibold tracking-tight">Classes</h2>
         <p>
           For a list of classes I've taken at Stanford, see my{" "}
