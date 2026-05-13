@@ -66,7 +66,7 @@ function Index_Inner() {
         </div>
       </div>
 
-      <article className="prose-academic relative z-20 mx-auto -mt-[20svh] w-full max-w-3xl bg-background px-6 pt-12 text-foreground">
+      <article className="prose-academic relative z-20 mx-auto mt-[80svh] w-full max-w-3xl bg-background px-6 pt-12 text-foreground">
 
         <p>
           I am a student at Stanford University pursuing a B.S. in Symbolic Systems
