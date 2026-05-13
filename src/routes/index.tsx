@@ -53,7 +53,7 @@ function Index_Inner() {
       {/* Full-screen interactive hero */}
       <div
         ref={heroRef}
-        className="pointer-events-none sticky top-0 z-10 flex h-[100svh] w-full items-center justify-center"
+        className="pointer-events-none fixed inset-0 z-10 flex h-[100svh] w-full items-center justify-center"
         style={{
           opacity: heroOpacity,
           transform: `translateY(${heroTranslate}px) scale(${heroScale})`,
@@ -66,7 +66,7 @@ function Index_Inner() {
         </div>
       </div>
 
-      <article className="prose-academic relative z-20 mx-auto -mt-[20svh] w-full max-w-3xl bg-background px-6 pt-12 text-foreground">
+      <article className="prose-academic relative z-20 mx-auto mt-[80svh] w-full max-w-3xl bg-background px-6 pt-12 text-foreground">
 
         <p>
           I am a student at Stanford University pursuing a B.S. in Symbolic Systems
