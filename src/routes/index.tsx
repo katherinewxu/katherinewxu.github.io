@@ -53,7 +53,7 @@ function Index_Inner() {
       {/* Full-screen interactive hero */}
       <div
         ref={heroRef}
-        className="pointer-events-none sticky top-0 z-10 flex h-[100svh] w-full items-center justify-center"
+        className="pointer-events-none fixed inset-0 z-10 flex h-[100svh] w-full items-center justify-center"
         style={{
           opacity: heroOpacity,
           transform: `translateY(${heroTranslate}px) scale(${heroScale})`,
