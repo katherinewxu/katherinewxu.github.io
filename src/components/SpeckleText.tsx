@@ -158,8 +158,8 @@ export function SpeckleText({
 
       const pr = pushRadius;
       const pr2 = pr * pr;
-      const spring = 6; // return-to-home stiffness
-      const damping = 4; // velocity damping
+      const spring = 0.9; // very gentle return — lets you reshape the letters
+      const damping = 1.6; // light damping so motion feels fluid
 
       for (let i = 0; i < dots.length; i++) {
         const d = dots[i];
