@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 import { SiteNav } from "@/components/SiteNav";
 import { SpeckleText } from "@/components/SpeckleText";
 
@@ -24,12 +25,52 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen pt-8 pb-16 md:pb-24">
+    <Index_Inner />
+  );
+}
+
+function Index_Inner() {
+  const [scrollY, setScrollY] = useState(0);
+  const heroRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Hero takes full viewport. Fade out over first 100vh of scroll.
+  const vh = typeof window !== "undefined" ? window.innerHeight : 800;
+  const progress = Math.min(1, scrollY / (vh * 0.7));
+  const heroOpacity = 1 - progress;
+  const heroScale = 1 - progress * 0.08;
+  const heroTranslate = -progress * 40;
+
+  return (
+    <main className="pb-16 md:pb-24">
       <SiteNav />
-      <div className="mx-auto w-full max-w-5xl px-6 mb-10 md:mb-16">
-        <SpeckleText text="katherine" />
+
+      {/* Full-screen interactive hero */}
+      <div
+        ref={heroRef}
+        className="pointer-events-none sticky top-0 z-10 flex h-[100svh] w-full items-center justify-center"
+        style={{
+          opacity: heroOpacity,
+          transform: `translateY(${heroTranslate}px) scale(${heroScale})`,
+          willChange: "opacity, transform",
+        }}
+        aria-hidden={progress > 0.95 ? "true" : undefined}
+      >
+        <div className="pointer-events-auto mx-auto w-full max-w-5xl px-6">
+          <SpeckleText text="katherine" />
+          <p className="mt-6 text-center text-sm text-muted-foreground">
+            (move your cursor across the dots — then scroll)
+          </p>
+        </div>
       </div>
-      <article className="prose-academic mx-auto w-full max-w-3xl px-6 text-foreground">
+
+      <article className="prose-academic relative z-20 mx-auto -mt-[20svh] w-full max-w-3xl bg-background px-6 pt-12 text-foreground">
+
         <p>
           I am a student at Stanford University pursuing a B.S. in Symbolic Systems
           (
