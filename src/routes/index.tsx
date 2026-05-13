@@ -63,9 +63,6 @@ function Index_Inner() {
       >
         <div className="pointer-events-auto mx-auto w-full max-w-5xl px-6">
           <SpeckleText text="katherine" />
-          <p className="mt-6 text-center text-sm text-muted-foreground">
-            (move your cursor across the dots — then scroll)
-          </p>
         </div>
       </div>
 
