@@ -26,6 +26,9 @@ function Index() {
   return (
     <main className="min-h-screen pt-8 pb-16 md:pb-24">
       <SiteNav />
+      <div className="mx-auto w-full max-w-5xl px-6 mb-10 md:mb-16">
+        <SpeckleText text="katherine" />
+      </div>
       <article className="prose-academic mx-auto w-full max-w-3xl px-6 text-foreground">
         <p>
           I am a student at Stanford University pursuing a B.S. in Symbolic Systems
