@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
+import { SpeckleText } from "@/components/SpeckleText";
 
 export const Route = createFileRoute("/")({
   component: Index,
