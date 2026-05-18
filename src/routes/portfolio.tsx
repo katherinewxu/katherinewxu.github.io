@@ -248,9 +248,19 @@ function Portfolio() {
           field.
         </p>
         <ul className="mt-3 list-disc space-y-1 pl-5">
-          {teaching.map((t) => (
-            <li key={t}>{t}</li>
-          ))}
+          {teaching.map((t) => {
+            if (!t.link) return <li key={t.text}>{t.text}</li>;
+            const [before, after] = t.text.split("{LINK}");
+            return (
+              <li key={t.text}>
+                {before}
+                <a href={t.link.href} target="_blank" rel="noopener noreferrer">
+                  {t.link.label}
+                </a>
+                {after}
+              </li>
+            );
+          })}
           <li>
             Summer 2023: Mobile App Development through{" "}
             <a
