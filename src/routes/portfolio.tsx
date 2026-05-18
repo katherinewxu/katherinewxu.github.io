@@ -88,6 +88,15 @@ const projects: Project[] = [
     category: "AI Policy/Ethics",
   },
   {
+    title:
+      "Longitudinal Assessment of ACGME Milestone Progression: Evaluating Gender and Racial Differences Across Graduate Medical Education Specialties",
+    blurb:
+      "Co-authored research manuscript with Stanford School of Medicine (Department of Medicine, Anesthesia, Pediatrics, Orthopedics) and the University of Utah. Retrospective cohort study of 2,814 graduate medical trainees (2014–2020) analyzing gender and racial disparities in ACGME Milestone progression across 107 hospital-based, medical, and surgical programs using Wilcoxon rank-sum, Kruskal-Wallis, and linear mixed-effects models.",
+    topics:
+      "Medical Education · Health Equity · Biostatistics · Bias in Assessment · Longitudinal Analysis",
+    category: "Computational Projects",
+  },
+  {
     title: "Governance of Frontier AI: Monitoring, Institutions, and Policy Transitions",
     blurb:
       "Final research paper for the Stanford Existential Risks Initiative (SERI) Summer 2025. Examines how to govern frontier AI before catastrophic risks materialize, proposing risk-monitoring taxonomies, cross-lab oversight architectures, and pathways from voluntary commitments to binding regulation.",
