@@ -231,8 +231,9 @@ export function SpeckleText({
     };
 
     init();
-    canvas.addEventListener("pointermove", onPointerMove);
-    canvas.addEventListener("pointerleave", onPointerLeave);
+    // Listen on window so cursor interaction works even when other layers sit on top.
+    window.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointerleave", onPointerLeave);
 
     let resizeT: ReturnType<typeof setTimeout> | null = null;
     const onResize = () => {
