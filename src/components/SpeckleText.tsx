@@ -64,11 +64,12 @@ export function SpeckleText({
     const mouse = { x: -9999, y: -9999, active: false };
 
     const buildDots = () => {
-      const containerW = container.clientWidth;
+      const containerW = window.innerWidth;
+      const containerH = window.innerHeight;
       const probeSize = 200;
       ctx.font = font.replace("1em", `${probeSize}px`);
       const probeWidth = ctx.measureText(text).width;
-      const targetWidth = containerW * 0.92;
+      const targetWidth = containerW * 0.82;
       const fontSize = Math.min(
         Math.max((probeSize * targetWidth) / probeWidth, 60),
         360,
@@ -81,9 +82,12 @@ export function SpeckleText({
       const textW = Math.ceil(m.width);
       const textH = Math.ceil(ascent + descent);
 
-      const pad = Math.ceil(fontSize * 0.2);
-      cssW = textW + pad * 2;
-      cssH = textH + pad * 2;
+      // Make the canvas span the full container so dots can drift freely
+      // without hitting a visible rectangular boundary.
+      cssW = containerW;
+      cssH = Math.max(containerH, textH + fontSize * 2);
+      const offsetX = Math.floor((cssW - textW) / 2);
+      const offsetY = Math.floor((cssH - textH) / 2);
 
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = Math.floor(cssW * dpr);
@@ -99,7 +103,7 @@ export function SpeckleText({
       mctx.fillStyle = "#000";
       mctx.textBaseline = "alphabetic";
       mctx.font = font.replace("1em", `${fontSize}px`);
-      mctx.fillText(text, pad, pad + ascent);
+      mctx.fillText(text, offsetX, offsetY + ascent);
       const data = mctx.getImageData(0, 0, cssW, cssH).data;
 
       const newDots: Dot[] = [];
@@ -227,8 +231,9 @@ export function SpeckleText({
     };
 
     init();
-    canvas.addEventListener("pointermove", onPointerMove);
-    canvas.addEventListener("pointerleave", onPointerLeave);
+    // Listen on window so cursor interaction works even when other layers sit on top.
+    window.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointerleave", onPointerLeave);
 
     let resizeT: ReturnType<typeof setTimeout> | null = null;
     const onResize = () => {
@@ -239,8 +244,8 @@ export function SpeckleText({
 
     return () => {
       window.removeEventListener("resize", onResize);
-      canvas.removeEventListener("pointermove", onPointerMove);
-      canvas.removeEventListener("pointerleave", onPointerLeave);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerleave", onPointerLeave);
       if (resizeT) clearTimeout(resizeT);
       cancelAnimationFrame(raf);
     };
@@ -250,11 +255,18 @@ export function SpeckleText({
     <div
       ref={containerRef}
       className={className}
-      style={{ display: "flex", justifyContent: "center" }}
+      style={{
+        position: "fixed",
+        inset: 0,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        pointerEvents: "none",
+      }}
       aria-label={text}
       role="img"
     >
-      <canvas ref={canvasRef} style={{ touchAction: "none" }} />
+      <canvas ref={canvasRef} style={{ touchAction: "none", display: "block" }} />
     </div>
   );
 }

@@ -88,6 +88,15 @@ const projects: Project[] = [
     category: "AI Policy/Ethics",
   },
   {
+    title:
+      "Longitudinal Assessment of ACGME Milestone Progression: Evaluating Gender and Racial Differences Across Graduate Medical Education Specialties",
+    blurb:
+      "Co-authored research manuscript with Stanford School of Medicine (Department of Medicine, Anesthesia, Pediatrics, Orthopedics) and the University of Utah. Retrospective cohort study of 2,814 graduate medical trainees (2014–2020) analyzing gender and racial disparities in ACGME Milestone progression across 107 hospital-based, medical, and surgical programs using Wilcoxon rank-sum, Kruskal-Wallis, and linear mixed-effects models.",
+    topics:
+      "Medical Education · Health Equity · Biostatistics · Bias in Assessment · Longitudinal Analysis",
+    category: "Computational Projects",
+  },
+  {
     title: "Governance of Frontier AI: Monitoring, Institutions, and Policy Transitions",
     blurb:
       "Final research paper for the Stanford Existential Risks Initiative (SERI) Summer 2025. Examines how to govern frontier AI before catastrophic risks materialize, proposing risk-monitoring taxonomies, cross-lab oversight architectures, and pathways from voluntary commitments to binding regulation.",
@@ -101,9 +110,12 @@ const projects: Project[] = [
 
 const filters: FilterKey[] = ["All", "Computational Projects", "AI Policy/Ethics"];
 
-const teaching = [
-  "Fall 2025: CS106A Programming Methodologies — Python, Programming Concepts",
-  "Spring 2025: CS106A through Stanford Code in Place — Python, Programming Concepts",
+const teaching: { text: string; link?: { label: string; href: string } }[] = [
+  { text: "Fall 2025: CS106A Programming Methodologies — Python, Programming Concepts" },
+  {
+    text: "Spring 2025: CS106A through {LINK} — Python, Programming Concepts",
+    link: { label: "Stanford Code in Place", href: "https://codeinplace.stanford.edu/" },
+  },
 ];
 
 const volunteering = [
@@ -236,9 +248,19 @@ function Portfolio() {
           field.
         </p>
         <ul className="mt-3 list-disc space-y-1 pl-5">
-          {teaching.map((t) => (
-            <li key={t}>{t}</li>
-          ))}
+          {teaching.map((t) => {
+            if (!t.link) return <li key={t.text}>{t.text}</li>;
+            const [before, after] = t.text.split("{LINK}");
+            return (
+              <li key={t.text}>
+                {before}
+                <a href={t.link.href} target="_blank" rel="noopener noreferrer">
+                  {t.link.label}
+                </a>
+                {after}
+              </li>
+            );
+          })}
           <li>
             Summer 2023: Mobile App Development through{" "}
             <a
