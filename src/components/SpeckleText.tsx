@@ -244,8 +244,8 @@ export function SpeckleText({
 
     return () => {
       window.removeEventListener("resize", onResize);
-      canvas.removeEventListener("pointermove", onPointerMove);
-      canvas.removeEventListener("pointerleave", onPointerLeave);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerleave", onPointerLeave);
       if (resizeT) clearTimeout(resizeT);
       cancelAnimationFrame(raf);
     };
@@ -255,11 +255,18 @@ export function SpeckleText({
     <div
       ref={containerRef}
       className={className}
-      style={{ display: "flex", justifyContent: "center" }}
+      style={{
+        position: "fixed",
+        inset: 0,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        pointerEvents: "none",
+      }}
       aria-label={text}
       role="img"
     >
-      <canvas ref={canvasRef} style={{ touchAction: "none" }} />
+      <canvas ref={canvasRef} style={{ touchAction: "none", display: "block" }} />
     </div>
   );
 }
