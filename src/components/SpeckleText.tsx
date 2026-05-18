@@ -64,8 +64,8 @@ export function SpeckleText({
     const mouse = { x: -9999, y: -9999, active: false };
 
     const buildDots = () => {
-      const containerW = container.clientWidth;
-      const containerH = container.clientHeight || window.innerHeight;
+      const containerW = window.innerWidth;
+      const containerH = window.innerHeight;
       const probeSize = 200;
       ctx.font = font.replace("1em", `${probeSize}px`);
       const probeWidth = ctx.measureText(text).width;
