@@ -41,11 +41,11 @@ function Index_Inner() {
 
   // Hero stays visible behind content; fades gently over a longer scroll range.
   const vh = typeof window !== "undefined" ? window.innerHeight : 800;
-  const progress = Math.min(1, scrollY / (vh * 1.4));
-  // Keep a minimum visibility so the speckle stays in the background like humansand.ai
-  const heroOpacity = Math.max(0.18, 1 - progress * 0.9);
-  const heroScale = 1 - progress * 0.05;
-  const heroTranslate = -progress * 30;
+  const progress = Math.min(1, scrollY / (vh * 0.9));
+  // Fade hero almost completely as you scroll — just a faint trace remains.
+  const heroOpacity = Math.max(0.04, 1 - progress * 1.05);
+  const heroScale = 1 - progress * 0.04;
+  const heroTranslate = -progress * 20;
 
   return (
     <main className="min-h-screen pt-8 pb-16 md:pb-24">

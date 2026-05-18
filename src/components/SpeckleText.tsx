@@ -160,23 +160,24 @@ export function SpeckleText({
       last = now;
       ctx.clearRect(0, 0, cssW, cssH);
 
-      const pr = pushRadius;
+      // Small radius, low strength — nearby dots just jiggle in place.
+      const pr = 55;
       const pr2 = pr * pr;
-      const spring = 0.9; // very gentle return — lets you reshape the letters
-      const damping = 1.6; // light damping so motion feels fluid
+      const spring = 9; // snappy return so dots stay near home (no reshaping)
+      const damping = 6; // higher damping so it reads as a jiggle, not a wave
 
       for (let i = 0; i < dots.length; i++) {
         const d = dots[i];
-        // repulsion from mouse
+        // tiny random jiggle for dots close to the cursor
         if (mouse.active) {
           const dx = d.x - mouse.x;
           const dy = d.y - mouse.y;
           const d2 = dx * dx + dy * dy;
-          if (d2 < pr2 && d2 > 0.01) {
-            const dist = Math.sqrt(d2);
-            const f = (1 - dist / pr) * pushStrength;
-            d.vx += (dx / dist) * f * dt;
-            d.vy += (dy / dist) * f * dt;
+          if (d2 < pr2) {
+            const falloff = 1 - Math.sqrt(d2) / pr;
+            const jitter = 220 * falloff;
+            d.vx += (Math.random() - 0.5) * jitter * dt * 60;
+            d.vy += (Math.random() - 0.5) * jitter * dt * 60;
           }
         }
         // spring back to home
