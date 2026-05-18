@@ -65,10 +65,11 @@ export function SpeckleText({
 
     const buildDots = () => {
       const containerW = container.clientWidth;
+      const containerH = container.clientHeight || window.innerHeight;
       const probeSize = 200;
       ctx.font = font.replace("1em", `${probeSize}px`);
       const probeWidth = ctx.measureText(text).width;
-      const targetWidth = containerW * 0.92;
+      const targetWidth = containerW * 0.82;
       const fontSize = Math.min(
         Math.max((probeSize * targetWidth) / probeWidth, 60),
         360,
@@ -81,9 +82,12 @@ export function SpeckleText({
       const textW = Math.ceil(m.width);
       const textH = Math.ceil(ascent + descent);
 
-      const pad = Math.ceil(fontSize * 0.2);
-      cssW = textW + pad * 2;
-      cssH = textH + pad * 2;
+      // Make the canvas span the full container so dots can drift freely
+      // without hitting a visible rectangular boundary.
+      cssW = containerW;
+      cssH = Math.max(containerH, textH + fontSize * 2);
+      const offsetX = Math.floor((cssW - textW) / 2);
+      const offsetY = Math.floor((cssH - textH) / 2);
 
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = Math.floor(cssW * dpr);
@@ -99,7 +103,7 @@ export function SpeckleText({
       mctx.fillStyle = "#000";
       mctx.textBaseline = "alphabetic";
       mctx.font = font.replace("1em", `${fontSize}px`);
-      mctx.fillText(text, pad, pad + ascent);
+      mctx.fillText(text, offsetX, offsetY + ascent);
       const data = mctx.getImageData(0, 0, cssW, cssH).data;
 
       const newDots: Dot[] = [];
