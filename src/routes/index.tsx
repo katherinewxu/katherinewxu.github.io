@@ -39,34 +39,36 @@ function Index_Inner() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Hero takes full viewport. Fade out over first 100vh of scroll.
+  // Hero stays visible behind content; fades gently over a longer scroll range.
   const vh = typeof window !== "undefined" ? window.innerHeight : 800;
-  const progress = Math.min(1, scrollY / (vh * 0.7));
-  const heroOpacity = 1 - progress;
-  const heroScale = 1 - progress * 0.08;
-  const heroTranslate = -progress * 40;
+  const progress = Math.min(1, scrollY / (vh * 1.4));
+  // Keep a minimum visibility so the speckle stays in the background like humansand.ai
+  const heroOpacity = Math.max(0.18, 1 - progress * 0.9);
+  const heroScale = 1 - progress * 0.05;
+  const heroTranslate = -progress * 30;
 
   return (
-    <main className="pb-16 md:pb-24">
-      <SiteNav />
+    <main className="min-h-screen pt-8 pb-16 md:pb-24">
+      <div className="relative z-30">
+        <SiteNav />
+      </div>
 
-      {/* Full-screen interactive hero */}
+      {/* Full-screen interactive hero — sits behind the article content */}
       <div
         ref={heroRef}
-        className="pointer-events-none fixed inset-0 z-10 flex h-[100svh] w-full items-center justify-center"
+        className="pointer-events-none fixed inset-0 z-0 flex h-[100svh] w-full items-center justify-center overflow-visible"
         style={{
           opacity: heroOpacity,
           transform: `translateY(${heroTranslate}px) scale(${heroScale})`,
           willChange: "opacity, transform",
         }}
-        aria-hidden={progress > 0.95 ? "true" : undefined}
       >
-        <div className="pointer-events-auto mx-auto w-full max-w-5xl px-6">
+        <div className="pointer-events-auto w-full">
           <SpeckleText text="katherine" />
         </div>
       </div>
 
-      <article className="prose-academic relative z-20 mx-auto mt-[80svh] w-full max-w-3xl bg-background px-6 pt-12 text-foreground">
+      <article className="prose-academic relative z-20 mx-auto mt-[80svh] w-full max-w-3xl px-6 pt-12 text-foreground">
 
         <p>
           I am a student at Stanford University pursuing a B.S. in Symbolic Systems
