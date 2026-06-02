@@ -215,54 +215,65 @@ function Portfolio() {
             })}
           </div>
 
-          <ul className="mt-6 space-y-4 list-none pl-0">
+          <div className="mt-8 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {visibleProjects.map((project) => {
               const isPolicy = project.category === "AI Policy/Ethics";
               const chipBg = isPolicy
                 ? "oklch(0.93 0.045 90)"
-                : "oklch(0.92 0.06 145)";
+                : "oklch(0.94 0.04 145)";
               const chipFg = isPolicy
                 ? "oklch(0.38 0.09 70)"
                 : "oklch(0.32 0.08 150)";
-              const dotColor = isPolicy
-                ? "oklch(0.7 0.13 80)"
-                : "oklch(0.62 0.08 145)";
+
+              const TitleEl = project.href ? "a" : "div";
+              const titleProps = project.href
+                ? {
+                    href: project.href,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    className: "!text-foreground !no-underline hover:!underline",
+                  }
+                : {};
+
               return (
-                <li
-                  key={project.title}
-                  className="relative pl-5 leading-7 text-foreground/90"
-                >
-                  <span
-                    className="absolute left-0 top-[0.7em] h-1.5 w-1.5 rounded-full"
-                    style={{ backgroundColor: dotColor }}
-                    aria-hidden
-                  />
-                  <span
-                    className="mr-1 inline rounded-md px-2 py-0.5 text-[0.98rem] font-medium"
-                    style={{ backgroundColor: chipBg, color: chipFg }}
-                  >
-                    {project.href ? (
-                      <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="!text-inherit !no-underline hover:!underline"
+                <article key={project.title} className="flex flex-col">
+                  <div className="overflow-hidden rounded-md bg-muted">
+                    <img
+                      src={project.image}
+                      alt={project.imageAlt}
+                      loading="lazy"
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                  </div>
+                  <div className="mt-4 flex items-baseline justify-between gap-4">
+                    <h3 className="text-base font-semibold leading-snug tracking-tight text-foreground">
+                      {/* @ts-expect-error dynamic element */}
+                      <TitleEl {...titleProps}>{project.title}</TitleEl>
+                    </h3>
+                    <span className="shrink-0 text-sm text-muted-foreground">
+                      {project.year}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground/80">
+                    {project.blurb}
+                  </p>
+                  <ul className="mt-4 flex flex-wrap gap-1.5 list-none pl-0">
+                    {project.tags.map((tag) => (
+                      <li
+                        key={tag}
+                        className="rounded-md px-2 py-0.5 text-xs font-medium"
+                        style={{ backgroundColor: chipBg, color: chipFg }}
                       >
-                        {project.title}
-                      </a>
-                    ) : (
-                      project.title
-                    )}
-                  </span>
-                  <span> — {project.blurb}</span>
-                  <span className="ml-1 text-sm text-muted-foreground">
-                    {" "}({project.topics})
-                  </span>
-                </li>
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
               );
             })}
-          </ul>
+          </div>
         </section>
+
 
         <h2 className="mt-12 text-xl font-semibold tracking-tight">Publications</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
