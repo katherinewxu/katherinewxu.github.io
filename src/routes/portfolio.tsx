@@ -189,38 +189,53 @@ function Portfolio() {
             })}
           </div>
 
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            {visibleProjects.map((project) => (
-              <article
-                key={project.title}
-                className="flex h-full flex-col border border-border bg-background p-5"
-              >
-                <p className="text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
-                  {project.category}
-                </p>
-                <h3 className="mt-3 text-[1.35rem] leading-tight font-medium text-foreground">
-                  {project.title}
-                </h3>
-                <p className="mt-3 text-[1rem] leading-7 text-foreground/90">
-                  {project.blurb}
-                </p>
-                <p className="mt-4 text-sm leading-6 text-muted-foreground">
-                  {project.topics}
-                </p>
-                {project.href ? (
-                  <p className="mt-4 text-sm">
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {project.linkLabel ?? "Related link"}
-                    </a>
-                  </p>
-                ) : null}
-              </article>
-            ))}
-          </div>
+          <ul className="mt-6 space-y-4 list-none pl-0">
+            {visibleProjects.map((project) => {
+              const isPolicy = project.category === "AI Policy/Ethics";
+              const chipBg = isPolicy
+                ? "oklch(0.93 0.045 90)"
+                : "oklch(0.92 0.06 145)";
+              const chipFg = isPolicy
+                ? "oklch(0.38 0.09 70)"
+                : "oklch(0.32 0.08 150)";
+              const dotColor = isPolicy
+                ? "oklch(0.7 0.13 80)"
+                : "oklch(0.62 0.08 145)";
+              return (
+                <li
+                  key={project.title}
+                  className="relative pl-5 leading-7 text-foreground/90"
+                >
+                  <span
+                    className="absolute left-0 top-[0.7em] h-1.5 w-1.5 rounded-full"
+                    style={{ backgroundColor: dotColor }}
+                    aria-hidden
+                  />
+                  <span
+                    className="mr-1 inline rounded-md px-2 py-0.5 text-[0.98rem] font-medium"
+                    style={{ backgroundColor: chipBg, color: chipFg }}
+                  >
+                    {project.href ? (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="!text-inherit !no-underline hover:!underline"
+                      >
+                        {project.title}
+                      </a>
+                    ) : (
+                      project.title
+                    )}
+                  </span>
+                  <span> — {project.blurb}</span>
+                  <span className="ml-1 text-sm text-muted-foreground">
+                    {" "}({project.topics})
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
         </section>
 
         <h2 className="mt-12 text-xl font-semibold tracking-tight">Publications</h2>
