@@ -247,8 +247,8 @@ function Portfolio() {
                   </div>
                   <div className="mt-4 flex items-baseline justify-between gap-4">
                     <h3 className="text-base font-semibold leading-snug tracking-tight text-foreground">
-                      {/* @ts-expect-error dynamic element */}
-                      <TitleEl {...titleProps}>{project.title}</TitleEl>
+                      <TitleEl {...(titleProps as Record<string, string>)}>{project.title}</TitleEl>
+
                     </h3>
                     <span className="shrink-0 text-sm text-muted-foreground">
                       {project.year}
