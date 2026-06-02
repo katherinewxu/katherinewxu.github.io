@@ -2,6 +2,15 @@ import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 
+import brainTumorImg from "@/assets/projects/brain-tumor.png.asset.json";
+import cokeTrashImg from "@/assets/projects/coke-trash.png.asset.json";
+import waveformImg from "@/assets/projects/waveform.png.asset.json";
+import wsjImg from "@/assets/projects/wsj-article.png.asset.json";
+import heapImg from "@/assets/projects/heap.jpg.asset.json";
+import musicImg from "@/assets/projects/music.jpg.asset.json";
+import acgmeImg from "@/assets/projects/acgme.jpg.asset.json";
+import governanceImg from "@/assets/projects/governance.jpg.asset.json";
+
 export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
   head: () => ({
@@ -27,84 +36,101 @@ type FilterKey = "All" | ProjectCategory;
 
 type Project = {
   title: string;
+  year: string;
+  image: string;
+  imageAlt: string;
   blurb: string;
-  topics: string;
+  tags: string[];
   category: ProjectCategory;
   href?: string;
-  linkLabel?: string;
 };
 
 const projects: Project[] = [
   {
     title:
       "Exploring Deep Segmentation Models for Brain Tumors: CNNs, Transformers, and Promptable Architectures",
+    year: "2025",
+    image: brainTumorImg.url,
+    imageAlt: "MRI brain scan used for tumor segmentation",
     blurb:
       "Final project for Stanford's CS 231N: Deep Learning for Computer Vision (Spring 2025). Developed deep learning models for automated brain tumor segmentation using the BraTS 2021 dataset, comparing CNNs, transformers, and promptable architectures for pixel-level tumor detection.",
-    topics:
-      "Medical AI · Computer Vision · Deep Learning · Semantic Segmentation · Healthcare Technology",
+    tags: ["Medical AI", "Computer Vision", "Deep Learning", "Semantic Segmentation", "Healthcare Technology"],
     category: "Computational Projects",
   },
   {
     title: "Robust Brand Logo Detection Under Adversarial Conditions",
+    year: "2025",
+    image: cokeTrashImg.url,
+    imageAlt: "Coca-Cola bottle next to a trash bag on a sidewalk",
     blurb:
       "Final report for Stanford's CS 131: Computer Vision (Winter 2025). Built a custom CNN with adversarial training to detect Coca-Cola logos under blur, noise, and occlusion. Achieved +13% accuracy over YOLOv8 with extensive data augmentation.",
-    topics:
-      "Computer Vision · Adversarial Robustness · Object Detection · Data Augmentation",
+    tags: ["Computer Vision", "Adversarial Robustness", "Object Detection", "Data Augmentation"],
     category: "Computational Projects",
   },
   {
     title: "Heap Allocator",
+    year: "2025",
+    image: heapImg.url,
+    imageAlt: "Diagram of memory blocks of varying sizes",
     blurb:
       "Final project for Stanford's CS 107 (Winter 2025). Implemented a full implicit + explicit free list allocator in C, including malloc, free, and realloc. Built debugging utilities (validate_heap, dump_heap) and stress-tested on real allocation traces.",
-    topics:
-      "Systems Programming · Memory Management · C · Performance Optimization",
+    tags: ["Systems Programming", "Memory Management", "C", "Performance Optimization"],
     category: "Computational Projects",
   },
   {
     title:
       "What's in the noise? Musical Genre Classification using Neural Networks",
+    year: "2024",
+    image: musicImg.url,
+    imageAlt: "Colorful mel spectrogram of an audio signal",
     blurb:
       "Final project for Stanford's CS 129 (Winter 2024). Trained VGG-style CNNs, GRUs, and LSTMs on mel spectrograms from GTZAN, incorporating noise, pitch-shift, and time-stretch augmentations for robustness.",
-    topics:
-      "Audio Classification · Deep Learning · CNNs · Music Information Retrieval",
+    tags: ["Audio Classification", "Deep Learning", "CNNs", "Music Information Retrieval"],
     category: "Computational Projects",
   },
   {
     title:
       "Protecting Against Propaganda: AI for Misinformation Detection & Critical Thinking",
+    year: "2024",
+    image: wsjImg.url,
+    imageAlt: "Wall Street Journal article annotated with fallacies",
     blurb:
       'Final project for Stanford\'s CS 197 (Winter 2024). Built a GPT-4–powered browser extension that detects persuasive fallacies in political news, provides real-time annotations, and generates "extremeness" scores. Ran a pilot RCT to evaluate behavioral impacts.',
-    topics:
-      "Human-AI Interaction · Politics & Psychology · Media Literacy · Language Models",
+    tags: ["Human-AI Interaction", "Politics & Psychology", "Media Literacy", "Language Models"],
     category: "Computational Projects",
   },
   {
     title:
       "Seeing is Believing? A Sociotechnical Evaluation of Saliency Maps for Brain Tumor Segmentation",
+    year: "2025",
+    image: waveformImg.url,
+    imageAlt: "Blue waveform visualization",
     blurb:
       "Final poster for Stanford's CS 281: Ethics of Artificial Intelligence (Spring 2025). Benchmarking Grad-CAM, Integrated Gradients, and GradientSHAP across segmentation models, combining quantitative evaluation with clinician + researcher feedback to assess clinical usability.",
-    topics:
-      "Explainable AI · Medical Imaging · Model Interpretability · Human-AI Interaction",
+    tags: ["Explainable AI", "Medical Imaging", "Model Interpretability", "Human-AI Interaction"],
     category: "AI Policy/Ethics",
   },
   {
     title:
       "Longitudinal Assessment of ACGME Milestone Progression: Evaluating Gender and Racial Differences Across Graduate Medical Education Specialties",
+    year: "2024",
+    image: acgmeImg.url,
+    imageAlt: "Line chart of milestone progression trajectories",
     blurb:
-      "Co-authored research manuscript with Stanford School of Medicine (Department of Medicine, Anesthesia, Pediatrics, Orthopedics) and the University of Utah. Retrospective cohort study of 2,814 graduate medical trainees (2014–2020) analyzing gender and racial disparities in ACGME Milestone progression across 107 hospital-based, medical, and surgical programs using Wilcoxon rank-sum, Kruskal-Wallis, and linear mixed-effects models.",
-    topics:
-      "Medical Education · Health Equity · Biostatistics · Bias in Assessment · Longitudinal Analysis",
+      "Co-authored research manuscript with Stanford School of Medicine and the University of Utah. Retrospective cohort study of 2,814 graduate medical trainees (2014–2020) analyzing gender and racial disparities in ACGME Milestone progression across 107 hospital-based, medical, and surgical programs using Wilcoxon rank-sum, Kruskal-Wallis, and linear mixed-effects models.",
+    tags: ["Medical Education", "Health Equity", "Biostatistics", "Bias in Assessment", "Longitudinal Analysis"],
     category: "Computational Projects",
   },
   {
     title: "Governance of Frontier AI: Monitoring, Institutions, and Policy Transitions",
+    year: "2025",
+    image: governanceImg.url,
+    imageAlt: "Abstract neural network within a geometric framework",
     blurb:
       "Final research paper for the Stanford Existential Risks Initiative (SERI) Summer 2025. Examines how to govern frontier AI before catastrophic risks materialize, proposing risk-monitoring taxonomies, cross-lab oversight architectures, and pathways from voluntary commitments to binding regulation.",
-    topics:
-      "AI Governance · AI Safety · Policy · Institutional Design · Existential Risk",
+    tags: ["AI Governance", "AI Safety", "Policy", "Institutional Design", "Existential Risk"],
     category: "AI Policy/Ethics",
     href: "https://seri.stanford.edu/resources/courses/courses/courses/courses/courses/2026-seri-summer-fellowship",
-    linkLabel: "SERI",
   },
 ];
 
