@@ -4,12 +4,13 @@ import { SiteNav } from "@/components/SiteNav";
 
 import brainTumorImg from "@/assets/projects/brain-tumor.png.asset.json";
 import cokeTrashImg from "@/assets/projects/coke-trash.png.asset.json";
-import waveformImg from "@/assets/projects/waveform.png.asset.json";
 import wsjImg from "@/assets/projects/wsj-article.png.asset.json";
 import heapImg from "@/assets/projects/heap.jpg.asset.json";
 import musicImg from "@/assets/projects/music.jpg.asset.json";
 import acgmeImg from "@/assets/projects/acgme.jpg.asset.json";
-import governanceImg from "@/assets/projects/governance.jpg.asset.json";
+import brainMriImg from "@/assets/projects/brain-mri.jpg.asset.json";
+import governanceImg from "@/assets/projects/governance-new.jpg.asset.json";
+import olfactoryImg from "@/assets/projects/olfactory.jpg.asset.json";
 
 export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
