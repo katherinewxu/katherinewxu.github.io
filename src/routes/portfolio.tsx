@@ -4,12 +4,13 @@ import { SiteNav } from "@/components/SiteNav";
 
 import brainTumorImg from "@/assets/projects/brain-tumor.png.asset.json";
 import cokeTrashImg from "@/assets/projects/coke-trash.png.asset.json";
-import waveformImg from "@/assets/projects/waveform.png.asset.json";
 import wsjImg from "@/assets/projects/wsj-article.png.asset.json";
 import heapImg from "@/assets/projects/heap.jpg.asset.json";
 import musicImg from "@/assets/projects/music.jpg.asset.json";
 import acgmeImg from "@/assets/projects/acgme.jpg.asset.json";
-import governanceImg from "@/assets/projects/governance.jpg.asset.json";
+import brainMriImg from "@/assets/projects/brain-mri.jpg.asset.json";
+import governanceImg from "@/assets/projects/governance-new.jpg.asset.json";
+import olfactoryImg from "@/assets/projects/olfactory.jpg.asset.json";
 
 export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
@@ -48,12 +49,23 @@ type Project = {
 const projects: Project[] = [
   {
     title:
+      "Olfactory Biomarkers as Early Indicators of Neurodegenerative Disease: A Survey of AI-Driven Sensing and Diagnostic Technologies",
+    year: "2025",
+    image: olfactoryImg.url,
+    imageAlt: "Abstract illustration of an electronic-nose sensor detecting volatile compounds",
+    blurb:
+      "Survey paper examining sensor-based and AI-enabled approaches to olfactory assessment, including electronic-nose chemical sensing, VOC analysis, wearable nasal airflow monitoring, and olfactory-evoked EEG responses, framing olfaction as both a diagnostic biomarker and an intervention target for early detection of neurodegenerative decline.",
+    tags: ["Medical AI", "Neurodegeneration", "Sensor Technology", "Early Detection", "Biomarkers"],
+    category: "Computational Projects",
+  },
+  {
+    title:
       "Exploring Deep Segmentation Models for Brain Tumors: CNNs, Transformers, and Promptable Architectures",
     year: "2025",
     image: brainTumorImg.url,
     imageAlt: "MRI brain scan used for tumor segmentation",
     blurb:
-      "Final project for Stanford's CS 231N: Deep Learning for Computer Vision (Spring 2025). Developed deep learning models for automated brain tumor segmentation using the BraTS 2021 dataset, comparing CNNs, transformers, and promptable architectures for pixel-level tumor detection.",
+      "Developed deep learning models for automated brain tumor segmentation using the BraTS 2021 dataset, comparing CNNs, transformers, and promptable architectures for pixel-level tumor detection.",
     tags: ["Medical AI", "Computer Vision", "Deep Learning", "Semantic Segmentation", "Healthcare Technology"],
     category: "Computational Projects",
   },
@@ -63,7 +75,7 @@ const projects: Project[] = [
     image: cokeTrashImg.url,
     imageAlt: "Coca-Cola bottle next to a trash bag on a sidewalk",
     blurb:
-      "Final report for Stanford's CS 131: Computer Vision (Winter 2025). Built a custom CNN with adversarial training to detect Coca-Cola logos under blur, noise, and occlusion. Achieved +13% accuracy over YOLOv8 with extensive data augmentation.",
+      "Built a custom CNN with adversarial training to detect Coca-Cola logos under blur, noise, and occlusion. Achieved +13% accuracy over YOLOv8 with extensive data augmentation.",
     tags: ["Computer Vision", "Adversarial Robustness", "Object Detection", "Data Augmentation"],
     category: "Computational Projects",
   },
@@ -73,7 +85,7 @@ const projects: Project[] = [
     image: heapImg.url,
     imageAlt: "Diagram of memory blocks of varying sizes",
     blurb:
-      "Final project for Stanford's CS 107 (Winter 2025). Implemented a full implicit + explicit free list allocator in C, including malloc, free, and realloc. Built debugging utilities (validate_heap, dump_heap) and stress-tested on real allocation traces.",
+      "Implemented a full implicit + explicit free list allocator in C, including malloc, free, and realloc. Built debugging utilities (validate_heap, dump_heap) and stress-tested on real allocation traces.",
     tags: ["Systems Programming", "Memory Management", "C", "Performance Optimization"],
     category: "Computational Projects",
   },
@@ -84,7 +96,7 @@ const projects: Project[] = [
     image: musicImg.url,
     imageAlt: "Colorful mel spectrogram of an audio signal",
     blurb:
-      "Final project for Stanford's CS 129 (Winter 2024). Trained VGG-style CNNs, GRUs, and LSTMs on mel spectrograms from GTZAN, incorporating noise, pitch-shift, and time-stretch augmentations for robustness.",
+      "Trained VGG-style CNNs, GRUs, and LSTMs on mel spectrograms from GTZAN, incorporating noise, pitch-shift, and time-stretch augmentations for robustness.",
     tags: ["Audio Classification", "Deep Learning", "CNNs", "Music Information Retrieval"],
     category: "Computational Projects",
   },
@@ -95,7 +107,7 @@ const projects: Project[] = [
     image: wsjImg.url,
     imageAlt: "Wall Street Journal article annotated with fallacies",
     blurb:
-      'Final project for Stanford\'s CS 197 (Winter 2024). Built a GPT-4–powered browser extension that detects persuasive fallacies in political news, provides real-time annotations, and generates "extremeness" scores. Ran a pilot RCT to evaluate behavioral impacts.',
+      'Built a GPT-4–powered browser extension that detects persuasive fallacies in political news, provides real-time annotations, and generates "extremeness" scores. Ran a pilot RCT to evaluate behavioral impacts.',
     tags: ["Human-AI Interaction", "Politics & Psychology", "Media Literacy", "Language Models"],
     category: "Computational Projects",
   },
@@ -103,10 +115,10 @@ const projects: Project[] = [
     title:
       "Seeing is Believing? A Sociotechnical Evaluation of Saliency Maps for Brain Tumor Segmentation",
     year: "2025",
-    image: waveformImg.url,
-    imageAlt: "Blue waveform visualization",
+    image: brainMriImg.url,
+    imageAlt: "Grayscale MRI scan of a human brain",
     blurb:
-      "Final poster for Stanford's CS 281: Ethics of Artificial Intelligence (Spring 2025). Benchmarking Grad-CAM, Integrated Gradients, and GradientSHAP across segmentation models, combining quantitative evaluation with clinician + researcher feedback to assess clinical usability.",
+      "Benchmarking Grad-CAM, Integrated Gradients, and GradientSHAP across segmentation models, combining quantitative evaluation with clinician + researcher feedback to assess clinical usability.",
     tags: ["Explainable AI", "Medical Imaging", "Model Interpretability", "Human-AI Interaction"],
     category: "AI Policy/Ethics",
   },
@@ -125,9 +137,9 @@ const projects: Project[] = [
     title: "Governance of Frontier AI: Monitoring, Institutions, and Policy Transitions",
     year: "2025",
     image: governanceImg.url,
-    imageAlt: "Abstract neural network within a geometric framework",
+    imageAlt: "United States Capitol building at dusk",
     blurb:
-      "Final research paper for the Stanford Existential Risks Initiative (SERI) Summer 2025. Examines how to govern frontier AI before catastrophic risks materialize, proposing risk-monitoring taxonomies, cross-lab oversight architectures, and pathways from voluntary commitments to binding regulation.",
+      "Examines how to govern frontier AI before catastrophic risks materialize, proposing risk-monitoring taxonomies, cross-lab oversight architectures, and pathways from voluntary commitments to binding regulation.",
     tags: ["AI Governance", "AI Safety", "Policy", "Institutional Design", "Existential Risk"],
     category: "AI Policy/Ethics",
     href: "https://seri.stanford.edu/resources/courses/courses/courses/courses/courses/2026-seri-summer-fellowship",
