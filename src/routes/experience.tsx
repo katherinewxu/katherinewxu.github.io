@@ -195,10 +195,10 @@ function Experience() {
                 ) : (
                   it.org
                 )}
-                , <span>{it.role}</span>
+                , <span>{it.team}</span>
               </p>
               <p className="mt-1 text-sm text-muted-foreground italic">
-                {it.period}
+                {it.role}, {it.period}
               </p>
               <p className="mt-2">{it.description}</p>
             </li>
