@@ -169,30 +169,30 @@ function Experience() {
       <SiteNav />
       <article className="prose-academic mx-auto w-full max-w-3xl px-6 text-foreground">
         <h1>Experience</h1>
-        <ul className="space-y-7">
+        <ul className="space-y-10 list-none pl-0">
           {items.map((it, i) => (
             <li key={i}>
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                <p className="font-medium flex items-center gap-2">
-                  {it.logoDomain && (
-                    <img
-                      src={`https://www.google.com/s2/favicons?domain=${it.logoDomain}&sz=64`}
-                      alt=""
-                      aria-hidden="true"
-                      loading="lazy"
-                      className="inline-block h-4 w-4 rounded-sm"
-                    />
-                  )}
-                  {it.orgUrl ? (
-                    <ExtLink href={it.orgUrl}>{it.org}</ExtLink>
-                  ) : (
-                    it.org
-                  )}{" "}
-                  — <span className="italic">{it.role}</span>
-                </p>
-                <p className="text-sm text-muted-foreground">{it.period}</p>
-              </div>
-              <p className="mt-1">{it.description}</p>
+              <p className="font-medium flex items-center gap-2 m-0">
+                {it.logoDomain && (
+                  <img
+                    src={`https://www.google.com/s2/favicons?domain=${it.logoDomain}&sz=64`}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    className="inline-block h-4 w-4 rounded-sm"
+                  />
+                )}
+                {it.orgUrl ? (
+                  <ExtLink href={it.orgUrl}>{it.org}</ExtLink>
+                ) : (
+                  it.org
+                )}
+                , <span>{it.role}</span>
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground italic">
+                {it.period}
+              </p>
+              <p className="mt-2">{it.description}</p>
             </li>
           ))}
         </ul>
