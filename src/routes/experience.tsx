@@ -26,6 +26,7 @@ type LinkRef = { label: string; url: string };
 
 type Item = {
   role: string;
+  team: string;
   org: string;
   orgUrl?: string;
   logoDomain?: string;
