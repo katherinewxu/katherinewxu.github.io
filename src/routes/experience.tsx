@@ -26,6 +26,7 @@ type LinkRef = { label: string; url: string };
 
 type Item = {
   role: string;
+  team: string;
   org: string;
   orgUrl?: string;
   logoDomain?: string;
@@ -47,6 +48,7 @@ const ExtLink = ({ href, children }: { href: string; children: ReactNode }) => (
 const items: Item[] = [
   {
     role: "Software Engineer Intern",
+    team: "Health Sensing",
     org: "Apple",
     orgUrl: "https://www.apple.com/",
     logoDomain: "apple.com",
@@ -56,6 +58,7 @@ const items: Item[] = [
   },
   {
     role: "Research Assistant",
+    team: "AI-Assisted Care",
     org: "Stanford Artificial Intelligence Laboratory",
     orgUrl: "https://ai.stanford.edu/",
     logoDomain: "stanford.edu",
@@ -81,6 +84,7 @@ const items: Item[] = [
   },
   {
     role: "AI Governance Researcher",
+    team: "AI Governance",
     org: "Stanford Existential Risks Initiative",
     orgUrl:
       "https://seri.stanford.edu/resources/courses/courses/courses/courses/courses/2026-seri-summer-fellowship",
@@ -91,6 +95,7 @@ const items: Item[] = [
   },
   {
     role: "Student Fellow",
+    team: "Future of Work",
     org: "Hoover Institution",
     orgUrl: "https://www.hoover.org/",
     logoDomain: "hoover.org",
@@ -111,6 +116,7 @@ const items: Item[] = [
   },
   {
     role: "Undergraduate Researcher",
+    team: "Synthetic Biology",
     org: "Stanford International Genetically Engineered Machine (iGEM)",
     orgUrl: "https://stanford-igem.org/",
     logoDomain: "stanford.edu",
@@ -136,6 +142,7 @@ const items: Item[] = [
   },
   {
     role: "Research Assistant",
+    team: "Bioinformatics",
     org: "The Ohio State University Bioinformatics & Mathematical Biosciences Lab",
     orgUrl: "https://u.osu.edu/mabbielab/",
     logoDomain: "osu.edu",
@@ -145,6 +152,7 @@ const items: Item[] = [
   },
   {
     role: "Research Assistant",
+    team: "Political Science",
     org: "The Ohio State University Department of Political Science",
     orgUrl: "https://polisci.osu.edu/",
     logoDomain: "osu.edu",
@@ -187,10 +195,10 @@ function Experience() {
                 ) : (
                   it.org
                 )}
-                , <span>{it.role}</span>
+                , <span>{it.team}</span>
               </p>
               <p className="mt-1 text-sm text-muted-foreground italic">
-                {it.period}
+                {it.role}, {it.period}
               </p>
               <p className="mt-2">{it.description}</p>
             </li>
