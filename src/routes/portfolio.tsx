@@ -2,15 +2,15 @@ import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 
-import brainTumorImg from "@/assets/projects/brain-tumor.png.asset.json";
-import cokeTrashImg from "@/assets/projects/coke-trash.png.asset.json";
-import wsjImg from "@/assets/projects/wsj-article.png.asset.json";
-import heapImg from "@/assets/projects/heap.jpg.asset.json";
-import musicImg from "@/assets/projects/music.jpg.asset.json";
-import acgmeImg from "@/assets/projects/acgme.jpg.asset.json";
-import brainMriImg from "@/assets/projects/brain-mri.jpg.asset.json";
-import governanceImg from "@/assets/projects/governance-new.jpg.asset.json";
-import olfactoryImg from "@/assets/projects/olfactory.jpg.asset.json";
+const brainTumorImg = { url: "/projects/brain-tumor.png" };
+const cokeTrashImg = { url: "/projects/coke-trash.png" };
+const wsjImg = { url: "/projects/wsj-article.png" };
+const heapImg = { url: "/projects/heap.jpg" };
+const musicImg = { url: "/projects/music.jpg" };
+const acgmeImg = { url: "/projects/acgme.jpg" };
+const brainMriImg = { url: "/projects/brain-mri.jpg" };
+const governanceImg = { url: "/projects/governance-new.jpg" };
+const olfactoryImg = { url: "/projects/olfactory.jpg" };
 
 export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
@@ -149,7 +149,7 @@ const projects: Project[] = [
 const filters: FilterKey[] = ["All", "Computational Projects", "AI Policy/Ethics"];
 
 const teaching: { text: string; link?: { label: string; href: string } }[] = [
-  { text: "Fall 2025: CS106A Programming Methodologies — Python, Programming Concepts" },
+  { text: "Fall 2025/Spring 2026: CS106A Programming Methodologies — Python, Programming Concepts" },
   {
     text: "Spring 2025: CS106A through {LINK} — Python, Programming Concepts",
     link: { label: "Stanford Code in Place", href: "https://codeinplace.stanford.edu/" },
