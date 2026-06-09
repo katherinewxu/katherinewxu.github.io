@@ -149,7 +149,7 @@ const projects: Project[] = [
 const filters: FilterKey[] = ["All", "Computational Projects", "AI Policy/Ethics"];
 
 const teaching: { text: string; link?: { label: string; href: string } }[] = [
-  { text: "Fall 2025: CS106A Programming Methodologies — Python, Programming Concepts" },
+  { text: "Fall 2025/Spring 2026: CS106A Programming Methodologies — Python, Programming Concepts" },
   {
     text: "Spring 2025: CS106A through {LINK} — Python, Programming Concepts",
     link: { label: "Stanford Code in Place", href: "https://codeinplace.stanford.edu/" },
