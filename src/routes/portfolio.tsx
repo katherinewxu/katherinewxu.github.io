@@ -11,6 +11,7 @@ const acgmeImg = { url: "/projects/acgme.jpg" };
 const brainMriImg = { url: "/projects/brain-mri.jpg" };
 const governanceImg = { url: "/projects/governance-new.jpg" };
 const olfactoryImg = { url: "/projects/olfactory.jpg" };
+const rlooLeashImg = { url: "/projects/rloo-leash.jpg" };
 
 export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
