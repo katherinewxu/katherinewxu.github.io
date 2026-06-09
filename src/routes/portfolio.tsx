@@ -11,6 +11,7 @@ const acgmeImg = { url: "/projects/acgme.jpg" };
 const brainMriImg = { url: "/projects/brain-mri.jpg" };
 const governanceImg = { url: "/projects/governance-new.jpg" };
 const olfactoryImg = { url: "/projects/olfactory.jpg" };
+const rlooLeashImg = { url: "/projects/rloo-leash.jpg" };
 
 export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
@@ -47,6 +48,16 @@ type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "Tool-Integrated RLOO and Pass@K: Testing the Invisible Leash",
+    year: "2025",
+    image: rlooLeashImg.url,
+    imageAlt: "Abstract visualization of a branching reasoning tree with mathematical notation",
+    blurb:
+      "CS224R final project investigating whether reinforcement learning with verifiable rewards (RLVR) can expand a small language model's reasoning frontier beyond its pretrained action space. Tests tool-integrated RLOO against the \"invisible leash\" hypothesis using Pass@K evaluations.",
+    tags: ["Reinforcement Learning", "Language Models", "RLVR", "Reasoning", "Tool Use"],
+    category: "Computational Projects",
+  },
   {
     title:
       "Olfactory Biomarkers as Early Indicators of Neurodegenerative Disease: A Survey of AI-Driven Sensing and Diagnostic Technologies",
