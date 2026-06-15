@@ -48,10 +48,8 @@ function Index_Inner() {
   const heroTranslate = -progress * 20;
 
   return (
-    <main className="min-h-screen pt-8 pb-16 md:pb-24">
-      <div className="relative z-30">
-        <SiteNav />
-      </div>
+    <main className="min-h-screen pb-16 md:pb-24">
+      <SiteNav />
 
       {/* Full-screen interactive hero — sits behind the article content */}
       <div
