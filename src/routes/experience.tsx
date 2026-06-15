@@ -173,7 +173,7 @@ const items: Item[] = [
 
 function Experience() {
   return (
-    <main className="min-h-screen pt-8 pb-16 md:pb-24">
+    <main className="min-h-screen pb-16 md:pb-24">
       <SiteNav />
       <article className="prose-academic mx-auto w-full max-w-3xl px-6 text-foreground">
         <h1>Experience</h1>
