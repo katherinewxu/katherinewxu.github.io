@@ -1,7 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
 import { SiteNav } from "@/components/SiteNav";
-import { SpeckleText } from "@/components/SpeckleText";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -25,61 +23,23 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <Index_Inner />
-  );
-}
-
-function Index_Inner() {
-  const [scrollY, setScrollY] = useState(0);
-  const heroRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Hero stays visible behind content; fades gently over a longer scroll range.
-  const vh = typeof window !== "undefined" ? window.innerHeight : 800;
-  const progress = Math.min(1, scrollY / (vh * 0.9));
-  // Fade hero almost completely as you scroll — just a faint trace remains.
-  const heroOpacity = Math.max(0.04, 1 - progress * 1.05);
-  const heroScale = 1 - progress * 0.04;
-  const heroTranslate = -progress * 20;
-
-  return (
     <main className="min-h-screen pb-16 md:pb-24">
       <SiteNav />
 
-      {/* Full-screen interactive hero — sits behind the article content */}
-      <div
-        ref={heroRef}
-        className="pointer-events-none fixed inset-0 z-0 flex h-[100svh] w-full items-center justify-center overflow-visible"
-        style={{
-          opacity: heroOpacity,
-          transform: `translateY(${heroTranslate}px) scale(${heroScale})`,
-          willChange: "opacity, transform",
-        }}
-      >
-        <div className="pointer-events-auto w-full">
-          <SpeckleText text="katherine" />
-        </div>
-      </div>
+      <header className="mx-auto max-w-3xl px-6 pb-12 pt-24 sm:pt-28">
+        <h1 className="text-5xl font-bold tracking-[-0.035em] text-foreground">
+          Katherine Wang Xu
+        </h1>
+      </header>
 
-      <article className="prose-academic relative z-20 mx-auto mt-[80svh] w-full max-w-3xl px-6 pt-12 text-foreground">
-
+      <article className="prose-academic mx-auto w-full max-w-3xl px-6 text-foreground">
         <p>
-          I am a student at Stanford University pursuing a B.S. in Symbolic Systems
-          (
-          <a
-            href="https://symsys.stanford.edu/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          I am a student at Stanford University pursuing a B.S. in Symbolic Systems (
+          <a href="https://symsys.stanford.edu/" target="_blank" rel="noopener noreferrer">
             What's SymSys?
           </a>
-          ) with a concentration in AI and concurrently pursuing an M.S. in Computer
-          Science (AI), advised by{" "}
+          ) with a concentration in AI and concurrently pursuing an M.S. in Computer Science (AI),
+          advised by{" "}
           <a
             href="https://www.linkedin.com/in/jerrycainjr/"
             target="_blank"
@@ -88,46 +48,35 @@ function Index_Inner() {
             Jerry Cain
           </a>{" "}
           and Professor{" "}
-          <a
-            href="https://stanford.edu/~eadeli/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://stanford.edu/~eadeli/" target="_blank" rel="noopener noreferrer">
             Ehsan Adeli
           </a>
           .
         </p>
 
         <p>
-          I'm passionate about finding new ways to use AI to benefit humanity. At
-          Stanford, I'm a student researcher at the Stanford Vision and Learning
-          Lab (SVL), working with Professors Fei-Fei Li and Ehsan Adeli at the{" "}
-          <a
-            href="https://med.stanford.edu/content/sm/pacresearch.html/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Partnership in AI-Assisted Care
+          I'm passionate about finding new ways to use AI to benefit humanity. At Stanford, I'm a
+          student researcher in James Zou's{" "}
+          <a href="https://www.james-zou.com/" target="_blank" rel="noopener noreferrer">
+            Stanford AI for Science Lab
           </a>
-          .
+          , where I work on evaluations and verifiers for AI-scientist agents.
         </p>
 
         <p>
-          I'm also devoted to the humanities. From studying literature and
-          literary criticism at Oxford to thinking through the ethics of AI, I
-          believe the questions worth asking about technology are ultimately
-          questions about people, language, and meaning.
+          I'm also devoted to the humanities. From studying literature and literary criticism at
+          Oxford to thinking through the ethics of AI, I believe the questions worth asking about
+          technology are ultimately questions about people, language, and meaning.
         </p>
 
         <p>
-          In my free time, I enjoy exploring the outdoors, sampling the local food
-          scene, curating increasingly niche Spotify playlists, and reading. Some
-          of my favorite books can be found <Link to="/bookshelf">here</Link>.
+          In my free time, I enjoy exploring the outdoors, sampling the local food scene, curating
+          increasingly niche Spotify playlists, and reading. Some of my favorite books can be found{" "}
+          <Link to="/bookshelf">here</Link>.
         </p>
 
         <p>
-          Feel free to reach me at{" "}
-          <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a>.
+          Feel free to reach me at <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a>.
         </p>
       </article>
     </main>

@@ -1,6 +1,5 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
-import { StarField } from "@/components/StarField";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -31,7 +30,10 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Katherine Xu" },
-      { name: "description", content: "Katherine Xu — Stanford student in Symbolic Systems and Computer Science." },
+      {
+        name: "description",
+        content: "Katherine Xu — Stanford student in Symbolic Systems and Computer Science.",
+      },
       { name: "author", content: "Katherine Xu" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -64,10 +66,5 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return (
-    <>
-      <StarField />
-      <Outlet />
-    </>
-  );
+  return <Outlet />;
 }

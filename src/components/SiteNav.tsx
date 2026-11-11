@@ -21,7 +21,7 @@ export function SiteNav() {
       <div className="mx-auto flex max-w-6xl flex-wrap items-baseline justify-between gap-x-8 gap-y-3 px-5 py-5 sm:px-6 sm:py-6">
         <Link
           to="/"
-          className="whitespace-nowrap text-[1.5rem] font-medium leading-none tracking-[-0.025em] text-[oklch(0.36_0.08_150)] hover:text-[oklch(0.36_0.08_150)] sm:text-[1.65rem]"
+          className="whitespace-nowrap text-[1.5rem] font-bold leading-none tracking-[-0.025em] text-foreground sm:text-[1.65rem]"
         >
           Katherine Wang Xu
         </Link>
@@ -31,10 +31,9 @@ export function SiteNav() {
               <Link
                 to={l.to}
                 activeOptions={{ exact: l.exact }}
-                className="decoration-1 underline-offset-[0.42rem] text-foreground/80 transition-colors hover:text-[oklch(0.36_0.08_150)] hover:underline"
+                className="decoration-1 underline-offset-[0.42rem] text-foreground/75 transition-colors hover:text-foreground hover:underline"
                 activeProps={{
-                  className:
-                    "font-medium underline text-[oklch(0.36_0.08_150)] decoration-[oklch(0.45_0.09_150)]",
+                  className: "font-bold underline text-foreground decoration-foreground/60",
                 }}
               >
                 {l.label}

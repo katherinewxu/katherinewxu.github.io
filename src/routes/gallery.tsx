@@ -168,9 +168,11 @@ function Gallery() {
           <h1 className="text-5xl font-medium tracking-tight text-foreground sm:text-6xl">
             Gallery
           </h1>
-          <div className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-            <p>A running list of art that I love.</p>
-            <p className="mt-3">
+          <div className="max-w-2xl text-foreground">
+            <p className="text-[1.35rem] leading-[1.45] sm:text-[1.85rem]">
+              A running list of art that I love.
+            </p>
+            <p className="mt-4 text-base leading-relaxed sm:text-lg">
               Some of my favorite museums are the National Gallery in London and The Metropolitan
               Museum of Art in New York.
             </p>

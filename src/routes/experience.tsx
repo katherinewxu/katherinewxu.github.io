@@ -63,7 +63,7 @@ const items: Item[] = [
     logoDomain: "inflection.ai",
     period: "June – September 2026",
     description:
-      "Worked on reinforcement learning with verifiable rewards for language models that reason with tools. Extended multi-GPU RLOO and GRPO post-training pipelines, ran controlled studies of sampling temperature, rollout length, batch scheduling, and pass@k, and analyzed the effect of rollout truncation on gradient estimates. Built diagnostics and evaluations that surfaced reward hacking, policy collapse, and long-context or multi-turn degradation before final checkpoints.",
+      "Worked on post-training and safety evaluation for small language models. Developed reinforcement-learning pipelines and evaluations to study model behavior, robustness, and failure modes.",
   },
   {
     role: "Software Engineer Intern",

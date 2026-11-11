@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -64,11 +64,11 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.987 0.006 88);
-  --foreground: oklch(0.2 0 0);
+  --background: oklch(0.975 0.018 92);
+  --foreground: oklch(0.12 0 0);
   --link: oklch(0.45 0.09 150);
   --link-hover: oklch(0.36 0.08 150);
-  --card: oklch(0.995 0.003 88);
+  --card: oklch(0.982 0.014 92);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
@@ -142,7 +142,7 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: "Inconsolata", "SFMono-Regular", Consolas, monospace;
+    font-family: "Nanum Myeongjo", Garamond, Georgia, serif;
     font-size: 18px;
     text-rendering: optimizeLegibility;
   }
@@ -151,7 +151,7 @@
     min-height: 100vh;
     background-color: var(--color-background);
     color: var(--color-foreground);
-    line-height: 1.65;
+    line-height: 1.7;
     font-kerning: normal;
   }
 
@@ -182,26 +182,26 @@
 
   .prose-academic h1 {
     font-size: clamp(2.25rem, 6vw, 3.4rem);
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.04;
     margin: 3.5rem 0 2rem;
     letter-spacing: -0.035em;
-    color: oklch(0.36 0.08 150);
+    color: var(--color-foreground);
   }
 
   .prose-academic h2 {
-    color: oklch(0.36 0.08 150);
+    color: var(--color-foreground);
     font-weight: 500;
     line-height: 1.2;
   }
 
   .font-bookshelf {
-    font-family: "Inconsolata", "SFMono-Regular", Consolas, monospace;
+    font-family: "Nanum Myeongjo", Garamond, Georgia, serif;
     font-feature-settings: "liga", "dlig", "onum";
   }
 
   .font-ui {
-    font-family: "Inconsolata", "SFMono-Regular", Consolas, monospace;
+    font-family: "Nanum Myeongjo", Garamond, Georgia, serif;
   }
 }
 
