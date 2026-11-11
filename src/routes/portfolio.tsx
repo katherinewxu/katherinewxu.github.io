@@ -2,16 +2,16 @@ import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 
-const brainTumorImg = { url: "/projects/paintings/brain-tumor.jpg" };
-const cokeTrashImg = { url: "/projects/paintings/logo-robustness.jpg" };
-const wsjImg = { url: "/projects/paintings/misinformation.jpg" };
-const heapImg = { url: "/projects/paintings/heap.jpg" };
-const musicImg = { url: "/projects/paintings/music.jpg" };
-const acgmeImg = { url: "/projects/paintings/medical-equity.jpg" };
-const brainMriImg = { url: "/projects/paintings/saliency.jpg" };
-const governanceImg = { url: "/projects/paintings/governance.jpg" };
-const olfactoryImg = { url: "/projects/paintings/olfactory.jpg" };
-const rlooLeashImg = { url: "/projects/paintings/reasoning.jpg" };
+const brainTumorImg = { url: "/projects/brain-tumor.png" };
+const cokeTrashImg = { url: "/projects/coke-trash.png" };
+const wsjImg = { url: "/projects/wsj-article.png" };
+const heapImg = { url: "/projects/heap.jpg" };
+const musicImg = { url: "/projects/music.jpg" };
+const acgmeImg = { url: "/projects/acgme.jpg" };
+const brainMriImg = { url: "/projects/brain-mri.jpg" };
+const governanceImg = { url: "/projects/governance-new.jpg" };
+const olfactoryImg = { url: "/projects/olfactory.jpg" };
+const rlooLeashImg = { url: "/projects/rloo-leash.jpg" };
 
 export const Route = createFileRoute("/portfolio")({
   component: Portfolio,

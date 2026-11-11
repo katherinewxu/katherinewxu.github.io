@@ -9,31 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PortfolioRouteImport } from './routes/portfolio'
-import { Route as PersonalRouteImport } from './routes/personal'
-import { Route as ExperienceRouteImport } from './routes/experience'
-import { Route as ClassesRouteImport } from './routes/classes'
-import { Route as BookshelfRouteImport } from './routes/bookshelf'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BookshelfRouteImport } from './routes/bookshelf'
+import { Route as ClassesRouteImport } from './routes/classes'
+import { Route as ExperienceRouteImport } from './routes/experience'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as PersonalRouteImport } from './routes/personal'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
 
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: '/portfolio',
-  path: '/portfolio',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PersonalRoute = PersonalRouteImport.update({
-  id: '/personal',
-  path: '/personal',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExperienceRoute = ExperienceRouteImport.update({
-  id: '/experience',
-  path: '/experience',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ClassesRoute = ClassesRouteImport.update({
-  id: '/classes',
-  path: '/classes',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookshelfRoute = BookshelfRouteImport.update({
@@ -41,9 +27,29 @@ const BookshelfRoute = BookshelfRouteImport.update({
   path: '/bookshelf',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ClassesRoute = ClassesRouteImport.update({
+  id: '/classes',
+  path: '/classes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienceRoute = ExperienceRouteImport.update({
+  id: '/experience',
+  path: '/experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PersonalRoute = PersonalRouteImport.update({
+  id: '/personal',
+  path: '/personal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/bookshelf': typeof BookshelfRoute
   '/classes': typeof ClassesRoute
   '/experience': typeof ExperienceRoute
+  '/gallery': typeof GalleryRoute
   '/personal': typeof PersonalRoute
   '/portfolio': typeof PortfolioRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/bookshelf': typeof BookshelfRoute
   '/classes': typeof ClassesRoute
   '/experience': typeof ExperienceRoute
+  '/gallery': typeof GalleryRoute
   '/personal': typeof PersonalRoute
   '/portfolio': typeof PortfolioRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/bookshelf': typeof BookshelfRoute
   '/classes': typeof ClassesRoute
   '/experience': typeof ExperienceRoute
+  '/gallery': typeof GalleryRoute
   '/personal': typeof PersonalRoute
   '/portfolio': typeof PortfolioRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/bookshelf'
     | '/classes'
     | '/experience'
+    | '/gallery'
     | '/personal'
     | '/portfolio'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/bookshelf'
     | '/classes'
     | '/experience'
+    | '/gallery'
     | '/personal'
     | '/portfolio'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/bookshelf'
     | '/classes'
     | '/experience'
+    | '/gallery'
     | '/personal'
     | '/portfolio'
   fileRoutesById: FileRoutesById
@@ -104,38 +116,18 @@ export interface RootRouteChildren {
   BookshelfRoute: typeof BookshelfRoute
   ClassesRoute: typeof ClassesRoute
   ExperienceRoute: typeof ExperienceRoute
+  GalleryRoute: typeof GalleryRoute
   PersonalRoute: typeof PersonalRoute
   PortfolioRoute: typeof PortfolioRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/portfolio': {
-      id: '/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/personal': {
-      id: '/personal'
-      path: '/personal'
-      fullPath: '/personal'
-      preLoaderRoute: typeof PersonalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/experience': {
-      id: '/experience'
-      path: '/experience'
-      fullPath: '/experience'
-      preLoaderRoute: typeof ExperienceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/classes': {
-      id: '/classes'
-      path: '/classes'
-      fullPath: '/classes'
-      preLoaderRoute: typeof ClassesRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bookshelf': {
@@ -145,11 +137,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookshelfRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/classes': {
+      id: '/classes'
+      path: '/classes'
+      fullPath: '/classes'
+      preLoaderRoute: typeof ClassesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experience': {
+      id: '/experience'
+      path: '/experience'
+      fullPath: '/experience'
+      preLoaderRoute: typeof ExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/personal': {
+      id: '/personal'
+      path: '/personal'
+      fullPath: '/personal'
+      preLoaderRoute: typeof PersonalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -160,9 +180,19 @@ const rootRouteChildren: RootRouteChildren = {
   BookshelfRoute: BookshelfRoute,
   ClassesRoute: ClassesRoute,
   ExperienceRoute: ExperienceRoute,
+  GalleryRoute: GalleryRoute,
   PersonalRoute: PersonalRoute,
   PortfolioRoute: PortfolioRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
