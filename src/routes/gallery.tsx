@@ -162,8 +162,8 @@ function Gallery() {
           <div className="max-w-2xl text-base leading-relaxed text-muted-foreground">
             <p>A running list of art that I love.</p>
             <p className="mt-3">
-              Some of my favorite museums are the Museum of Fine Arts in Boston, the Norton Simon
-              Museum in Pasadena, and the Musée d'Orsay in Paris.
+              Some of my favorite museums are the National Gallery in London and The Metropolitan
+              Museum of Art in New York.
             </p>
           </div>
         </div>
