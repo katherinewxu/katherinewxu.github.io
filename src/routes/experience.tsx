@@ -53,7 +53,7 @@ const items: Item[] = [
     logoDomain: "stanford.edu",
     period: "June 2026 – Present",
     description:
-      "Build evaluation infrastructure and verifiers for autonomous AI-scientist agents. Developed a reproducible harness for Claude Code and Codex across biomedical machine-learning tasks, including hidden graders, leakage checks, and replayable workspace histories. Built a ground-truth benchmark spanning 2,400+ audits that showed verifiers catch substantially more errors when they can inspect code and outputs rather than reports alone, and ran controlled studies of memory-driven error propagation and recovery in multi-agent research systems.",
+      "Build evaluation infrastructure and verification methods for AI-assisted scientific research. Work on reproducible evaluation systems, research audits, and studies of model reliability in biomedical machine learning.",
   },
   {
     role: "Member of Technical Staff Intern",
@@ -175,26 +175,20 @@ function Experience() {
       <SiteNav />
       <article className="prose-academic mx-auto w-full max-w-3xl px-6 text-foreground">
         <h1>Experience</h1>
-        <ul className="space-y-10 list-none pl-0">
+        <ul className="list-none border-t border-foreground/20 pl-0">
           {items.map((it, i) => (
-            <li key={i}>
-              <p className="font-medium flex items-center gap-2 m-0">
-                {it.logoDomain && (
-                  <img
-                    src={`https://www.google.com/s2/favicons?domain=${it.logoDomain}&sz=64`}
-                    alt=""
-                    aria-hidden="true"
-                    loading="lazy"
-                    className="inline-block h-4 w-4 rounded-sm"
-                  />
-                )}
-                {it.orgUrl ? <ExtLink href={it.orgUrl}>{it.org}</ExtLink> : it.org},{" "}
-                <span>{it.team}</span>
+            <li key={i} className="border-b border-foreground/20 py-6">
+              <div className="grid gap-1 sm:grid-cols-[1fr_auto] sm:gap-8">
+                <p className="m-0 font-medium text-foreground">
+                  {it.orgUrl ? <ExtLink href={it.orgUrl}>{it.org}</ExtLink> : it.org}
+                  <span className="text-foreground/55">, {it.team}</span>
+                </p>
+                <p className="m-0 text-sm text-foreground/55 sm:text-right">{it.period}</p>
+              </div>
+              <p className="mt-1 text-sm text-foreground/70">{it.role}</p>
+              <p className="mb-0 mt-3 text-[0.96rem] leading-relaxed text-foreground/85">
+                {it.description}
               </p>
-              <p className="mt-1 text-sm text-muted-foreground italic">
-                {it.role}, {it.period}
-              </p>
-              <p className="mt-2">{it.description}</p>
             </li>
           ))}
         </ul>
