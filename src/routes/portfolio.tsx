@@ -2,16 +2,16 @@ import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 
-const brainTumorImg = { url: "/projects/editorial/brain-tumor.webp" };
-const cokeTrashImg = { url: "/projects/editorial/logo-robustness.webp" };
-const wsjImg = { url: "/projects/editorial/propaganda.webp" };
-const heapImg = { url: "/projects/editorial/heap.webp" };
-const musicImg = { url: "/projects/editorial/music.webp" };
-const acgmeImg = { url: "/projects/editorial/acgme.webp" };
-const brainMriImg = { url: "/projects/editorial/saliency.webp" };
-const governanceImg = { url: "/projects/editorial/governance.webp" };
-const olfactoryImg = { url: "/projects/editorial/olfactory.webp" };
-const rlooLeashImg = { url: "/projects/editorial/rloo.webp" };
+const brainTumorImg = { url: "/projects/public-domain/brain-tumor.webp" };
+const cokeTrashImg = { url: "/projects/public-domain/logo-robustness.webp" };
+const wsjImg = { url: "/projects/public-domain/propaganda.webp" };
+const heapImg = { url: "/projects/public-domain/heap.webp" };
+const musicImg = { url: "/projects/public-domain/music.webp" };
+const acgmeImg = { url: "/projects/public-domain/acgme.webp" };
+const brainMriImg = { url: "/projects/public-domain/saliency.webp" };
+const governanceImg = { url: "/projects/public-domain/governance.webp" };
+const olfactoryImg = { url: "/projects/public-domain/olfactory.webp" };
+const rlooLeashImg = { url: "/projects/public-domain/rloo.webp" };
 
 export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
@@ -52,7 +52,7 @@ const projects: Project[] = [
     title: "Tool-Integrated RLOO and Pass@K: Testing the Invisible Leash",
     year: "2025",
     image: rlooLeashImg.url,
-    imageAlt: "Illustrated clockwork bird navigating branching paths through a coral garden",
+    imageAlt: "Siphonophores illustrated by Ernst Haeckel in 1904",
     blurb:
       'CS224R final project investigating whether reinforcement learning with verifiable rewards (RLVR) can expand a small language model\'s reasoning frontier beyond its pretrained action space. Tests tool-integrated RLOO against the "invisible leash" hypothesis using Pass@K evaluations.',
     tags: ["Reinforcement Learning", "Language Models", "RLVR", "Reasoning", "Tool Use"],
@@ -63,7 +63,7 @@ const projects: Project[] = [
       "Olfactory Biomarkers as Early Indicators of Neurodegenerative Disease: A Survey of AI-Driven Sensing and Diagnostic Technologies",
     year: "2025",
     image: olfactoryImg.url,
-    imageAlt: "Illustrated flowers, scent plumes, neural tendrils, and an anatomical nose",
+    imageAlt: "Orchids illustrated by Ernst Haeckel in 1904",
     blurb:
       "Survey paper examining sensor-based and AI-enabled approaches to olfactory assessment, including electronic-nose chemical sensing, VOC analysis, wearable nasal airflow monitoring, and olfactory-evoked EEG responses, framing olfaction as both a diagnostic biomarker and an intervention target for early detection of neurodegenerative decline.",
     tags: ["Medical AI", "Neurodegeneration", "Sensor Technology", "Early Detection", "Biomarkers"],
@@ -74,7 +74,7 @@ const projects: Project[] = [
       "Exploring Deep Segmentation Models for Brain Tumors: CNNs, Transformers, and Promptable Architectures",
     year: "2025",
     image: brainTumorImg.url,
-    imageAlt: "Illustrated brain cross-section with coral-like segmented regions",
+    imageAlt: "Discomedusae illustrated by Ernst Haeckel in 1904",
     blurb:
       "Developed deep learning models for automated brain tumor segmentation using the BraTS 2021 dataset, comparing CNNs, transformers, and promptable architectures for pixel-level tumor detection.",
     tags: [
@@ -90,7 +90,7 @@ const projects: Project[] = [
     title: "Robust Brand Logo Detection Under Adversarial Conditions",
     year: "2025",
     image: cokeTrashImg.url,
-    imageAlt: "Illustrated red bottle specimen obscured by leaves, mist, and water",
+    imageAlt: "Boxfish illustrated by Ernst Haeckel in 1904",
     blurb:
       "Built a custom CNN with adversarial training to detect Coca-Cola logos under blur, noise, and occlusion. Achieved +13% accuracy over YOLOv8 with extensive data augmentation.",
     tags: ["Computer Vision", "Adversarial Robustness", "Object Detection", "Data Augmentation"],
@@ -100,7 +100,7 @@ const projects: Project[] = [
     title: "Heap Allocator",
     year: "2025",
     image: heapImg.url,
-    imageAlt: "Illustrated hermit crabs moving through linked shell compartments",
+    imageAlt: "Gastropod shells illustrated by Ernst Haeckel in 1904",
     blurb:
       "Implemented a full implicit + explicit free list allocator in C, including malloc, free, and realloc. Built debugging utilities (validate_heap, dump_heap) and stress-tested on real allocation traces.",
     tags: ["Systems Programming", "Memory Management", "C", "Performance Optimization"],
@@ -110,7 +110,7 @@ const projects: Project[] = [
     title: "What's in the noise? Musical Genre Classification using Neural Networks",
     year: "2024",
     image: musicImg.url,
-    imageAlt: "Illustrated sea creatures sending ribbons of sound toward a listening shell",
+    imageAlt: "Teleost fish illustrated by Ernst Haeckel in 1904",
     blurb:
       "Trained VGG-style CNNs, GRUs, and LSTMs on mel spectrograms from GTZAN, incorporating noise, pitch-shift, and time-stretch augmentations for robustness.",
     tags: ["Audio Classification", "Deep Learning", "CNNs", "Music Information Retrieval"],
@@ -120,7 +120,7 @@ const projects: Project[] = [
     title: "Protecting Against Propaganda: AI for Misinformation Detection & Critical Thinking",
     year: "2024",
     image: wsjImg.url,
-    imageAlt: "Illustrated octopus sorting paper fragments beneath investigative lanternfish",
+    imageAlt: "Arachnids illustrated by Ernst Haeckel in 1904",
     blurb:
       'Built a GPT-4–powered browser extension that detects persuasive fallacies in political news, provides real-time annotations, and generates "extremeness" scores. Ran a pilot RCT to evaluate behavioral impacts.',
     tags: ["Human-AI Interaction", "Politics & Psychology", "Media Literacy", "Language Models"],
@@ -131,7 +131,7 @@ const projects: Project[] = [
       "Seeing is Believing? A Sociotechnical Evaluation of Saliency Maps for Brain Tumor Segmentation",
     year: "2025",
     image: brainMriImg.url,
-    imageAlt: "Illustrated translucent brain creature examined through brass lenses",
+    imageAlt: "Peromedusae illustrated by Ernst Haeckel in 1904",
     blurb:
       "Benchmarking Grad-CAM, Integrated Gradients, and GradientSHAP across segmentation models, combining quantitative evaluation with clinician + researcher feedback to assess clinical usability.",
     tags: ["Explainable AI", "Medical Imaging", "Model Interpretability", "Human-AI Interaction"],
@@ -142,7 +142,7 @@ const projects: Project[] = [
       "Longitudinal Assessment of ACGME Milestone Progression: Evaluating Gender and Racial Differences Across Graduate Medical Education Specialties",
     year: "2024",
     image: acgmeImg.url,
-    imageAlt: "Illustrated seabirds climbing parallel coral staircases with medical satchels",
+    imageAlt: "Hummingbirds illustrated by Ernst Haeckel in 1904",
     blurb:
       "Co-authored research manuscript with Stanford School of Medicine and the University of Utah. Retrospective cohort study of 2,814 graduate medical trainees (2014–2020) analyzing gender and racial disparities in ACGME Milestone progression across 107 hospital-based, medical, and surgical programs using Wilcoxon rank-sum, Kruskal-Wallis, and linear mixed-effects models.",
     tags: [
@@ -158,7 +158,7 @@ const projects: Project[] = [
     title: "Governance of Frontier AI: Monitoring, Institutions, and Policy Transitions",
     year: "2025",
     image: governanceImg.url,
-    imageAlt: "Illustrated island institutions surrounding a sleeping mechanical whale",
+    imageAlt: "Amphoridea illustrated by Ernst Haeckel in 1904",
     blurb:
       "Examines how to govern frontier AI before catastrophic risks materialize, proposing risk-monitoring taxonomies, cross-lab oversight architectures, and pathways from voluntary commitments to binding regulation.",
     tags: ["AI Governance", "AI Safety", "Policy", "Institutional Design", "Existential Risk"],
@@ -354,6 +354,18 @@ function Portfolio() {
               </section>
             ))}
           </div>
+          <p className="mt-3 text-xs text-foreground/50">
+            Project imagery from Ernst Haeckel's{" "}
+            <a
+              href="https://commons.wikimedia.org/wiki/Kunstformen_der_Natur"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4"
+            >
+              Kunstformen der Natur
+            </a>{" "}
+            (1904), public domain.
+          </p>
         </section>
 
         <section className="mt-14 not-prose" aria-labelledby="publications-heading">
