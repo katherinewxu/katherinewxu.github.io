@@ -2,16 +2,16 @@ import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 
-const brainTumorImg = { url: "/projects/brain-tumor.png" };
-const cokeTrashImg = { url: "/projects/coke-trash.png" };
-const wsjImg = { url: "/projects/wsj-article.png" };
-const heapImg = { url: "/projects/heap.jpg" };
-const musicImg = { url: "/projects/music.jpg" };
-const acgmeImg = { url: "/projects/acgme.jpg" };
-const brainMriImg = { url: "/projects/brain-mri.jpg" };
-const governanceImg = { url: "/projects/governance-new.jpg" };
-const olfactoryImg = { url: "/projects/olfactory.jpg" };
-const rlooLeashImg = { url: "/projects/rloo-leash.jpg" };
+const brainTumorImg = { url: "/projects/paintings/brain-tumor.jpg" };
+const cokeTrashImg = { url: "/projects/paintings/logo-robustness.jpg" };
+const wsjImg = { url: "/projects/paintings/misinformation.jpg" };
+const heapImg = { url: "/projects/paintings/heap.jpg" };
+const musicImg = { url: "/projects/paintings/music.jpg" };
+const acgmeImg = { url: "/projects/paintings/medical-equity.jpg" };
+const brainMriImg = { url: "/projects/paintings/saliency.jpg" };
+const governanceImg = { url: "/projects/paintings/governance.jpg" };
+const olfactoryImg = { url: "/projects/paintings/olfactory.jpg" };
+const rlooLeashImg = { url: "/projects/paintings/reasoning.jpg" };
 
 export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
@@ -54,7 +54,7 @@ const projects: Project[] = [
     image: rlooLeashImg.url,
     imageAlt: "Abstract visualization of a branching reasoning tree with mathematical notation",
     blurb:
-      "CS224R final project investigating whether reinforcement learning with verifiable rewards (RLVR) can expand a small language model's reasoning frontier beyond its pretrained action space. Tests tool-integrated RLOO against the \"invisible leash\" hypothesis using Pass@K evaluations.",
+      'CS224R final project investigating whether reinforcement learning with verifiable rewards (RLVR) can expand a small language model\'s reasoning frontier beyond its pretrained action space. Tests tool-integrated RLOO against the "invisible leash" hypothesis using Pass@K evaluations.',
     tags: ["Reinforcement Learning", "Language Models", "RLVR", "Reasoning", "Tool Use"],
     category: "Computational Projects",
   },
@@ -77,7 +77,13 @@ const projects: Project[] = [
     imageAlt: "MRI brain scan used for tumor segmentation",
     blurb:
       "Developed deep learning models for automated brain tumor segmentation using the BraTS 2021 dataset, comparing CNNs, transformers, and promptable architectures for pixel-level tumor detection.",
-    tags: ["Medical AI", "Computer Vision", "Deep Learning", "Semantic Segmentation", "Healthcare Technology"],
+    tags: [
+      "Medical AI",
+      "Computer Vision",
+      "Deep Learning",
+      "Semantic Segmentation",
+      "Healthcare Technology",
+    ],
     category: "Computational Projects",
   },
   {
@@ -101,8 +107,7 @@ const projects: Project[] = [
     category: "Computational Projects",
   },
   {
-    title:
-      "What's in the noise? Musical Genre Classification using Neural Networks",
+    title: "What's in the noise? Musical Genre Classification using Neural Networks",
     year: "2024",
     image: musicImg.url,
     imageAlt: "Colorful mel spectrogram of an audio signal",
@@ -112,8 +117,7 @@ const projects: Project[] = [
     category: "Computational Projects",
   },
   {
-    title:
-      "Protecting Against Propaganda: AI for Misinformation Detection & Critical Thinking",
+    title: "Protecting Against Propaganda: AI for Misinformation Detection & Critical Thinking",
     year: "2024",
     image: wsjImg.url,
     imageAlt: "Wall Street Journal article annotated with fallacies",
@@ -141,7 +145,13 @@ const projects: Project[] = [
     imageAlt: "Line chart of milestone progression trajectories",
     blurb:
       "Co-authored research manuscript with Stanford School of Medicine and the University of Utah. Retrospective cohort study of 2,814 graduate medical trainees (2014–2020) analyzing gender and racial disparities in ACGME Milestone progression across 107 hospital-based, medical, and surgical programs using Wilcoxon rank-sum, Kruskal-Wallis, and linear mixed-effects models.",
-    tags: ["Medical Education", "Health Equity", "Biostatistics", "Bias in Assessment", "Longitudinal Analysis"],
+    tags: [
+      "Medical Education",
+      "Health Equity",
+      "Biostatistics",
+      "Bias in Assessment",
+      "Longitudinal Analysis",
+    ],
     category: "Computational Projects",
   },
   {
@@ -160,7 +170,9 @@ const projects: Project[] = [
 const filters: FilterKey[] = ["All", "Computational Projects", "AI Policy/Ethics"];
 
 const teaching: { text: string; link?: { label: string; href: string } }[] = [
-  { text: "Fall 2025/Spring 2026: CS106A Programming Methodologies — Python, Programming Concepts" },
+  {
+    text: "Fall 2025/Spring 2026: CS106A Programming Methodologies — Python, Programming Concepts",
+  },
   {
     text: "Spring 2025: CS106A through {LINK} — Python, Programming Concepts",
     link: { label: "Stanford Code in Place", href: "https://codeinplace.stanford.edu/" },
@@ -187,19 +199,19 @@ function Portfolio() {
     <main className="min-h-screen pb-16 md:pb-24">
       <SiteNav />
       <article className="prose-academic mx-auto w-full max-w-6xl px-6 text-foreground">
-        <h1>Portfolio</h1>
+        <p className="not-prose mt-12 text-xs font-semibold uppercase tracking-[0.28em] text-[oklch(0.45_0.09_150)]">
+          Selected work
+        </p>
+        <h1 className="!mt-3">Portfolio</h1>
 
         <p>
-          Inspired by my interdisciplinary coursework, I am drawn to research
-          leveraging AI for positive change in the world. I aim to better
-          understand technologies and how we interact with them to create AI
-          systems that can support people through healthcare, policy, and
+          Inspired by my interdisciplinary coursework, I am drawn to research leveraging AI for
+          positive change in the world. I aim to better understand technologies and how we interact
+          with them to create AI systems that can support people through healthcare, policy, and
           overall in meaningful, human-centered ways.
         </p>
 
-        <p>
-          Below is a collection of works that summarize my academic interests.
-        </p>
+        <p>Below is a collection of works that summarize my academic interests.</p>
 
         <section className="mt-10 not-prose">
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -238,15 +250,11 @@ function Portfolio() {
             })}
           </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {visibleProjects.map((project) => {
               const isPolicy = project.category === "AI Policy/Ethics";
-              const chipBg = isPolicy
-                ? "oklch(0.93 0.045 90)"
-                : "oklch(0.94 0.04 145)";
-              const chipFg = isPolicy
-                ? "oklch(0.38 0.09 70)"
-                : "oklch(0.32 0.08 150)";
+              const chipBg = isPolicy ? "oklch(0.93 0.045 90)" : "oklch(0.94 0.04 145)";
+              const chipFg = isPolicy ? "oklch(0.38 0.09 70)" : "oklch(0.32 0.08 150)";
 
               const TitleEl = project.href ? "a" : "div";
               const titleProps = project.href
@@ -259,51 +267,53 @@ function Portfolio() {
                 : {};
 
               return (
-                <article key={project.title} className="flex flex-col">
-                  <div className="overflow-hidden rounded-md bg-muted">
+                <article
+                  key={project.title}
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-white/55 shadow-[0_14px_42px_-34px_oklch(0.28_0.06_150_/_0.75)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_48px_-30px_oklch(0.28_0.06_150_/_0.72)]"
+                >
+                  <div className="overflow-hidden bg-muted">
                     <img
                       src={project.image}
                       alt={project.imageAlt}
                       loading="lazy"
-                      className="aspect-[4/3] w-full object-cover"
+                      className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]"
                     />
                   </div>
-                  <div className="mt-4 flex items-baseline justify-between gap-4">
-                    <h3 className="text-base font-semibold leading-snug tracking-tight text-foreground">
-                      <TitleEl {...(titleProps as Record<string, string>)}>{project.title}</TitleEl>
-
-                    </h3>
-                    <span className="shrink-0 text-sm text-muted-foreground">
-                      {project.year}
-                    </span>
+                  <div className="flex flex-1 flex-col p-5">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <h3 className="text-base font-semibold leading-snug tracking-tight text-foreground">
+                        <TitleEl {...(titleProps as Record<string, string>)}>
+                          {project.title}
+                        </TitleEl>
+                      </h3>
+                      <span className="shrink-0 text-sm text-muted-foreground">{project.year}</span>
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-foreground/80">
+                      {project.blurb}
+                    </p>
+                    <ul className="mt-4 flex flex-wrap gap-1.5 list-none pl-0">
+                      {project.tags.map((tag) => (
+                        <li
+                          key={tag}
+                          className="rounded-md px-2 py-0.5 text-xs font-medium"
+                          style={{ backgroundColor: chipBg, color: chipFg }}
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                    {project.blurb}
-                  </p>
-                  <ul className="mt-4 flex flex-wrap gap-1.5 list-none pl-0">
-                    {project.tags.map((tag) => (
-                      <li
-                        key={tag}
-                        className="rounded-md px-2 py-0.5 text-xs font-medium"
-                        style={{ backgroundColor: chipBg, color: chipFg }}
-                      >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
                 </article>
               );
             })}
           </div>
         </section>
 
-
         <h2 className="mt-12 text-xl font-semibold tracking-tight">Publications</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li>
-            Xu, K. (2025). AI-driven personalized fall prevention for older
-            adults. <em>Proceedings of the AAAI Conference on Artificial
-            Intelligence</em>, 39(28), 29610.{" "}
+            Xu, K. (2025). AI-driven personalized fall prevention for older adults.{" "}
+            <em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, 39(28), 29610.{" "}
             <a
               href="https://ojs.aaai.org/index.php/AAAI/article/view/35342"
               target="_blank"
@@ -316,11 +326,10 @@ function Portfolio() {
 
         <h2 className="mt-10 text-xl font-semibold tracking-tight">Teaching</h2>
         <p className="mt-3">
-          I'm passionate about education and believe that great teaching is one
-          of the most powerful tools we have for opening doors. Whether through
-          section, office hours, or course design, I love helping students build
-          confidence in computer science and discover that they belong in this
-          field.
+          I'm passionate about education and believe that great teaching is one of the most powerful
+          tools we have for opening doors. Whether through section, office hours, or course design,
+          I love helping students build confidence in computer science and discover that they belong
+          in this field.
         </p>
         <ul className="mt-3 list-disc space-y-1 pl-5">
           {teaching.map((t) => {
@@ -338,20 +347,14 @@ function Portfolio() {
           })}
           <li>
             Summer 2023: Mobile App Development through{" "}
-            <a
-              href="https://www.kodewithklossy.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.kodewithklossy.com/" target="_blank" rel="noopener noreferrer">
               Kode with Klossy
             </a>{" "}
             — Swift, App Development
           </li>
         </ul>
 
-        <h2 className="mt-10 text-xl font-semibold tracking-tight">
-          Volunteering
-        </h2>
+        <h2 className="mt-10 text-xl font-semibold tracking-tight">Volunteering</h2>
         <ul className="mt-3 list-disc space-y-1 pl-5">
           {volunteering.map((v) => (
             <li key={v}>{v}</li>
@@ -359,13 +362,8 @@ function Portfolio() {
         </ul>
 
         <footer className="mt-16 border-t border-border pt-6 text-sm text-muted-foreground">
-          © 2026 Katherine Wang Xu ·{" "}
-          <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
-          <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          © 2026 Katherine Wang Xu · <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>{" "}
           ·{" "}
