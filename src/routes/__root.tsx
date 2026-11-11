@@ -32,7 +32,7 @@ export const Route = createRootRoute({
       { title: "Katherine Xu" },
       {
         name: "description",
-        content: "Katherine Xu — Stanford student in Symbolic Systems and Computer Science.",
+        content: "Katherine Xu, Stanford student in Symbolic Systems and Computer Science.",
       },
       { name: "author", content: "Katherine Xu" },
       { property: "og:type", content: "website" },

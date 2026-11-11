@@ -5,12 +5,12 @@ export const Route = createFileRoute("/gallery")({
   component: Gallery,
   head: () => ({
     meta: [
-      { title: "Gallery — Katherine Xu" },
+      { title: "Gallery | Katherine Xu" },
       {
         name: "description",
         content: "A running collection of art that Katherine Xu loves.",
       },
-      { property: "og:title", content: "Gallery — Katherine Xu" },
+      { property: "og:title", content: "Gallery | Katherine Xu" },
       {
         property: "og:description",
         content: "A running collection of art that Katherine Xu loves.",

@@ -17,13 +17,13 @@ export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
   head: () => ({
     meta: [
-      { title: "Portfolio — Katherine Xu" },
+      { title: "Portfolio | Katherine Xu" },
       {
         name: "description",
         content:
           "Selected computational projects, AI policy work, teaching, and volunteering by Katherine Xu.",
       },
-      { property: "og:title", content: "Portfolio — Katherine Xu" },
+      { property: "og:title", content: "Portfolio | Katherine Xu" },
       {
         property: "og:description",
         content:
@@ -169,22 +169,60 @@ const projects: Project[] = [
 
 const filters: FilterKey[] = ["All", "Computational Projects", "AI Policy/Ethics"];
 
+const publications = [
+  {
+    year: "2026",
+    title:
+      "In vitro and in silico characterization of competitive inhibition and repression of DUX4 target gene activation as a therapeutic approach for facioscapulohumeral muscular dystrophy (FSHD)",
+    authors:
+      "Heloise M. Hoffmann, Alice Finkelstein, Amanuel Geremew, Katherine Xu, Vanessa Chiprez Meza, Ayushi Mohanty, Maria Fernanda Velásquez, Michael Liu, Alex Engel, Phillip Kyriakakis",
+    venue: "bioRxiv",
+    href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Sli3mxEAAAAJ&citation_for_view=Sli3mxEAAAAJ:u-x6o8ySG0sC",
+  },
+  {
+    year: "2026",
+    title: "Audit Before Design: Failure Modes of SAE-Guided Steering in Genomic Foundation Models",
+    authors: "Katherine Xu",
+    venue: "The Second Workshop on Language Models for Scientific Discovery",
+    href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Sli3mxEAAAAJ&citation_for_view=Sli3mxEAAAAJ:9yKSN-GCB0IC",
+  },
+  {
+    year: "2025",
+    title: "AI-driven personalized fall prevention for older adults",
+    authors: "Katherine Xu",
+    venue: "Proceedings of the AAAI Conference on Artificial Intelligence, 39(28)",
+    href: "https://ojs.aaai.org/index.php/AAAI/article/view/35342",
+  },
+  {
+    year: "2022",
+    title:
+      "Effects of Acculturation of Eating Disorder Prevalence Across Generations of Asian American Immigrants",
+    authors:
+      "Tejas Devata, Veda Devata, Bianca Chiu, Karen Lin, Gouri Garg, Edward Thomas, Jennifer Lee, Cynthia Tan, Julia Ongking, Katherine Xu, Shreyas Pannase, Dada Dadas",
+    venue: "Research Square preprint",
+    href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Sli3mxEAAAAJ&citation_for_view=Sli3mxEAAAAJ:d1gkVwhDpl0C",
+  },
+];
+
 const teaching: { text: string; link?: { label: string; href: string } }[] = [
   {
     text: "Fall 2025/Spring 2026: CS106A Programming Methodologies — Python, Programming Concepts",
   },
   {
-    text: "Spring 2025: CS106A through {LINK} — Python, Programming Concepts",
+    text: "Summer 2026: CS106B Programming Abstractions, C++ and Data Structures",
+  },
+  {
+    text: "Spring 2025: CS106A through {LINK}, Python and Programming Concepts",
     link: { label: "Stanford Code in Place", href: "https://codeinplace.stanford.edu/" },
   },
 ];
 
 const volunteering = [
-  "Stanford Women in Computer Science 2025 — Director of Outreach",
-  "ASES Launchpad 2025 — Organizer",
-  "Listen to the Silence 2024 — Workshops Co-Chair",
-  "Black LaiR — CS106A/106B Course Helper",
-  "Stanford Women in Computer Science 2024 — Outreach Intern",
+  "Stanford Women in Computer Science 2025, Director of Outreach",
+  "ASES Launchpad 2025, Organizer",
+  "Listen to the Silence 2024, Workshops Co-Chair",
+  "Black LaiR, CS106A/106B Course Helper",
+  "Stanford Women in Computer Science 2024, Outreach Intern",
 ];
 
 function Portfolio() {
@@ -292,20 +330,47 @@ function Portfolio() {
           </div>
         </section>
 
-        <h2 className="mt-12 text-xl font-semibold tracking-tight">Publications</h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li>
-            Xu, K. (2025). AI-driven personalized fall prevention for older adults.{" "}
-            <em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, 39(28), 29610.{" "}
+        <section className="mt-14 not-prose" aria-labelledby="publications-heading">
+          <div className="flex items-end justify-between border-b border-foreground/25 pb-3">
+            <h2 id="publications-heading" className="text-2xl font-normal text-foreground">
+              Publications
+            </h2>
             <a
-              href="https://ojs.aaai.org/index.php/AAAI/article/view/35342"
+              href="https://scholar.google.com/citations?hl=en&user=Sli3mxEAAAAJ&view_op=list_works"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-sm text-foreground/60 underline-offset-4 hover:underline"
             >
-              Link
+              Google Scholar
             </a>
-          </li>
-        </ul>
+          </div>
+          <div>
+            {publications.map((publication) => (
+              <article
+                key={publication.title}
+                className="grid gap-2 border-b border-foreground/25 py-5 sm:grid-cols-[1fr_4rem] sm:gap-8"
+              >
+                <div>
+                  <h3 className="text-lg font-normal leading-snug text-foreground">
+                    <a
+                      href={publication.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline-offset-4 hover:underline"
+                    >
+                      {publication.title}
+                    </a>
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-foreground/75">
+                    {publication.authors}
+                  </p>
+                  <p className="mt-1 text-sm italic text-foreground/60">{publication.venue}</p>
+                </div>
+                <p className="text-sm text-foreground/60 sm:text-right">{publication.year}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <h2 className="mt-10 text-xl font-semibold tracking-tight">Teaching</h2>
         <p className="mt-3">
@@ -333,7 +398,7 @@ function Portfolio() {
             <a href="https://www.kodewithklossy.com/" target="_blank" rel="noopener noreferrer">
               Kode with Klossy
             </a>{" "}
-            — Swift, App Development
+            , Swift and App Development
           </li>
         </ul>
 

@@ -6,13 +6,13 @@ export const Route = createFileRoute("/experience")({
   component: Experience,
   head: () => ({
     meta: [
-      { title: "Experience — Katherine Xu" },
+      { title: "Experience | Katherine Xu" },
       {
         name: "description",
         content:
           "Research, internships, and academic experience of Katherine Xu, Stanford Symbolic Systems and CS student.",
       },
-      { property: "og:title", content: "Experience — Katherine Xu" },
+      { property: "og:title", content: "Experience | Katherine Xu" },
       {
         property: "og:description",
         content: "Research, internships, and academic experience of Katherine Xu.",
@@ -73,7 +73,7 @@ const items: Item[] = [
     logoDomain: "apple.com",
     period: "Summer 2025",
     description:
-      "Automated a multi-stage 3D scanning pipeline in Python — covering alignment, contact extraction, and visualization — reducing processing time by an order of magnitude and eliminating manual steps. Standardized SOPs for both data processing and user studies, increasing data yield and ensuring reproducible anthropometric measurements. Developed preliminary contact-quality metrics that enabled early quantitative analysis and informed new feature development for next-generation health sensing technologies.",
+      "Automated a multi-stage 3D scanning pipeline in Python, covering alignment, contact extraction, and visualization, which reduced processing time by an order of magnitude and eliminated manual steps. Standardized SOPs for both data processing and user studies, increasing data yield and ensuring reproducible anthropometric measurements. Developed preliminary contact-quality metrics that enabled early quantitative analysis and informed new feature development for next-generation health sensing technologies.",
   },
   {
     role: "Research Assistant",

@@ -5,12 +5,12 @@ export const Route = createFileRoute("/personal")({
   component: Personal,
   head: () => ({
     meta: [
-      { title: "Personal — Katherine Xu" },
+      { title: "Personal | Katherine Xu" },
       {
         name: "description",
         content: "Personal interests, books, and creative pursuits of Katherine Xu.",
       },
-      { property: "og:title", content: "Personal — Katherine Xu" },
+      { property: "og:title", content: "Personal | Katherine Xu" },
       {
         property: "og:description",
         content: "Personal interests, books, and creative pursuits of Katherine Xu.",

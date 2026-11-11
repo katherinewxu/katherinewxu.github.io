@@ -5,12 +5,12 @@ export const Route = createFileRoute("/classes")({
   component: Classes,
   head: () => ({
     meta: [
-      { title: "Classes — Katherine Xu" },
+      { title: "Classes | Katherine Xu" },
       {
         name: "description",
         content: "List of classes Katherine Xu has taken at Stanford and Oxford.",
       },
-      { property: "og:title", content: "Classes — Katherine Xu" },
+      { property: "og:title", content: "Classes | Katherine Xu" },
       {
         property: "og:description",
         content: "List of classes Katherine Xu has taken at Stanford and Oxford.",
@@ -102,7 +102,7 @@ const stanford: { code: string; title: string }[] = [
 
 const oxford: { code: string; title: string }[] = [
   { code: "OSPOXFRD 57", title: "The Rise of the Woman Writer 1660-1860" },
-  { code: "OSPOXFRD 195A", title: "Oxford Tutorial — Modern Literature and Literary Criticism" },
+  { code: "OSPOXFRD 195A", title: "Oxford Tutorial: Modern Literature and Literary Criticism" },
 ];
 
 function Classes() {

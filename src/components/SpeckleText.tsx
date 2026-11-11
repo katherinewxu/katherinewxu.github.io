@@ -51,9 +51,7 @@ export function SpeckleText({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let dots: Dot[] = [];
     let dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -70,10 +68,7 @@ export function SpeckleText({
       ctx.font = font.replace("1em", `${probeSize}px`);
       const probeWidth = ctx.measureText(text).width;
       const targetWidth = containerW * 0.82;
-      const fontSize = Math.min(
-        Math.max((probeSize * targetWidth) / probeWidth, 60),
-        360,
-      );
+      const fontSize = Math.min(Math.max((probeSize * targetWidth) / probeWidth, 60), 360);
 
       ctx.font = font.replace("1em", `${fontSize}px`);
       const m = ctx.measureText(text);
@@ -160,7 +155,7 @@ export function SpeckleText({
       last = now;
       ctx.clearRect(0, 0, cssW, cssH);
 
-      // Small radius, low strength — nearby dots just jiggle in place.
+      // Small radius and low strength; nearby dots just jiggle in place.
       const pr = 55;
       const pr2 = pr * pr;
       const spring = 9; // snappy return so dots stay near home (no reshaping)

@@ -29,15 +29,17 @@ export const Route = createFileRoute("/bookshelf")({
   component: Bookshelf,
   head: () => ({
     meta: [
-      { title: "Bookshelf — Katherine Xu" },
+      { title: "Bookshelf | Katherine Xu" },
       {
         name: "description",
-        content: "A running list of books Katherine Xu has loved — fiction, memoir, and more.",
+        content:
+          "A running list of books Katherine Xu has loved, including fiction, memoir, and more.",
       },
-      { property: "og:title", content: "Bookshelf — Katherine Xu" },
+      { property: "og:title", content: "Bookshelf | Katherine Xu" },
       {
         property: "og:description",
-        content: "A running list of books Katherine Xu has loved — fiction, memoir, and more.",
+        content:
+          "A running list of books Katherine Xu has loved, including fiction, memoir, and more.",
       },
     ],
   }),

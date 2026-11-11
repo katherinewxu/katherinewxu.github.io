@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Katherine Xu — Stanford student in Symbolic Systems and Computer Science, researching AI for human benefit.",
+          "Katherine Xu, Stanford student in Symbolic Systems and Computer Science, researching AI for human benefit.",
       },
       { property: "og:title", content: "Katherine Xu" },
       {
