@@ -121,6 +121,12 @@ const artworks: Artwork[] = [
     image: "/art/treasurebox.jpg",
   },
   { artist: "Edward Hopper", title: "Gas", year: "1940", image: "/art/gas.jpg" },
+  {
+    artist: "Paul Delaroche",
+    title: "The Execution of Lady Jane Grey",
+    year: "1833",
+    image: "/art/ladyjanegrey.jpg",
+  },
 ];
 
 function ArtworkCard({ artwork }: { artwork: Artwork }) {
