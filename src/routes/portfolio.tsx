@@ -52,7 +52,7 @@ const projects: Project[] = [
     title: "Tool-Integrated RLOO and Pass@K: Testing the Invisible Leash",
     year: "2025",
     image: rlooLeashImg.url,
-    imageAlt: "Archival ink study of a branching reasoning tree",
+    imageAlt: "Illustrated clockwork bird navigating branching paths through a coral garden",
     blurb:
       'CS224R final project investigating whether reinforcement learning with verifiable rewards (RLVR) can expand a small language model\'s reasoning frontier beyond its pretrained action space. Tests tool-integrated RLOO against the "invisible leash" hypothesis using Pass@K evaluations.',
     tags: ["Reinforcement Learning", "Language Models", "RLVR", "Reasoning", "Tool Use"],
@@ -63,7 +63,7 @@ const projects: Project[] = [
       "Olfactory Biomarkers as Early Indicators of Neurodegenerative Disease: A Survey of AI-Driven Sensing and Diagnostic Technologies",
     year: "2025",
     image: olfactoryImg.url,
-    imageAlt: "Vintage natural-history study of flowers and olfactory sensing",
+    imageAlt: "Illustrated flowers, scent plumes, neural tendrils, and an anatomical nose",
     blurb:
       "Survey paper examining sensor-based and AI-enabled approaches to olfactory assessment, including electronic-nose chemical sensing, VOC analysis, wearable nasal airflow monitoring, and olfactory-evoked EEG responses, framing olfaction as both a diagnostic biomarker and an intervention target for early detection of neurodegenerative decline.",
     tags: ["Medical AI", "Neurodegeneration", "Sensor Technology", "Early Detection", "Biomarkers"],
@@ -74,7 +74,7 @@ const projects: Project[] = [
       "Exploring Deep Segmentation Models for Brain Tumors: CNNs, Transformers, and Promptable Architectures",
     year: "2025",
     image: brainTumorImg.url,
-    imageAlt: "Vivid marbled forms shaped like overlapping brain scans",
+    imageAlt: "Illustrated brain cross-section with coral-like segmented regions",
     blurb:
       "Developed deep learning models for automated brain tumor segmentation using the BraTS 2021 dataset, comparing CNNs, transformers, and promptable architectures for pixel-level tumor detection.",
     tags: [
@@ -90,7 +90,7 @@ const projects: Project[] = [
     title: "Robust Brand Logo Detection Under Adversarial Conditions",
     year: "2025",
     image: cokeTrashImg.url,
-    imageAlt: "Screenprint collage of fragmented bottles and botanical forms",
+    imageAlt: "Illustrated red bottle specimen obscured by leaves, mist, and water",
     blurb:
       "Built a custom CNN with adversarial training to detect Coca-Cola logos under blur, noise, and occlusion. Achieved +13% accuracy over YOLOv8 with extensive data augmentation.",
     tags: ["Computer Vision", "Adversarial Robustness", "Object Detection", "Data Augmentation"],
@@ -100,7 +100,7 @@ const projects: Project[] = [
     title: "Heap Allocator",
     year: "2025",
     image: heapImg.url,
-    imageAlt: "Archival technical drawing of linked memory blocks",
+    imageAlt: "Illustrated hermit crabs moving through linked shell compartments",
     blurb:
       "Implemented a full implicit + explicit free list allocator in C, including malloc, free, and realloc. Built debugging utilities (validate_heap, dump_heap) and stress-tested on real allocation traces.",
     tags: ["Systems Programming", "Memory Management", "C", "Performance Optimization"],
@@ -110,7 +110,7 @@ const projects: Project[] = [
     title: "What's in the noise? Musical Genre Classification using Neural Networks",
     year: "2024",
     image: musicImg.url,
-    imageAlt: "Vivid marbled sound wave and spectral forms",
+    imageAlt: "Illustrated sea creatures sending ribbons of sound toward a listening shell",
     blurb:
       "Trained VGG-style CNNs, GRUs, and LSTMs on mel spectrograms from GTZAN, incorporating noise, pitch-shift, and time-stretch augmentations for robustness.",
     tags: ["Audio Classification", "Deep Learning", "CNNs", "Music Information Retrieval"],
@@ -120,7 +120,7 @@ const projects: Project[] = [
     title: "Protecting Against Propaganda: AI for Misinformation Detection & Critical Thinking",
     year: "2024",
     image: wsjImg.url,
-    imageAlt: "Archival collage of speech, newsprint, and analytical marks",
+    imageAlt: "Illustrated octopus sorting paper fragments beneath investigative lanternfish",
     blurb:
       'Built a GPT-4–powered browser extension that detects persuasive fallacies in political news, provides real-time annotations, and generates "extremeness" scores. Ran a pilot RCT to evaluate behavioral impacts.',
     tags: ["Human-AI Interaction", "Politics & Psychology", "Media Literacy", "Language Models"],
@@ -131,7 +131,7 @@ const projects: Project[] = [
       "Seeing is Believing? A Sociotechnical Evaluation of Saliency Maps for Brain Tumor Segmentation",
     year: "2025",
     image: brainMriImg.url,
-    imageAlt: "Fluorescent marbled heat map over a brain slice",
+    imageAlt: "Illustrated translucent brain creature examined through brass lenses",
     blurb:
       "Benchmarking Grad-CAM, Integrated Gradients, and GradientSHAP across segmentation models, combining quantitative evaluation with clinician + researcher feedback to assess clinical usability.",
     tags: ["Explainable AI", "Medical Imaging", "Model Interpretability", "Human-AI Interaction"],
@@ -142,7 +142,7 @@ const projects: Project[] = [
       "Longitudinal Assessment of ACGME Milestone Progression: Evaluating Gender and Racial Differences Across Graduate Medical Education Specialties",
     year: "2024",
     image: acgmeImg.url,
-    imageAlt: "Vintage research chart with ascending milestone trajectories",
+    imageAlt: "Illustrated seabirds climbing parallel coral staircases with medical satchels",
     blurb:
       "Co-authored research manuscript with Stanford School of Medicine and the University of Utah. Retrospective cohort study of 2,814 graduate medical trainees (2014–2020) analyzing gender and racial disparities in ACGME Milestone progression across 107 hospital-based, medical, and surgical programs using Wilcoxon rank-sum, Kruskal-Wallis, and linear mixed-effects models.",
     tags: [
@@ -158,7 +158,7 @@ const projects: Project[] = [
     title: "Governance of Frontier AI: Monitoring, Institutions, and Policy Transitions",
     year: "2025",
     image: governanceImg.url,
-    imageAlt: "Archival systems map of civic and scientific institutions",
+    imageAlt: "Illustrated island institutions surrounding a sleeping mechanical whale",
     blurb:
       "Examines how to govern frontier AI before catastrophic risks materialize, proposing risk-monitoring taxonomies, cross-lab oversight architectures, and pathways from voluntary commitments to binding regulation.",
     tags: ["AI Governance", "AI Safety", "Policy", "Institutional Design", "Existential Risk"],
