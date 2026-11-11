@@ -127,6 +127,12 @@ const artworks: Artwork[] = [
     year: "1833",
     image: "/art/ladyjanegrey.jpg",
   },
+  {
+    artist: "Kim Whanki",
+    title: "05-IV-71 #200 (Universe)",
+    year: "1971",
+    image: "/art/universe-kim-whanki.jpg",
+  },
 ];
 
 function ArtworkCard({ artwork }: { artwork: Artwork }) {
@@ -158,11 +164,8 @@ function Gallery() {
       <SiteNav />
 
       <header className="mx-auto max-w-6xl px-6 pb-12 pt-14 sm:pb-16 sm:pt-20">
-        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[oklch(0.45_0.09_150)]">
-          A personal collection
-        </p>
-        <div className="mt-4 grid gap-7 border-b border-border pb-10 md:grid-cols-[1fr_1.25fr] md:items-end">
-          <h1 className="font-serif text-5xl font-normal tracking-tight text-foreground sm:text-6xl">
+        <div className="grid gap-7 border-b border-border pb-10 md:grid-cols-[1fr_1.25fr] md:items-end">
+          <h1 className="text-5xl font-medium tracking-tight text-foreground sm:text-6xl">
             Gallery
           </h1>
           <div className="max-w-2xl text-base leading-relaxed text-muted-foreground">

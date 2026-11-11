@@ -15,8 +15,7 @@ export const Route = createFileRoute("/experience")({
       { property: "og:title", content: "Experience — Katherine Xu" },
       {
         property: "og:description",
-        content:
-          "Research, internships, and academic experience of Katherine Xu.",
+        content: "Research, internships, and academic experience of Katherine Xu.",
       },
     ],
   }),
@@ -47,6 +46,26 @@ const ExtLink = ({ href, children }: { href: string; children: ReactNode }) => (
 
 const items: Item[] = [
   {
+    role: "Student Researcher",
+    team: "AI Scientist Agents",
+    org: "Stanford AI for Science Lab",
+    orgUrl: "https://www.james-zou.com/",
+    logoDomain: "stanford.edu",
+    period: "June 2026 – Present",
+    description:
+      "Build evaluation infrastructure and verifiers for autonomous AI-scientist agents. Developed a reproducible harness for Claude Code and Codex across biomedical machine-learning tasks, including hidden graders, leakage checks, and replayable workspace histories. Built a ground-truth benchmark spanning 2,400+ audits that showed verifiers catch substantially more errors when they can inspect code and outputs rather than reports alone, and ran controlled studies of memory-driven error propagation and recovery in multi-agent research systems.",
+  },
+  {
+    role: "Member of Technical Staff Intern",
+    team: "Applied AI Research",
+    org: "Inflection AI",
+    orgUrl: "https://inflection.ai/",
+    logoDomain: "inflection.ai",
+    period: "June – September 2026",
+    description:
+      "Worked on reinforcement learning with verifiable rewards for language models that reason with tools. Extended multi-GPU RLOO and GRPO post-training pipelines, ran controlled studies of sampling temperature, rollout length, batch scheduling, and pass@k, and analyzed the effect of rollout truncation on gradient estimates. Built diagnostics and evaluations that surfaced reward hacking, policy collapse, and long-context or multi-turn degradation before final checkpoints.",
+  },
+  {
     role: "Software Engineer Intern",
     team: "Health Sensing",
     org: "Apple",
@@ -62,23 +81,16 @@ const items: Item[] = [
     org: "Stanford Artificial Intelligence Laboratory",
     orgUrl: "https://ai.stanford.edu/",
     logoDomain: "stanford.edu",
-    period: "2024 – Present",
+    period: "2024 – May 2026",
     description: (
       <>
-        Collaborating with the{" "}
-        <ExtLink href="https://pac.stanford.edu/">
-          Partnership in AI-Assisted Care (PAC)
-        </ExtLink>{" "}
+        Collaborated with the{" "}
+        <ExtLink href="https://pac.stanford.edu/">Partnership in AI-Assisted Care (PAC)</ExtLink>{" "}
         group under Dr. Narayan Schutz,{" "}
-        <ExtLink href="https://profiles.stanford.edu/fei-fei-li">
-          Prof. Fei-Fei Li
-        </ExtLink>
-        , and{" "}
-        <ExtLink href="https://profiles.stanford.edu/ehsan-adeli">
-          Prof. Ehsan Adeli
-        </ExtLink>{" "}
-        to develop multi-view pose estimation and deep learning models for
-        activity recognition and clinical applications in older adults.
+        <ExtLink href="https://profiles.stanford.edu/fei-fei-li">Prof. Fei-Fei Li</ExtLink>, and{" "}
+        <ExtLink href="https://profiles.stanford.edu/ehsan-adeli">Prof. Ehsan Adeli</ExtLink> to
+        develop multi-view pose estimation and deep learning models for activity recognition and
+        clinical applications in older adults.
       </>
     ),
   },
@@ -102,14 +114,12 @@ const items: Item[] = [
     period: "2024 – 2025",
     description: (
       <>
-        Conducted private sector outreach, organized a summit, performed
-        employment data analysis, helped design chatbot interventions, and
-        co-authored a report for the Hoover Institution's{" "}
+        Conducted private sector outreach, organized a summit, performed employment data analysis,
+        helped design chatbot interventions, and co-authored a report for the Hoover Institution's{" "}
         <ExtLink href="https://www.hoover.org/research-teams/future-work-women-initiative">
           Future of Work for Women Initiative
         </ExtLink>{" "}
-        to identify scalable solutions for increasing female labor force
-        participation in India with{" "}
+        to identify scalable solutions for increasing female labor force participation in India with{" "}
         <ExtLink href="https://www.myna.org/about">Dr. Suhani Jalota</ExtLink>.
       </>
     ),
@@ -123,20 +133,12 @@ const items: Item[] = [
     period: "Summer 2024",
     description: (
       <>
-        Built a predictive gene expression model and disease progression
-        simulator for{" "}
-        <ExtLink href="https://www.fshsociety.org/about-fshd/what-is-fshd/">
-          FSHD
-        </ExtLink>{" "}
-        using Poisson-Beta regression, physics-inspired neural networks, and
-        ODE/Markov chain comparisons in collaboration with{" "}
-        <ExtLink href="https://med.stanford.edu/">Stanford Medicine</ExtLink>.
-        Won nominations for Best Therapeutic, Best Education, and Best Human
-        Outreach in the{" "}
-        <ExtLink href="https://2024.igem.wiki/stanford/">
-          Paris iGEM 2024 Grand Jamboree
-        </ExtLink>
-        .
+        Built a predictive gene expression model and disease progression simulator for{" "}
+        <ExtLink href="https://www.fshsociety.org/about-fshd/what-is-fshd/">FSHD</ExtLink> using
+        Poisson-Beta regression, physics-inspired neural networks, and ODE/Markov chain comparisons
+        in collaboration with <ExtLink href="https://med.stanford.edu/">Stanford Medicine</ExtLink>.
+        Won nominations for Best Therapeutic, Best Education, and Best Human Outreach in the{" "}
+        <ExtLink href="https://2024.igem.wiki/stanford/">Paris iGEM 2024 Grand Jamboree</ExtLink>.
       </>
     ),
   },
@@ -159,13 +161,9 @@ const items: Item[] = [
     period: "2023",
     description: (
       <>
-        Contributed to political science research by analyzing tweets from
-        political figures and groups in the United States and coding them by
-        sentiment for analysis with{" "}
-        <ExtLink href="https://polisci.osu.edu/people/ritchie.155">
-          Dr. Melinda Ritchie
-        </ExtLink>
-        .
+        Contributed to political science research by analyzing tweets from political figures and
+        groups in the United States and coding them by sentiment for analysis with{" "}
+        <ExtLink href="https://polisci.osu.edu/people/ritchie.155">Dr. Melinda Ritchie</ExtLink>.
       </>
     ),
   },
@@ -190,12 +188,8 @@ function Experience() {
                     className="inline-block h-4 w-4 rounded-sm"
                   />
                 )}
-                {it.orgUrl ? (
-                  <ExtLink href={it.orgUrl}>{it.org}</ExtLink>
-                ) : (
-                  it.org
-                )}
-                , <span>{it.team}</span>
+                {it.orgUrl ? <ExtLink href={it.orgUrl}>{it.org}</ExtLink> : it.org},{" "}
+                <span>{it.team}</span>
               </p>
               <p className="mt-1 text-sm text-muted-foreground italic">
                 {it.role}, {it.period}
@@ -206,8 +200,7 @@ function Experience() {
         </ul>
 
         <footer className="mt-16 border-t border-border pt-6 text-sm text-muted-foreground">
-          © 2026 Katherine Wang Xu ·{" "}
-          <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
+          © 2026 Katherine Wang Xu · <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
           <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>{" "}

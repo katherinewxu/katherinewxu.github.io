@@ -199,10 +199,7 @@ function Portfolio() {
     <main className="min-h-screen pb-16 md:pb-24">
       <SiteNav />
       <article className="prose-academic mx-auto w-full max-w-6xl px-6 text-foreground">
-        <p className="not-prose mt-12 text-xs font-semibold uppercase tracking-[0.28em] text-[oklch(0.45_0.09_150)]">
-          Selected work
-        </p>
-        <h1 className="!mt-3">Portfolio</h1>
+        <h1>Portfolio</h1>
 
         <p>
           Inspired by my interdisciplinary coursework, I am drawn to research leveraging AI for

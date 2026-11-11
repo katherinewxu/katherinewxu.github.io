@@ -104,9 +104,6 @@ function Bookshelf() {
       <SiteNav />
 
       <header className="mx-auto max-w-5xl px-6 pt-14 text-center sm:pt-20">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[oklch(0.45_0.09_150)]">
-          Notes from the nightstand
-        </p>
         <h1 className="text-4xl font-normal tracking-tight sm:text-5xl">
           <span className="italic text-[oklch(0.45_0.09_150)]">Katherine's</span> Bookshelf
         </h1>
@@ -118,16 +115,16 @@ function Bookshelf() {
       <section className="mx-auto mt-12 max-w-4xl px-6">
         <div className="relative overflow-hidden border-y border-[oklch(0.78_0.04_145)] bg-[oklch(0.965_0.018_90)] px-7 py-8 sm:px-10">
           <div className="absolute -right-8 -top-10 h-36 w-36 rounded-full bg-[oklch(0.89_0.06_145_/_0.55)] blur-2xl" />
-          <p className="relative text-xs font-semibold uppercase tracking-[0.24em] text-[oklch(0.42_0.09_150)]">
+          <h2 className="relative text-lg font-medium text-[oklch(0.42_0.09_150)]">
             Currently reading
-          </p>
+          </h2>
           <div className="relative mt-5 grid gap-5 sm:grid-cols-2 sm:gap-8">
             <div>
-              <h2 className="font-serif text-2xl italic text-foreground">Wild Swans</h2>
+              <h2 className="text-2xl italic text-foreground">Wild Swans</h2>
               <p className="mt-1 text-sm text-muted-foreground">Jung Chang</p>
             </div>
             <div className="border-t border-[oklch(0.78_0.04_145)] pt-5 sm:border-l sm:border-t-0 sm:pl-8 sm:pt-0">
-              <h2 className="font-serif text-2xl italic leading-snug text-foreground">
+              <h2 className="text-2xl italic leading-snug text-foreground">
                 The Restaurant at the End of the Universe
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">Douglas Adams</p>
@@ -139,10 +136,7 @@ function Bookshelf() {
       <section className="mx-auto mt-14 max-w-6xl px-6">
         <div className="mb-5 flex items-end justify-between border-b border-border pb-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[oklch(0.45_0.09_150)]">
-              The shelf
-            </p>
-            <h2 className="mt-2 font-serif text-2xl text-foreground">Books that stayed with me</h2>
+            <h2 className="text-2xl text-foreground">Books that stayed with me</h2>
           </div>
           <p className="hidden text-sm text-muted-foreground sm:block">{books.length} favorites</p>
         </div>
