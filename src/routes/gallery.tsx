@@ -134,7 +134,7 @@ function ArtworkCard({ artwork }: { artwork: Artwork }) {
           className="h-auto w-full transition duration-500 group-hover:scale-[1.015]"
         />
       </div>
-      <figcaption className="mt-4 border-l border-[oklch(0.7_0.06_150)] pl-4">
+      <figcaption className="mt-4">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[oklch(0.4_0.08_150)]">
           {artwork.artist}
         </p>
