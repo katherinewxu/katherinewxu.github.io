@@ -125,20 +125,20 @@ const artworks: Artwork[] = [
 
 function ArtworkCard({ artwork }: { artwork: Artwork }) {
   return (
-    <figure className="group mb-10 break-inside-avoid">
-      <div className="overflow-hidden bg-[oklch(0.93_0.015_85)] shadow-[0_14px_40px_-24px_oklch(0.25_0.04_150_/_0.6)]">
+    <figure className="group mb-11 break-inside-avoid-column">
+      <div className="overflow-hidden bg-[oklch(0.93_0.015_85)] shadow-[0_12px_32px_-24px_oklch(0.25_0.04_150_/_0.55)]">
         <img
           src={artwork.image}
           alt={`${artwork.title} by ${artwork.artist}`}
           loading="lazy"
-          className="h-auto w-full transition duration-500 group-hover:scale-[1.015]"
+          className="block h-auto w-full transition duration-500 group-hover:scale-[1.012]"
         />
       </div>
-      <figcaption className="mt-4">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[oklch(0.4_0.08_150)]">
+      <figcaption className="mt-3.5">
+        <p className="font-ui text-[0.68rem] font-medium uppercase tracking-[0.14em] text-[oklch(0.4_0.08_150)]">
           {artwork.artist}
         </p>
-        <p className="mt-1 font-serif text-base leading-snug text-foreground">
+        <p className="mt-1 text-[1.02rem] leading-snug text-foreground">
           <em>{artwork.title}</em>, {artwork.year}
         </p>
       </figcaption>

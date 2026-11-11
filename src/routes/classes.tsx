@@ -8,14 +8,12 @@ export const Route = createFileRoute("/classes")({
       { title: "Classes — Katherine Xu" },
       {
         name: "description",
-        content:
-          "List of classes Katherine Xu has taken at Stanford and Oxford.",
+        content: "List of classes Katherine Xu has taken at Stanford and Oxford.",
       },
       { property: "og:title", content: "Classes — Katherine Xu" },
       {
         property: "og:description",
-        content:
-          "List of classes Katherine Xu has taken at Stanford and Oxford.",
+        content: "List of classes Katherine Xu has taken at Stanford and Oxford.",
       },
     ],
   }),
@@ -31,11 +29,13 @@ const stanford: { code: string; title: string }[] = [
   { code: "LINGUIST 145", title: "Introduction to Psycholinguistics" },
   {
     code: "OTOHNS 206",
-    title:
-      "Augmenting Human Senses: Enhancing Perception with Technology and Bioscience",
+    title: "Augmenting Human Senses: Enhancing Perception with Technology and Bioscience",
   },
   // 2025–2026 Winter (Oxford)
-  { code: "CS 205L", title: "Continuous Mathematical Methods with an Emphasis on Machine Learning" },
+  {
+    code: "CS 205L",
+    title: "Continuous Mathematical Methods with an Emphasis on Machine Learning",
+  },
   // 2024–2025 Spring
   { code: "CS 281", title: "Ethics of Artificial Intelligence" },
   { code: "CS 231N", title: "Deep Learning for Computer Vision" },
@@ -61,8 +61,7 @@ const stanford: { code: string; title: string }[] = [
   // 2023–2024 Summer
   {
     code: "OCEANS 10SC",
-    title:
-      "Discover Monterey Bay through Oceanography, Ecology, and Literature",
+    title: "Discover Monterey Bay through Oceanography, Ecology, and Literature",
   },
   // 2023–2024 Spring
   { code: "BIO 150", title: "Human Behavioral Biology" },
@@ -77,8 +76,7 @@ const stanford: { code: string; title: string }[] = [
   { code: "CS 103", title: "Mathematical Foundations of Computing" },
   {
     code: "PWR 1AH",
-    title:
-      "Writing & Rhetoric 1: The Rhetoric of American Multicultural Experience",
+    title: "Writing & Rhetoric 1: The Rhetoric of American Multicultural Experience",
   },
   // 2023–2024 Winter
   { code: "CS 129", title: "Applied Machine Learning" },
@@ -98,8 +96,7 @@ const stanford: { code: string; title: string }[] = [
   { code: "COLLEGE 101", title: "Why College? Your Education and the Good Life" },
   {
     code: "EDUC 64",
-    title:
-      "Shaping America's Future: Exploring the Key Issues on Our Path to the 2024 Elections",
+    title: "Shaping America's Future: Exploring the Key Issues on Our Path to the 2024 Elections",
   },
 ];
 
@@ -110,45 +107,38 @@ const oxford: { code: string; title: string }[] = [
 
 function Classes() {
   return (
-    <main className="min-h-screen pt-8 pb-16 md:pb-24">
+    <main className="min-h-screen pb-16 md:pb-24">
       <SiteNav />
       <article className="prose-academic mx-auto w-full max-w-3xl px-6 text-foreground">
         <h1>Classes</h1>
 
         <h2 className="mt-2 text-xl font-semibold tracking-tight">At Stanford</h2>
         <hr className="my-3 border-border" />
-        <p className="italic text-muted-foreground">
-          Chronological order (newest first)
-        </p>
-        <ul className="list-disc pl-6 space-y-1">
+        <p className="italic text-muted-foreground">Chronological order (newest first)</p>
+        <ul className="space-y-1.5 pl-0">
           {stanford.map((c, i) => (
-            <li key={`s-${i}`}>
-              <span className="font-semibold">{c.code}</span> {c.title}
+            <li key={`s-${i}`} className="grid gap-x-5 sm:grid-cols-[7.5rem_1fr]">
+              <span className="font-medium text-[oklch(0.36_0.08_150)]">{c.code}</span>
+              <span>{c.title}</span>
             </li>
           ))}
         </ul>
 
-        <h2 className="mt-10 text-xl font-semibold tracking-tight">
-          At Oxford
-        </h2>
+        <h2 className="mt-10 text-xl font-semibold tracking-tight">At Oxford</h2>
         <hr className="my-3 border-border" />
         <p className="italic text-muted-foreground">Winter 2026</p>
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="space-y-1.5 pl-0">
           {oxford.map((c, i) => (
-            <li key={`o-${i}`}>
-              <span className="font-semibold">{c.code}</span> {c.title}
+            <li key={`o-${i}`} className="grid gap-x-5 sm:grid-cols-[7.5rem_1fr]">
+              <span className="font-medium text-[oklch(0.36_0.08_150)]">{c.code}</span>
+              <span>{c.title}</span>
             </li>
           ))}
         </ul>
 
         <footer className="mt-16 border-t border-border pt-6 text-sm text-muted-foreground">
-          © 2026 Katherine Wang Xu ·{" "}
-          <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
-          <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          © 2026 Katherine Wang Xu · <a href="mailto:kwx04@stanford.edu">kwx04@stanford.edu</a> ·{" "}
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>{" "}
           ·{" "}

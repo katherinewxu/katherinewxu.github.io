@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -64,11 +64,11 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.987 0.006 88);
   --foreground: oklch(0.2 0 0);
   --link: oklch(0.45 0.09 150);
   --link-hover: oklch(0.36 0.08 150);
-  --card: oklch(1 0 0);
+  --card: oklch(0.995 0.003 88);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
@@ -141,19 +141,34 @@
   }
 
   html {
-    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "URW Palladio L", Garamond, Georgia, serif;
+    scroll-behavior: smooth;
+    font-family: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
     font-size: 18px;
+    text-rendering: optimizeLegibility;
   }
 
   body {
+    min-height: 100vh;
     background-color: var(--color-background);
     color: var(--color-foreground);
-    line-height: 1.6;
+    line-height: 1.65;
+    font-kerning: normal;
+  }
+
+  ::selection {
+    background: oklch(0.88 0.04 145);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--forest);
+    outline-offset: 4px;
   }
 
   .prose-academic a {
     color: var(--link);
     text-decoration: none;
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 0.06em;
   }
 
   .prose-academic a:hover {
@@ -162,24 +177,36 @@
   }
 
   .prose-academic p {
-    margin-bottom: 1.1rem;
+    margin-bottom: 1.2rem;
   }
 
   .prose-academic h1 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.01em;
+    font-size: clamp(2.25rem, 6vw, 3.4rem);
+    font-weight: 500;
+    line-height: 1.04;
+    margin: 3.5rem 0 2rem;
+    letter-spacing: -0.035em;
     color: oklch(0.36 0.08 150);
   }
 
   .prose-academic h2 {
     color: oklch(0.36 0.08 150);
+    font-weight: 500;
+    line-height: 1.2;
   }
 
   .font-bookshelf {
-    font-family: "EB Garamond", "Iowan Old Style", Garamond, Georgia, serif;
+    font-family: "Newsreader", "Iowan Old Style", Georgia, serif;
     font-feature-settings: "liga", "dlig", "onum";
+  }
+
+  .font-ui {
+    font-family:
+      ui-sans-serif,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
   }
 }
 

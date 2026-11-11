@@ -81,7 +81,7 @@ const books: Book[] = [
 
 function BookCard({ book }: { book: Book }) {
   return (
-    <article className="group flex flex-col items-center rounded-2xl border border-transparent px-4 py-7 text-center transition duration-300 hover:-translate-y-1 hover:border-border/70 hover:bg-white/50 hover:shadow-[0_18px_45px_-30px_oklch(0.28_0.06_150_/_0.5)]">
+    <article className="group flex h-full flex-col items-center px-3 py-6 text-center sm:px-4">
       <div className="mb-5 flex aspect-[2/3] w-full max-w-[176px] items-center justify-center overflow-hidden rounded-sm bg-muted/30 shadow-[0_10px_28px_-14px_oklch(0.28_0.06_150_/_0.65)] transition duration-300 group-hover:shadow-[0_18px_34px_-16px_oklch(0.28_0.06_150_/_0.72)]">
         <img
           src={book.cover}
@@ -90,7 +90,7 @@ function BookCard({ book }: { book: Book }) {
           loading="lazy"
         />
       </div>
-      <h3 className="text-base font-semibold leading-snug text-[oklch(0.36_0.08_150)]">
+      <h3 className="text-base font-medium leading-snug text-[oklch(0.36_0.08_150)] sm:min-h-[2.6rem]">
         {book.title}
       </h3>
       <p className="mt-1 text-sm italic text-foreground/75">{book.author}</p>
@@ -100,10 +100,10 @@ function BookCard({ book }: { book: Book }) {
 
 function Bookshelf() {
   return (
-    <main className="font-bookshelf min-h-screen pt-8 pb-16 md:pb-24">
+    <main className="font-bookshelf min-h-screen pb-16 md:pb-24">
       <SiteNav />
 
-      <header className="mx-auto mt-10 max-w-5xl px-6 text-center">
+      <header className="mx-auto max-w-5xl px-6 pt-14 text-center sm:pt-20">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[oklch(0.45_0.09_150)]">
           Notes from the nightstand
         </p>
@@ -116,7 +116,7 @@ function Bookshelf() {
       </header>
 
       <section className="mx-auto mt-12 max-w-4xl px-6">
-        <div className="relative overflow-hidden rounded-[2rem] border border-[oklch(0.78_0.04_145)] bg-[oklch(0.965_0.018_90)] px-7 py-8 shadow-[0_24px_60px_-44px_oklch(0.28_0.06_150)] sm:px-10">
+        <div className="relative overflow-hidden border-y border-[oklch(0.78_0.04_145)] bg-[oklch(0.965_0.018_90)] px-7 py-8 sm:px-10">
           <div className="absolute -right-8 -top-10 h-36 w-36 rounded-full bg-[oklch(0.89_0.06_145_/_0.55)] blur-2xl" />
           <p className="relative text-xs font-semibold uppercase tracking-[0.24em] text-[oklch(0.42_0.09_150)]">
             Currently reading
