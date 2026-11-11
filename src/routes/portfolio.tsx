@@ -195,6 +195,11 @@ function Portfolio() {
     return projects.filter((project) => project.category === activeFilter);
   }, [activeFilter]);
 
+  const projectYears = useMemo(
+    () => [...new Set(visibleProjects.map((project) => project.year))].sort().reverse(),
+    [visibleProjects],
+  );
+
   return (
     <main className="min-h-screen pb-16 md:pb-24">
       <SiteNav />
@@ -202,107 +207,88 @@ function Portfolio() {
         <h1>Portfolio</h1>
 
         <p>
-          Inspired by my interdisciplinary coursework, I am drawn to research leveraging AI for
-          positive change in the world. I aim to better understand technologies and how we interact
-          with them to create AI systems that can support people through healthcare, policy, and
-          overall in meaningful, human-centered ways.
+          Selected coursework and research across AI, healthcare, policy, and human-centered
+          computing.
         </p>
 
-        <p>Below is a collection of works that summarize my academic interests.</p>
-
         <section className="mt-10 not-prose">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <h2 className="text-xl font-semibold tracking-tight text-foreground">
-                Project Archive
-              </h2>
-              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-                Selected coursework, research, and policy projects.
-              </p>
+          <div className="flex flex-wrap items-end justify-between gap-5 border-b border-foreground/25 pb-4">
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {filters.map((filter) => {
+                const isActive = activeFilter === filter;
+                return (
+                  <button
+                    key={filter}
+                    type="button"
+                    onClick={() => setActiveFilter(filter)}
+                    aria-pressed={isActive}
+                    className={[
+                      "border-b py-1 text-sm transition-colors",
+                      isActive
+                        ? "border-foreground font-bold text-foreground"
+                        : "border-transparent text-foreground/55 hover:border-foreground/30 hover:text-foreground",
+                    ].join(" ")}
+                  >
+                    {filter}
+                  </button>
+                );
+              })}
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-foreground/60">
               {visibleProjects.length} project{visibleProjects.length === 1 ? "" : "s"}
             </p>
           </div>
 
-          <div className="mt-5 flex flex-wrap gap-2">
-            {filters.map((filter) => {
-              const isActive = activeFilter === filter;
-              return (
-                <button
-                  key={filter}
-                  type="button"
-                  onClick={() => setActiveFilter(filter)}
-                  aria-pressed={isActive}
-                  className={[
-                    "min-w-[5.5rem] border px-3 py-1.5 text-sm transition-colors",
-                    isActive
-                      ? "border-foreground bg-foreground text-background"
-                      : "border-border bg-background text-muted-foreground hover:text-foreground",
-                  ].join(" ")}
+          <div className="mt-10">
+            {projectYears.map((year) => (
+              <section key={year} className="mb-10" aria-labelledby={`projects-${year}`}>
+                <h3
+                  id={`projects-${year}`}
+                  className="mb-2 text-right text-2xl font-normal text-foreground"
                 >
-                  {filter}
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {visibleProjects.map((project) => {
-              const isPolicy = project.category === "AI Policy/Ethics";
-              const chipBg = isPolicy ? "oklch(0.93 0.045 90)" : "oklch(0.94 0.04 145)";
-              const chipFg = isPolicy ? "oklch(0.38 0.09 70)" : "oklch(0.32 0.08 150)";
-
-              const TitleEl = project.href ? "a" : "div";
-              const titleProps = project.href
-                ? {
-                    href: project.href,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    className: "!text-foreground !no-underline hover:!underline",
-                  }
-                : {};
-
-              return (
-                <article
-                  key={project.title}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-white/55 shadow-[0_14px_42px_-34px_oklch(0.28_0.06_150_/_0.75)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_48px_-30px_oklch(0.28_0.06_150_/_0.72)]"
-                >
-                  <div className="overflow-hidden bg-muted">
-                    <img
-                      src={project.image}
-                      alt={project.imageAlt}
-                      loading="lazy"
-                      className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col p-5">
-                    <div className="flex items-baseline justify-between gap-4">
-                      <h3 className="text-base font-semibold leading-snug tracking-tight text-foreground">
-                        <TitleEl {...(titleProps as Record<string, string>)}>
-                          {project.title}
-                        </TitleEl>
-                      </h3>
-                      <span className="shrink-0 text-sm text-muted-foreground">{project.year}</span>
-                    </div>
-                    <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                      {project.blurb}
-                    </p>
-                    <ul className="mt-4 flex flex-wrap gap-1.5 list-none pl-0">
-                      {project.tags.map((tag) => (
-                        <li
-                          key={tag}
-                          className="rounded-md px-2 py-0.5 text-xs font-medium"
-                          style={{ backgroundColor: chipBg, color: chipFg }}
-                        >
-                          {tag}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
-              );
-            })}
+                  {year}
+                </h3>
+                <div className="border-t border-foreground/25">
+                  {visibleProjects
+                    .filter((project) => project.year === year)
+                    .map((project) => (
+                      <article
+                        key={project.title}
+                        className="grid gap-5 border-b border-foreground/25 py-4 sm:grid-cols-[7.5rem_1fr] sm:items-start"
+                      >
+                        <img
+                          src={project.image}
+                          alt={project.imageAlt}
+                          loading="lazy"
+                          className="aspect-square w-full object-cover sm:w-[7.5rem]"
+                        />
+                        <div className="min-w-0 pt-0.5">
+                          <h4 className="text-xl font-normal leading-snug text-foreground">
+                            {project.href ? (
+                              <a
+                                href={project.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline-offset-4 hover:underline"
+                              >
+                                {project.title}
+                              </a>
+                            ) : (
+                              project.title
+                            )}
+                          </h4>
+                          <p className="mt-1.5 text-sm leading-relaxed text-foreground/80">
+                            {project.blurb}
+                          </p>
+                          <p className="mt-2 text-sm text-foreground/60">
+                            {project.category} · {project.tags.join(" · ")}
+                          </p>
+                        </div>
+                      </article>
+                    ))}
+                </div>
+              </section>
+            ))}
           </div>
         </section>
 
