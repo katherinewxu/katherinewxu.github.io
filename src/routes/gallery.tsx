@@ -125,13 +125,13 @@ const artworks: Artwork[] = [
 
 function ArtworkCard({ artwork }: { artwork: Artwork }) {
   return (
-    <figure className="group mb-11 break-inside-avoid-column">
+    <figure className="mb-11 break-inside-avoid-column">
       <div className="overflow-hidden bg-[oklch(0.93_0.015_85)] shadow-[0_12px_32px_-24px_oklch(0.25_0.04_150_/_0.55)]">
         <img
           src={artwork.image}
           alt={`${artwork.title} by ${artwork.artist}`}
           loading="lazy"
-          className="block h-auto w-full transition duration-500 group-hover:scale-[1.012]"
+          className="block h-auto w-full"
         />
       </div>
       <figcaption className="mt-3.5">
