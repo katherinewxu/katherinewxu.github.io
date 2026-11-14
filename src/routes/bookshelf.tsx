@@ -83,8 +83,8 @@ const books: Book[] = [
 
 function BookCard({ book }: { book: Book }) {
   return (
-    <article className="group flex h-full flex-col items-center px-3 py-6 text-center sm:px-4">
-      <div className="mb-5 flex aspect-[2/3] w-full max-w-[176px] items-center justify-center overflow-hidden rounded-sm bg-muted/30 shadow-[0_10px_28px_-14px_oklch(0.28_0.06_150_/_0.65)] transition duration-300 group-hover:shadow-[0_18px_34px_-16px_oklch(0.28_0.06_150_/_0.72)]">
+    <article className="min-w-0">
+      <div className="aspect-[2/3] w-full overflow-hidden bg-foreground/5">
         <img
           src={book.cover}
           alt={`${book.title} cover`}
@@ -92,68 +92,65 @@ function BookCard({ book }: { book: Book }) {
           loading="lazy"
         />
       </div>
-      <h3 className="text-base font-medium leading-snug text-[oklch(0.36_0.08_150)] sm:min-h-[2.6rem]">
+      <h3 className="font-bookshelf mt-3 text-[1.05rem] font-bold leading-tight text-foreground">
         {book.title}
       </h3>
-      <p className="mt-1 text-sm italic text-foreground/75">{book.author}</p>
+      <p className="font-ui mt-1 text-[0.78rem] leading-snug text-foreground/60">
+        {book.author.replace(/^By /, "")}
+      </p>
     </article>
   );
 }
 
 function Bookshelf() {
   return (
-    <main className="font-bookshelf min-h-screen pb-16 md:pb-24">
+    <main className="min-h-screen pb-16 md:pb-24">
       <SiteNav />
 
-      <header className="mx-auto max-w-5xl px-6 pt-14 text-center sm:pt-20">
-        <h1 className="text-4xl font-normal tracking-tight sm:text-5xl">
-          <span className="italic text-[oklch(0.45_0.09_150)]">Katherine's</span> Bookshelf
+      <header className="mx-auto w-full max-w-6xl px-6 pt-14 sm:pt-16">
+        <h1 className="font-bookshelf text-4xl font-normal tracking-[-0.025em] sm:text-5xl">
+          Bookshelf
         </h1>
-        <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+        <p className="mt-4 max-w-xl text-base leading-relaxed text-foreground/70">
           A running list of books I've loved.
         </p>
       </header>
 
-      <section className="mx-auto mt-12 max-w-4xl px-6">
-        <div className="relative overflow-hidden border-y border-[oklch(0.78_0.04_145)] bg-[oklch(0.965_0.018_90)] px-7 py-8 sm:px-10">
-          <div className="absolute -right-8 -top-10 h-36 w-36 rounded-full bg-[oklch(0.89_0.06_145_/_0.55)] blur-2xl" />
-          <h2 className="relative text-lg font-medium text-[oklch(0.42_0.09_150)]">
-            Currently reading
-          </h2>
-          <div className="relative mt-5 grid gap-5 sm:grid-cols-2 sm:gap-8">
-            <div>
-              <h2 className="text-2xl italic text-foreground">Wild Swans</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Jung Chang</p>
-            </div>
-            <div className="border-t border-[oklch(0.78_0.04_145)] pt-5 sm:border-l sm:border-t-0 sm:pl-8 sm:pt-0">
-              <h2 className="text-2xl italic leading-snug text-foreground">
-                The Restaurant at the End of the Universe
-              </h2>
-              <p className="mt-1 text-sm text-muted-foreground">Douglas Adams</p>
-            </div>
+      <section className="mx-auto mt-12 w-full max-w-6xl px-6">
+        <h2 className="font-bookshelf text-2xl font-normal text-foreground">Currently reading</h2>
+        <div className="mt-4 grid border-y border-foreground/25 sm:grid-cols-2">
+          <div className="py-5 sm:pr-8">
+            <h3 className="font-bookshelf text-xl font-bold leading-snug text-foreground">
+              Wild Swans
+            </h3>
+            <p className="mt-1 text-sm text-foreground/60">Jung Chang</p>
+          </div>
+          <div className="border-t border-foreground/20 py-5 sm:border-l sm:border-t-0 sm:pl-8">
+            <h3 className="font-bookshelf text-xl font-bold leading-snug text-foreground">
+              The Restaurant at the End of the Universe
+            </h3>
+            <p className="mt-1 text-sm text-foreground/60">Douglas Adams</p>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto mt-14 max-w-6xl px-6">
-        <div className="mb-5 flex items-end justify-between border-b border-border pb-4">
-          <div>
-            <h2 className="text-2xl text-foreground">Books that stayed with me</h2>
-          </div>
-          <p className="hidden text-sm text-muted-foreground sm:block">{books.length} favorites</p>
+      <section className="mx-auto mt-14 w-full max-w-6xl px-6">
+        <div className="mb-7 flex items-end justify-between border-b border-foreground/25 pb-3">
+          <h2 className="font-bookshelf text-2xl font-normal text-foreground">Favorites</h2>
+          <p className="text-sm text-foreground/50">{books.length} books</p>
         </div>
-        <div className="grid grid-cols-2 gap-x-2 sm:grid-cols-3 md:grid-cols-4 lg:gap-x-4">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-8">
           {books.map((b, i) => (
             <BookCard key={i} book={b} />
           ))}
         </div>
-        <p className="mt-10 text-center text-xs italic leading-relaxed text-muted-foreground">
+        <p className="mt-12 text-xs leading-relaxed text-foreground/50">
           Book covers are from Ben Dodson's{" "}
           <a
             href="https://bendodson.com/projects/itunes-artwork-finder/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-[oklch(0.45_0.09_150)] underline decoration-[oklch(0.65_0.08_150)] underline-offset-4 hover:text-[oklch(0.36_0.08_150)]"
+            className="text-[var(--link)] underline underline-offset-4 hover:text-[var(--link-hover)]"
           >
             artwork finder
           </a>
@@ -161,15 +158,21 @@ function Bookshelf() {
         </p>
       </section>
 
-      <div className="mx-auto mt-16 max-w-2xl px-6 text-center">
-        <Link to="/personal" className="text-sm text-[oklch(0.45_0.09_150)] hover:underline">
+      <div className="mx-auto mt-16 w-full max-w-6xl px-6">
+        <Link
+          to="/personal"
+          className="text-sm text-[var(--link)] underline-offset-4 hover:text-[var(--link-hover)] hover:underline"
+        >
           ← Back to personal
         </Link>
       </div>
 
-      <footer className="mx-auto mt-16 max-w-2xl border-t border-border px-6 pt-6 text-center text-sm text-muted-foreground">
+      <footer className="mx-auto mt-16 w-full max-w-6xl border-t border-border px-6 pt-6 text-sm text-muted-foreground">
         © 2026 Katherine Wang Xu ·{" "}
-        <a href="mailto:kwx04@stanford.edu" className="hover:text-[oklch(0.36_0.08_150)]">
+        <a
+          href="mailto:kwx04@stanford.edu"
+          className="text-[var(--link)] hover:text-[var(--link-hover)] hover:underline"
+        >
           kwx04@stanford.edu
         </a>{" "}
         ·{" "}
@@ -177,7 +180,7 @@ function Bookshelf() {
           href="https://www.linkedin.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-[oklch(0.36_0.08_150)]"
+          className="text-[var(--link)] hover:text-[var(--link-hover)] hover:underline"
         >
           LinkedIn
         </a>{" "}
@@ -186,7 +189,7 @@ function Bookshelf() {
           href="https://scholar.google.com/citations?hl=en&user=Sli3mxEAAAAJ&view_op=list_works"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-[oklch(0.36_0.08_150)]"
+          className="text-[var(--link)] hover:text-[var(--link-hover)] hover:underline"
         >
           Google Scholar
         </a>

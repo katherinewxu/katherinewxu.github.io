@@ -66,8 +66,8 @@
   --radius: 0.625rem;
   --background: oklch(0.988 0.006 90);
   --foreground: oklch(0.12 0 0);
-  --link: oklch(0.18 0 0);
-  --link-hover: oklch(0.42 0 0);
+  --link: oklch(0.36 0.075 154);
+  --link-hover: oklch(0.28 0.065 154);
   --accent-green: oklch(0.43 0.085 154);
   --card: oklch(0.982 0.014 92);
   --card-foreground: oklch(0.129 0.042 264.695);
@@ -166,13 +166,22 @@
   }
 
   .prose-academic a {
-    color: var(--link);
+    color: var(--link) !important;
     text-decoration: none;
     text-underline-offset: 0.18em;
     text-decoration-thickness: 0.06em;
   }
 
   .prose-academic a:hover {
+    color: var(--link-hover) !important;
+    text-decoration: underline;
+  }
+
+  main footer a {
+    color: var(--link);
+  }
+
+  main footer a:hover {
     color: var(--link-hover);
     text-decoration: underline;
   }
