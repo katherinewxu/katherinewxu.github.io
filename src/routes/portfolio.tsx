@@ -2,16 +2,16 @@ import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 
-const brainTumorImg = { url: "/projects/public-domain/brain-tumor.webp" };
-const cokeTrashImg = { url: "/projects/public-domain/logo-robustness.webp" };
-const wsjImg = { url: "/projects/public-domain/propaganda.webp" };
-const heapImg = { url: "/projects/public-domain/heap.webp" };
-const musicImg = { url: "/projects/public-domain/music.webp" };
-const acgmeImg = { url: "/projects/public-domain/acgme.webp" };
-const brainMriImg = { url: "/projects/public-domain/saliency.webp" };
-const governanceImg = { url: "/projects/public-domain/governance.webp" };
-const olfactoryImg = { url: "/projects/public-domain/olfactory.webp" };
-const rlooLeashImg = { url: "/projects/public-domain/rloo.webp" };
+const brainTumorImg = { url: "/projects/public-domain/brain-tumor-painting.webp" };
+const cokeTrashImg = { url: "/projects/public-domain/logo-robustness-painting.webp" };
+const wsjImg = { url: "/projects/public-domain/propaganda-painting.webp" };
+const heapImg = { url: "/projects/public-domain/heap-painting.webp" };
+const musicImg = { url: "/projects/public-domain/music-painting.webp" };
+const acgmeImg = { url: "/projects/public-domain/acgme-painting.webp" };
+const brainMriImg = { url: "/projects/public-domain/saliency-painting.webp" };
+const governanceImg = { url: "/projects/public-domain/governance-painting.webp" };
+const olfactoryImg = { url: "/projects/public-domain/olfactory-painting.webp" };
+const rlooLeashImg = { url: "/projects/public-domain/rloo-painting.webp" };
 
 export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
@@ -52,7 +52,7 @@ const projects: Project[] = [
     title: "Tool-Integrated RLOO and Pass@K: Testing the Invisible Leash",
     year: "2025",
     image: rlooLeashImg.url,
-    imageAlt: "Siphonophores illustrated by Ernst Haeckel in 1904",
+    imageAlt: "Horse and Rider by Edgar Degas",
     blurb:
       'CS224R final project investigating whether reinforcement learning with verifiable rewards (RLVR) can expand a small language model\'s reasoning frontier beyond its pretrained action space. Tests tool-integrated RLOO against the "invisible leash" hypothesis using Pass@K evaluations.',
     tags: ["Reinforcement Learning", "Language Models", "RLVR", "Reasoning", "Tool Use"],
@@ -63,7 +63,7 @@ const projects: Project[] = [
       "Olfactory Biomarkers as Early Indicators of Neurodegenerative Disease: A Survey of AI-Driven Sensing and Diagnostic Technologies",
     year: "2025",
     image: olfactoryImg.url,
-    imageAlt: "Orchids illustrated by Ernst Haeckel in 1904",
+    imageAlt: "Roses in a Bowl by Henri Fantin-Latour",
     blurb:
       "Survey paper examining sensor-based and AI-enabled approaches to olfactory assessment, including electronic-nose chemical sensing, VOC analysis, wearable nasal airflow monitoring, and olfactory-evoked EEG responses, framing olfaction as both a diagnostic biomarker and an intervention target for early detection of neurodegenerative decline.",
     tags: ["Medical AI", "Neurodegeneration", "Sensor Technology", "Early Detection", "Biomarkers"],
@@ -74,7 +74,7 @@ const projects: Project[] = [
       "Exploring Deep Segmentation Models for Brain Tumors: CNNs, Transformers, and Promptable Architectures",
     year: "2025",
     image: brainTumorImg.url,
-    imageAlt: "Discomedusae illustrated by Ernst Haeckel in 1904",
+    imageAlt: "Head of a Woman by an unknown nineteenth-century artist",
     blurb:
       "Developed deep learning models for automated brain tumor segmentation using the BraTS 2021 dataset, comparing CNNs, transformers, and promptable architectures for pixel-level tumor detection.",
     tags: [
@@ -90,7 +90,7 @@ const projects: Project[] = [
     title: "Robust Brand Logo Detection Under Adversarial Conditions",
     year: "2025",
     image: cokeTrashImg.url,
-    imageAlt: "Boxfish illustrated by Ernst Haeckel in 1904",
+    imageAlt: "The Basket of Apples by Paul Cezanne",
     blurb:
       "Built a custom CNN with adversarial training to detect Coca-Cola logos under blur, noise, and occlusion. Achieved +13% accuracy over YOLOv8 with extensive data augmentation.",
     tags: ["Computer Vision", "Adversarial Robustness", "Object Detection", "Data Augmentation"],
@@ -100,7 +100,7 @@ const projects: Project[] = [
     title: "Heap Allocator",
     year: "2025",
     image: heapImg.url,
-    imageAlt: "Gastropod shells illustrated by Ernst Haeckel in 1904",
+    imageAlt: "Composition No. 1, Gray-Red by Piet Mondrian",
     blurb:
       "Implemented a full implicit + explicit free list allocator in C, including malloc, free, and realloc. Built debugging utilities (validate_heap, dump_heap) and stress-tested on real allocation traces.",
     tags: ["Systems Programming", "Memory Management", "C", "Performance Optimization"],
@@ -110,7 +110,7 @@ const projects: Project[] = [
     title: "What's in the noise? Musical Genre Classification using Neural Networks",
     year: "2024",
     image: musicImg.url,
-    imageAlt: "Teleost fish illustrated by Ernst Haeckel in 1904",
+    imageAlt: "Woman at the Piano by Pierre-Auguste Renoir",
     blurb:
       "Trained VGG-style CNNs, GRUs, and LSTMs on mel spectrograms from GTZAN, incorporating noise, pitch-shift, and time-stretch augmentations for robustness.",
     tags: ["Audio Classification", "Deep Learning", "CNNs", "Music Information Retrieval"],
@@ -120,7 +120,7 @@ const projects: Project[] = [
     title: "Protecting Against Propaganda: AI for Misinformation Detection & Critical Thinking",
     year: "2024",
     image: wsjImg.url,
-    imageAlt: "Arachnids illustrated by Ernst Haeckel in 1904",
+    imageAlt: "The Irish Question by De Scott Evans",
     blurb:
       'Built a GPT-4–powered browser extension that detects persuasive fallacies in political news, provides real-time annotations, and generates "extremeness" scores. Ran a pilot RCT to evaluate behavioral impacts.',
     tags: ["Human-AI Interaction", "Politics & Psychology", "Media Literacy", "Language Models"],
@@ -131,7 +131,7 @@ const projects: Project[] = [
       "Seeing is Believing? A Sociotechnical Evaluation of Saliency Maps for Brain Tumor Segmentation",
     year: "2025",
     image: brainMriImg.url,
-    imageAlt: "Peromedusae illustrated by Ernst Haeckel in 1904",
+    imageAlt: "Closed Eyes by Odilon Redon",
     blurb:
       "Benchmarking Grad-CAM, Integrated Gradients, and GradientSHAP across segmentation models, combining quantitative evaluation with clinician + researcher feedback to assess clinical usability.",
     tags: ["Explainable AI", "Medical Imaging", "Model Interpretability", "Human-AI Interaction"],
@@ -142,7 +142,7 @@ const projects: Project[] = [
       "Longitudinal Assessment of ACGME Milestone Progression: Evaluating Gender and Racial Differences Across Graduate Medical Education Specialties",
     year: "2024",
     image: acgmeImg.url,
-    imageAlt: "Hummingbirds illustrated by Ernst Haeckel in 1904",
+    imageAlt: "The Physician Considered as God, after Hendrick Goltzius",
     blurb:
       "Co-authored research manuscript with Stanford School of Medicine and the University of Utah. Retrospective cohort study of 2,814 graduate medical trainees (2014–2020) analyzing gender and racial disparities in ACGME Milestone progression across 107 hospital-based, medical, and surgical programs using Wilcoxon rank-sum, Kruskal-Wallis, and linear mixed-effects models.",
     tags: [
@@ -158,7 +158,7 @@ const projects: Project[] = [
     title: "Governance of Frontier AI: Monitoring, Institutions, and Policy Transitions",
     year: "2025",
     image: governanceImg.url,
-    imageAlt: "Amphoridea illustrated by Ernst Haeckel in 1904",
+    imageAlt: "The Council of the Gods by John Flaxman II",
     blurb:
       "Examines how to govern frontier AI before catastrophic risks materialize, proposing risk-monitoring taxonomies, cross-lab oversight architectures, and pathways from voluntary commitments to binding regulation.",
     tags: ["AI Governance", "AI Safety", "Policy", "Institutional Design", "Existential Risk"],
@@ -172,8 +172,8 @@ const filters: FilterKey[] = ["All", "Computational Projects", "AI Policy/Ethics
 const publications = [
   {
     year: "2026",
-    image: "/publications/dux4-fshd.webp",
-    imageAlt: "Abstract interwoven muscle fibers and genomic forms",
+    image: "/publications/public-domain/dux4-fshd.webp",
+    imageAlt: "A Sheet of Anatomical Studies by Peter Paul Rubens",
     title:
       "In vitro and in silico characterization of competitive inhibition and repression of DUX4 target gene activation as a therapeutic approach for facioscapulohumeral muscular dystrophy (FSHD)",
     authors:
@@ -183,8 +183,8 @@ const publications = [
   },
   {
     year: "2026",
-    image: "/publications/genomic-audit.webp",
-    imageAlt: "Abstract genomic paths passing through a sparse geometric lattice",
+    image: "/publications/public-domain/genomic-audit.webp",
+    imageAlt: "A Sunday on La Grande Jatte by Georges Seurat",
     title: "Audit Before Design: Failure Modes of SAE-Guided Steering in Genomic Foundation Models",
     authors: "Katherine Xu",
     venue: "The Second Workshop on Language Models for Scientific Discovery",
@@ -192,8 +192,8 @@ const publications = [
   },
   {
     year: "2025",
-    image: "/publications/fall-prevention.webp",
-    imageAlt: "Abstract balanced forms held by sweeping supportive arcs",
+    image: "/publications/public-domain/fall-prevention.webp",
+    imageAlt: "Old Man with a Walking Stick by Wilhelm Leibl",
     title: "AI-driven personalized fall prevention for older adults",
     authors: "Katherine Xu",
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence, 39(28)",
@@ -201,8 +201,8 @@ const publications = [
   },
   {
     year: "2022",
-    image: "/publications/acculturation.webp",
-    imageAlt: "Abstract nested vessels and layered woven bands",
+    image: "/publications/public-domain/acculturation.webp",
+    imageAlt: "Yang Pu Moving His Family by an unknown Chinese artist",
     title:
       "Effects of Acculturation of Eating Disorder Prevalence Across Generations of Asian American Immigrants",
     authors:
@@ -355,16 +355,16 @@ function Portfolio() {
             ))}
           </div>
           <p className="mt-3 text-xs text-foreground/50">
-            Project imagery from Ernst Haeckel's{" "}
+            Project covers are public domain works from the{" "}
             <a
-              href="https://commons.wikimedia.org/wiki/Kunstformen_der_Natur"
+              href="https://www.artic.edu/open-access/open-access-images"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-4"
             >
-              Kunstformen der Natur
+              Art Institute of Chicago
             </a>{" "}
-            (1904), public domain.
+            collection.
           </p>
         </section>
 
