@@ -383,7 +383,7 @@ function Portfolio() {
                     {project.blurb}
                   </p>
                   <p className="mt-2 text-sm text-foreground/60">
-                    {project.year} · {project.category} · {project.tags.join(" · ")}
+                    {project.category} · {project.tags.join(" · ")}
                   </p>
                 </div>
               </article>
