@@ -152,6 +152,7 @@
     min-height: 100vh;
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: "Newsreader", Garamond, Georgia, serif;
     line-height: 1.62;
     font-kerning: normal;
   }

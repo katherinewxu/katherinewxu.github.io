@@ -297,7 +297,7 @@ function Portfolio() {
                   className="aspect-square w-[6rem] object-cover sm:w-[8.5rem]"
                 />
                 <div className="min-w-0 pt-0.5">
-                  <h3 className="font-bookshelf text-[1.18rem] font-bold leading-[1.18] tracking-[-0.02em] text-foreground sm:text-[1.65rem] sm:tracking-[-0.025em]">
+                  <h3 className="font-bookshelf text-[1.18rem] font-normal leading-[1.18] tracking-[-0.02em] text-foreground sm:text-[1.65rem] sm:tracking-[-0.025em]">
                     <a
                       href={publication.href}
                       target="_blank"
