@@ -53,7 +53,7 @@ const items: Item[] = [
     logoDomain: "stanford.edu",
     period: "June 2026 – Present",
     description:
-      "Build evaluation infrastructure and verification methods for AI-assisted scientific research. Work on reproducible evaluation systems, research audits, and studies of model reliability in biomedical machine learning.",
+      "Work on evaluations and verifiers for AI-scientist agents, including agent memory and a project on verifiable scientific paper reproduction.",
   },
   {
     role: "Member of Technical Staff Intern",
