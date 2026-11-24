@@ -245,11 +245,6 @@ function Portfolio() {
     return projects.filter((project) => project.category === activeFilter);
   }, [activeFilter]);
 
-  const projectYears = useMemo(
-    () => [...new Set(visibleProjects.map((project) => project.year))].sort().reverse(),
-    [visibleProjects],
-  );
-
   const renderAuthors = (authors: string) => {
     const parts = authors.split("Katherine Xu");
     return parts.map((part, index) => (
@@ -275,9 +270,66 @@ function Portfolio() {
           computing.
         </p>
 
-        <section className="mt-10 not-prose">
+        <section className="mt-10 not-prose" aria-labelledby="publications-heading">
+          <div className="flex items-end justify-between border-b border-foreground/25 pb-3">
+            <h2 id="publications-heading" className="text-2xl font-normal text-foreground">
+              Publications
+            </h2>
+            <a
+              href="https://scholar.google.com/citations?hl=en&user=Sli3mxEAAAAJ&view_op=list_works"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-foreground/60 underline-offset-4 hover:underline"
+            >
+              Google Scholar
+            </a>
+          </div>
+          <div className="border-t border-foreground/20">
+            {publications.map((publication) => (
+              <article
+                key={publication.title}
+                className="grid grid-cols-[6rem_minmax(0,1fr)] items-start gap-4 border-b border-foreground/20 py-5 sm:grid-cols-[8.5rem_minmax(0,1fr)] sm:gap-6"
+              >
+                <img
+                  src={publication.image}
+                  alt={publication.imageAlt}
+                  loading="lazy"
+                  className="aspect-square w-[6rem] object-cover sm:w-[8.5rem]"
+                />
+                <div className="min-w-0 pt-0.5">
+                  <h3 className="font-bookshelf text-[1.18rem] font-bold leading-[1.18] tracking-[-0.02em] text-foreground sm:text-[1.65rem] sm:tracking-[-0.025em]">
+                    <a
+                      href={publication.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline-offset-4 hover:underline"
+                    >
+                      {publication.title}
+                    </a>
+                  </h3>
+                  <p className="mt-2 text-[0.92rem] font-medium leading-snug text-foreground/90">
+                    {renderAuthors(publication.authors)}
+                  </p>
+                  <p className="mt-2 text-[0.95rem] text-foreground/70">
+                    {publication.venue} ({publication.year})
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-14 not-prose" aria-labelledby="projects-heading">
+          <div className="flex items-end justify-between border-b border-foreground/25 pb-3">
+            <h2 id="projects-heading" className="text-2xl font-normal text-foreground">
+              Projects
+            </h2>
+            <p className="text-sm text-foreground/60">
+              {visibleProjects.length} project{visibleProjects.length === 1 ? "" : "s"}
+            </p>
+          </div>
           <div className="flex flex-wrap items-end justify-between gap-5 border-b border-foreground/25 pb-4">
-            <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
               {filters.map((filter) => {
                 const isActive = activeFilter === filter;
                 return (
@@ -298,60 +350,43 @@ function Portfolio() {
                 );
               })}
             </div>
-            <p className="text-sm text-foreground/60">
-              {visibleProjects.length} project{visibleProjects.length === 1 ? "" : "s"}
-            </p>
           </div>
 
-          <div className="mt-10">
-            {projectYears.map((year) => (
-              <section key={year} className="mb-10" aria-labelledby={`projects-${year}`}>
-                <h3
-                  id={`projects-${year}`}
-                  className="mb-2 text-right text-2xl font-normal text-foreground"
-                >
-                  {year}
-                </h3>
-                <div className="border-t border-foreground/25">
-                  {visibleProjects
-                    .filter((project) => project.year === year)
-                    .map((project) => (
-                      <article
-                        key={project.title}
-                        className="grid gap-5 border-b border-foreground/25 py-4 sm:grid-cols-[7.5rem_1fr] sm:items-start"
+          <div className="mt-8 border-t border-foreground/25">
+            {visibleProjects.map((project) => (
+              <article
+                key={project.title}
+                className="grid grid-cols-[5.5rem_minmax(0,1fr)] items-start gap-4 border-b border-foreground/25 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-5"
+              >
+                <img
+                  src={project.image}
+                  alt={project.imageAlt}
+                  loading="lazy"
+                  className="aspect-square w-[5.5rem] object-cover sm:w-[7.5rem]"
+                />
+                <div className="min-w-0 pt-0.5">
+                  <h3 className="font-ui text-lg font-medium leading-snug text-foreground sm:text-xl">
+                    {project.href ? (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline-offset-4 hover:underline"
                       >
-                        <img
-                          src={project.image}
-                          alt={project.imageAlt}
-                          loading="lazy"
-                          className="aspect-square w-full object-cover sm:w-[7.5rem]"
-                        />
-                        <div className="min-w-0 pt-0.5">
-                          <h4 className="text-xl font-normal leading-snug text-foreground">
-                            {project.href ? (
-                              <a
-                                href={project.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="underline-offset-4 hover:underline"
-                              >
-                                {project.title}
-                              </a>
-                            ) : (
-                              project.title
-                            )}
-                          </h4>
-                          <p className="mt-1.5 text-sm leading-relaxed text-foreground/80">
-                            {project.blurb}
-                          </p>
-                          <p className="mt-2 text-sm text-foreground/60">
-                            {project.category} · {project.tags.join(" · ")}
-                          </p>
-                        </div>
-                      </article>
-                    ))}
+                        {project.title}
+                      </a>
+                    ) : (
+                      project.title
+                    )}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-foreground/80">
+                    {project.blurb}
+                  </p>
+                  <p className="mt-2 text-sm text-foreground/60">
+                    {project.year} · {project.category} · {project.tags.join(" · ")}
+                  </p>
                 </div>
-              </section>
+              </article>
             ))}
           </div>
           <p className="mt-3 text-xs text-foreground/50">
@@ -366,55 +401,6 @@ function Portfolio() {
             </a>{" "}
             collection.
           </p>
-        </section>
-
-        <section className="mt-14 not-prose" aria-labelledby="publications-heading">
-          <div className="flex items-end justify-between border-b border-foreground/25 pb-3">
-            <h2 id="publications-heading" className="text-2xl font-normal text-foreground">
-              Publications
-            </h2>
-            <a
-              href="https://scholar.google.com/citations?hl=en&user=Sli3mxEAAAAJ&view_op=list_works"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-foreground/60 underline-offset-4 hover:underline"
-            >
-              Google Scholar
-            </a>
-          </div>
-          <div className="border-t border-foreground/20">
-            {publications.map((publication) => (
-              <article
-                key={publication.title}
-                className="grid gap-5 border-b border-foreground/20 py-5 sm:grid-cols-[8.5rem_1fr] sm:items-start sm:gap-6"
-              >
-                <img
-                  src={publication.image}
-                  alt={publication.imageAlt}
-                  loading="lazy"
-                  className="aspect-square w-full object-cover sm:w-[8.5rem]"
-                />
-                <div className="min-w-0 pt-0.5">
-                  <h3 className="font-bookshelf text-[1.45rem] font-bold leading-[1.18] tracking-[-0.025em] text-foreground sm:text-[1.65rem]">
-                    <a
-                      href={publication.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline-offset-4 hover:underline"
-                    >
-                      {publication.title}
-                    </a>
-                  </h3>
-                  <p className="mt-2 text-[0.92rem] font-medium leading-snug text-foreground/90">
-                    {renderAuthors(publication.authors)}
-                  </p>
-                  <p className="mt-2 text-[0.95rem] text-foreground/70">
-                    {publication.venue} ({publication.year})
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
         </section>
 
         <h2 className="mt-10 text-xl font-semibold tracking-tight">Teaching</h2>

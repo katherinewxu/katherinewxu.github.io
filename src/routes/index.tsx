@@ -60,8 +60,8 @@ function Index() {
           <a href="https://www.james-zou.com/" target="_blank" rel="noopener noreferrer">
             Stanford AI for Science Lab
           </a>
-          , where I work on evaluations and verifiers for AI-scientist agents, including agent
-          memory and a project on verifiable scientific paper reproduction.
+          , where my research interests include evaluating AI-scientist agents, verification,
+          memory, and reproducible scientific workflows.
         </p>
 
         <p>
