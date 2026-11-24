@@ -118,18 +118,12 @@ function Bookshelf() {
 
       <section className="mx-auto mt-12 w-full max-w-6xl px-6">
         <h2 className="font-bookshelf text-2xl font-normal text-foreground">Currently reading</h2>
-        <div className="mt-4 grid border-y border-foreground/25 sm:grid-cols-2">
-          <div className="py-5 sm:pr-8">
+        <div className="mt-4 border-y border-foreground/25">
+          <div className="py-5">
             <h3 className="font-bookshelf text-xl font-bold leading-snug text-foreground">
-              Wild Swans
+              Being Mortal
             </h3>
-            <p className="mt-1 text-sm text-foreground/60">Jung Chang</p>
-          </div>
-          <div className="border-t border-foreground/20 py-5 sm:border-l sm:border-t-0 sm:pl-8">
-            <h3 className="font-bookshelf text-xl font-bold leading-snug text-foreground">
-              The Restaurant at the End of the Universe
-            </h3>
-            <p className="mt-1 text-sm text-foreground/60">Douglas Adams</p>
+            <p className="mt-1 text-sm text-foreground/60">Atul Gawande</p>
           </div>
         </div>
       </section>
