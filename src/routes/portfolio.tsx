@@ -46,6 +46,7 @@ type Project = {
   tags: string[];
   category: ProjectCategory;
   href?: string;
+  codeHref?: string;
 };
 
 const projects: Project[] = [
@@ -65,7 +66,7 @@ const projects: Project[] = [
       "Uncertainty Quantification",
     ],
     category: "Computational Projects",
-    href: "https://github.com/katherinewxu/sam-ovarian-segmentation",
+    codeHref: "https://github.com/katherinewxu/sam-ovarian-segmentation",
   },
   {
     title: "Tool-Integrated RLOO and Pass@K: Testing the Invisible Leash",
@@ -134,6 +135,7 @@ const projects: Project[] = [
       "Trained VGG-style CNNs, GRUs, and LSTMs on mel spectrograms from GTZAN, incorporating noise, pitch-shift, and time-stretch augmentations for robustness.",
     tags: ["Audio Classification", "Deep Learning", "CNNs", "Music Information Retrieval"],
     category: "Computational Projects",
+    codeHref: "https://github.com/katherinewxu/129Final",
   },
   {
     title: "Protecting Against Propaganda: AI for Misinformation Detection & Critical Thinking",
@@ -199,8 +201,9 @@ const publications = [
       "Heloise M. Hoffmann, Alice Finkelstein, Amanuel Geremew, Katherine Xu, Vanessa Chiprez Meza, Ayushi Mohanty, Maria Fernanda Velásquez, Michael Liu, Alex Engel, Phillip Kyriakakis",
     venue: "bioRxiv",
     description:
-      "Develops a therapeutic strategy to suppress pathogenic DUX4 target gene activation in facioscapulohumeral muscular dystrophy.",
+      "We show that a fully humanized DUX4 DNA-binding-domain KRAB fusion strongly represses toxic DUX4 target activation, offering a potential FSHD therapy that avoids key limitations of Cas-based systems.",
     href: "https://www.biorxiv.org/content/10.64898/2026.08.04.742607.abstract",
+    codeHref: "https://github.com/katherinewxu/iGEM_modeling",
   },
   {
     year: "2026",
@@ -210,7 +213,7 @@ const publications = [
     authors: "Katherine Xu",
     venue: "The Second Workshop on Language Models for Scientific Discovery",
     description:
-      "Audits the limits of sparse autoencoder guided steering in genomic foundation models.",
+      "We show that SAE-guided steering in Evo 2 can produce sequence collapse and composition-driven proxy gains rather than preserved regulatory grammar, motivating audit-before-design controls for genomic generation.",
     href: "https://openreview.net/forum?id=Ra1o0e3uMs",
   },
   {
@@ -221,7 +224,7 @@ const publications = [
     authors: "Katherine Xu",
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence, 39(28)",
     description:
-      "Explores how AI can support personalized fall risk assessment and prevention for older adults.",
+      "We propose a privacy-preserving fall prevention system combining pose and activity recognition, multimodal risk assessment, adaptive reinforcement-learning interventions, and explainable human-AI interfaces.",
     href: "https://ojs.aaai.org/index.php/AAAI/article/view/35342",
   },
   {
@@ -234,7 +237,7 @@ const publications = [
       "Tejas Devata, Veda Devata, Bianca Chiu, Karen Lin, Gouri Garg, Edward Thomas, Jennifer Lee, Cynthia Tan, Julia Ongking, Katherine Xu, Shreyas Pannase, Dada Dadas",
     venue: "Research Square preprint",
     description:
-      "Examines how acculturation and immigrant generation relate to eating disorder prevalence among Asian Americans.",
+      "In a survey of 131 first- and second-generation Asian Americans, we find that second-generation respondents are more acculturated, but acculturation is not significantly associated with eating-disorder prevalence.",
     href: "https://doi.org/10.21203/rs.3.rs-1213536/v1",
   },
 ];
@@ -336,14 +339,26 @@ function Portfolio() {
                   <p className="mt-2 text-[0.95rem] leading-relaxed text-foreground/80">
                     {publication.description}
                   </p>
-                  <a
-                    href={publication.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-block text-[0.95rem] underline-offset-4 hover:underline"
-                  >
-                    [Paper]
-                  </a>
+                  <div className="mt-2 flex gap-4 text-[0.95rem]">
+                    <a
+                      href={publication.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline-offset-4 hover:underline"
+                    >
+                      [Paper]
+                    </a>
+                    {publication.codeHref && (
+                      <a
+                        href={publication.codeHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline-offset-4 hover:underline"
+                      >
+                        [Code]
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             ))}
@@ -416,6 +431,16 @@ function Portfolio() {
                   <p className="mt-2 text-sm text-foreground/60">
                     {project.category} · {project.tags.join(" · ")}
                   </p>
+                  {project.codeHref && (
+                    <a
+                      href={project.codeHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-block text-sm underline-offset-4 hover:underline"
+                    >
+                      [Code]
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
