@@ -27,7 +27,7 @@ function Index() {
       <SiteNav />
 
       <header className="mx-auto max-w-3xl px-6 pb-12 pt-24 sm:pt-28">
-        <h1 className="text-5xl font-bold tracking-[-0.035em] text-foreground">
+        <h1 className="font-display text-5xl font-normal tracking-[-0.02em] text-foreground">
           Katherine Wang Xu
         </h1>
       </header>
@@ -62,6 +62,18 @@ function Index() {
           </a>
           , where my research interests include evaluating AI-scientist agents, verification,
           memory, and reproducible scientific workflows.
+        </p>
+
+        <p>
+          Previously, I worked at{" "}
+          <a href="https://inflection.ai/" target="_blank" rel="noopener noreferrer">
+            Inflection AI
+          </a>{" "}
+          and{" "}
+          <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer">
+            Apple
+          </a>{" "}
+          in research and engineering roles.
         </p>
 
         <p>

@@ -165,7 +165,7 @@ function Gallery() {
 
       <header className="mx-auto max-w-6xl px-6 pb-12 pt-14 sm:pb-16 sm:pt-20">
         <div className="grid gap-7 border-b border-border pb-10 md:grid-cols-[1fr_1.25fr] md:items-end">
-          <h1 className="text-5xl font-medium tracking-tight text-foreground sm:text-6xl">
+          <h1 className="font-display text-5xl font-normal tracking-[-0.02em] text-foreground sm:text-6xl">
             Gallery
           </h1>
           <div className="max-w-2xl text-foreground">

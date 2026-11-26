@@ -108,7 +108,7 @@ function Bookshelf() {
       <SiteNav />
 
       <header className="mx-auto w-full max-w-6xl px-6 pt-14 sm:pt-16">
-        <h1 className="font-bookshelf text-4xl font-normal tracking-[-0.025em] sm:text-5xl">
+        <h1 className="font-display text-4xl font-normal tracking-[-0.02em] sm:text-5xl">
           Bookshelf
         </h1>
         <p className="mt-4 max-w-xl text-base leading-relaxed text-foreground/70">

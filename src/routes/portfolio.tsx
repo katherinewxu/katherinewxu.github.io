@@ -251,9 +251,9 @@ function Portfolio() {
       <span key={`${part}-${index}`}>
         {part}
         {index < parts.length - 1 && (
-          <strong className="font-semibold" style={{ color: "var(--accent-green)" }}>
+          <span className="font-normal" style={{ color: "var(--accent-green)" }}>
             Katherine Xu
-          </strong>
+          </span>
         )}
       </span>
     ));

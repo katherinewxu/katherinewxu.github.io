@@ -21,7 +21,7 @@ export function SiteNav() {
       <div className="mx-auto flex max-w-6xl flex-wrap items-baseline justify-between gap-x-8 gap-y-3 px-5 py-4 sm:px-6">
         <Link
           to="/"
-          className="whitespace-nowrap font-bookshelf text-[1.22rem] font-bold leading-none tracking-[-0.02em] text-foreground"
+          className="font-display whitespace-nowrap text-[1.22rem] font-normal leading-none tracking-[-0.015em] text-foreground"
         >
           Katherine Wang Xu
         </Link>
