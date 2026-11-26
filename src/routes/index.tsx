@@ -70,11 +70,7 @@ function Index() {
           <a href="https://www.james-zou.com/" target="_blank" rel="noopener noreferrer">
             Stanford AI for Science Lab
           </a>
-          .
-        </p>
-
-        <p>
-          Previously, I worked at{" "}
+          . Previously, I worked at{" "}
           <a href="https://inflection.ai/" target="_blank" rel="noopener noreferrer">
             Inflection AI
           </a>{" "}
@@ -82,7 +78,7 @@ function Index() {
           <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer">
             Apple
           </a>{" "}
-          in roles spanning research and engineering.
+          in roles that combined research and engineering.
         </p>
 
         <p>
