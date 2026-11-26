@@ -244,10 +244,18 @@ const publications = [
 
 const teaching: { text: string; link?: { label: string; href: string } }[] = [
   {
-    text: "Summer 2026: CS106B Programming Abstractions, C++ and Data Structures",
+    text: "Summer 2026: {LINK}, C++ and Data Structures",
+    link: {
+      label: "CS106B Programming Abstractions",
+      href: "https://web.stanford.edu/class/cs106b/",
+    },
   },
   {
-    text: "Fall 2025/Spring 2026: CS106A Programming Methodologies, Python and Programming Concepts",
+    text: "Fall 2025/Spring 2026: {LINK}, Python and Programming Concepts",
+    link: {
+      label: "CS106A Programming Methodologies",
+      href: "https://web.stanford.edu/class/cs106a/",
+    },
   },
   {
     text: "Spring 2026: {LINK}, Head Teaching Assistant",
