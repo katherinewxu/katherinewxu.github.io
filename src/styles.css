@@ -209,6 +209,10 @@
     margin-bottom: 1.2rem;
   }
 
+  .research-entry p {
+    margin-bottom: 0;
+  }
+
   .prose-academic h1 {
     font-family: "ET Book", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
     font-size: clamp(2.1rem, 5vw, 3rem);
