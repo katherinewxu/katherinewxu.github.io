@@ -114,21 +114,12 @@ function Bookshelf() {
         <p className="mt-4 max-w-xl text-base leading-relaxed text-foreground/70">
           A running list of books I've loved.
         </p>
+        <p className="mt-2 max-w-xl text-base leading-relaxed text-foreground/70">
+          Currently reading: <em>Being Mortal</em> by Atul Gawande.
+        </p>
       </header>
 
       <section className="mx-auto mt-12 w-full max-w-6xl px-6">
-        <h2 className="font-bookshelf text-2xl font-normal text-foreground">Currently reading</h2>
-        <div className="mt-4 border-y border-foreground/25">
-          <div className="py-5">
-            <h3 className="font-bookshelf text-xl font-bold leading-snug text-foreground">
-              Being Mortal
-            </h3>
-            <p className="mt-1 text-sm text-foreground/60">Atul Gawande</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto mt-14 w-full max-w-6xl px-6">
         <div className="mb-7 flex items-end justify-between border-b border-foreground/25 pb-3">
           <h2 className="font-bookshelf text-2xl font-normal text-foreground">Favorites</h2>
           <p className="text-sm text-foreground/50">{books.length} books</p>

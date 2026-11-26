@@ -10,54 +10,6 @@ const profileLinks = [
   },
 ];
 
-const research = [
-  {
-    title:
-      "In vitro and in silico characterization of competitive inhibition and repression of DUX4 target gene activation as a therapeutic approach for facioscapulohumeral muscular dystrophy (FSHD)",
-    authors:
-      "Heloise M. Hoffmann, Alice Finkelstein, Amanuel Geremew, Katherine Xu, Vanessa Chiprez Meza, Ayushi Mohanty, Maria Fernanda Velásquez, Michael Liu, Alex Engel, Phillip Kyriakakis",
-    summary:
-      "We evaluate a competitive inhibition strategy designed to reduce toxic DUX4 target-gene activation in FSHD.",
-    href: "https://www.biorxiv.org/content/10.64898/2026.08.04.742607v3.abstract",
-  },
-  {
-    title: "Audit Before Design: Failure Modes of SAE-Guided Steering in Genomic Foundation Models",
-    authors: "Katherine Xu",
-    summary:
-      "We audit the limits of sparse autoencoder guided steering in genomic foundation models.",
-    href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Sli3mxEAAAAJ&citation_for_view=Sli3mxEAAAAJ:9yKSN-GCB0IC",
-  },
-  {
-    title: "AI-driven personalized fall prevention for older adults",
-    authors: "Katherine Xu",
-    summary:
-      "We present a personalized monitoring and intervention framework for fall prevention among older adults.",
-    href: "https://ojs.aaai.org/index.php/AAAI/article/view/35342",
-  },
-  {
-    title:
-      "Effects of Acculturation of Eating Disorder Prevalence Across Generations of Asian American Immigrants",
-    authors:
-      "Tejas Devata, Veda Devata, Bianca Chiu, Karen Lin, Gouri Garg, Edward Thomas, Jennifer Lee, Cynthia Tan, Julia Ongking, Katherine Xu, Shreyas Pannase, Dada Dadas",
-    summary:
-      "We examine how acculturation and immigrant generation relate to eating disorder prevalence among Asian American communities.",
-    href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Sli3mxEAAAAJ&citation_for_view=Sli3mxEAAAAJ:d1gkVwhDpl0C",
-  },
-];
-
-function ResearchAuthors({ authors }: { authors: string }) {
-  const parts = authors.split("Katherine Xu");
-
-  return parts.map((part, index) => (
-    <span key={`${part}-${index}`}>
-      {part}
-      {index < parts.length - 1 && (
-        <span className="font-normal text-[var(--accent-green)]">Katherine Xu</span>
-      )}
-    </span>
-  ));
-}
-
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
@@ -112,13 +64,12 @@ function Index() {
         </p>
 
         <p>
-          I'm passionate about finding new ways to use AI to benefit humanity. At Stanford, I'm a
-          student researcher in James Zou's{" "}
+          I'm passionate about using AI to benefit humanity. At Stanford, I study reliable
+          AI-scientist agents in James Zou's{" "}
           <a href="https://www.james-zou.com/" target="_blank" rel="noopener noreferrer">
             Stanford AI for Science Lab
           </a>
-          , where my research interests include evaluating AI-scientist agents, verification,
-          memory, and reproducible scientific workflows.
+          .
         </p>
 
         <p>
@@ -130,7 +81,7 @@ function Index() {
           <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer">
             Apple
           </a>{" "}
-          in research and engineering roles.
+          in roles spanning research and engineering.
         </p>
 
         <p>
@@ -166,6 +117,19 @@ function Index() {
           </h2>
           <ul className="mt-5 list-disc space-y-2 pl-5 text-[1rem] leading-[1.5] marker:text-foreground/45">
             <li>
+              [09/2026] Our work,{" "}
+              <a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Sli3mxEAAAAJ&citation_for_view=Sli3mxEAAAAJ:9yKSN-GCB0IC"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Audit Before Design: Failure Modes of SAE-Guided Steering in Genomic Foundation
+                Models
+              </a>
+              , audits the limits of sparse autoencoder guided steering in genomic foundation
+              models.
+            </li>
+            <li>
               [08/04/2026] Our Stanford iGEM work on competitive DUX4 inhibition for FSHD is now
               available as a{" "}
               <a
@@ -178,18 +142,11 @@ function Index() {
               .
             </li>
             <li>
-              [06/2026] I joined James Zou's{" "}
-              <a href="https://www.james-zou.com/" target="_blank" rel="noopener noreferrer">
-                Stanford AI for Science Lab
+              [06/22/2026] I joined{" "}
+              <a href="https://inflection.ai/" target="_blank" rel="noopener noreferrer">
+                Inflection AI
               </a>{" "}
-              to study evaluations, verification, and reproducible scientific workflows.
-            </li>
-            <li>
-              [Spring 2026] I served as Head Teaching Assistant for{" "}
-              <a href="https://codeinplace.stanford.edu/" target="_blank" rel="noopener noreferrer">
-                Stanford Code in Place
-              </a>
-              .
+              for the summer, working across research and engineering.
             </li>
             <li>
               [Winter 2026] I studied Modern Literature and Literary Criticism at{" "}
@@ -197,6 +154,13 @@ function Index() {
                 Magdalen College, Oxford
               </a>
               .
+            </li>
+            <li>
+              [06/23/2025] I joined{" "}
+              <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer">
+                Apple
+              </a>{" "}
+              for the summer, working across research and engineering.
             </li>
             <li>
               [2025] Our work on{" "}
@@ -221,55 +185,6 @@ function Index() {
               for our project, “dux.”
             </li>
           </ul>
-        </section>
-
-        <section className="mt-20" aria-labelledby="research-heading">
-          <h2 id="research-heading" className="font-display text-3xl font-normal">
-            Research
-          </h2>
-          <p className="mt-4">
-            Find all my published research on{" "}
-            <a
-              href="https://scholar.google.com/citations?hl=en&user=Sli3mxEAAAAJ&view_op=list_works"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Google Scholar
-            </a>
-            .
-          </p>
-          <div className="mt-8 space-y-10">
-            {research.map((item) => (
-              <article key={item.title} className="research-entry not-prose">
-                <h3 className="font-bookshelf text-[1.28rem] font-normal leading-[1.2] tracking-[-0.015em] sm:text-[1.42rem]">
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--link)] hover:text-[var(--link-hover)] hover:underline"
-                  >
-                    {item.title}
-                  </a>
-                </h3>
-                <p className="mt-2 text-[0.98rem] leading-[1.45] text-foreground/90">
-                  <ResearchAuthors authors={item.authors} />
-                </p>
-                <p className="mt-2 text-[0.98rem] leading-[1.5] text-foreground/70">
-                  {item.summary}
-                </p>
-                <p className="mt-2 text-[0.95rem]">
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--link)] underline underline-offset-4 hover:text-[var(--link-hover)]"
-                  >
-                    [Paper]
-                  </a>
-                </p>
-              </article>
-            ))}
-          </div>
         </section>
       </article>
     </main>
