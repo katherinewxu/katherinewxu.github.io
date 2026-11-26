@@ -64,8 +64,9 @@ function Index() {
         </p>
 
         <p>
-          I'm passionate about using AI to benefit humanity. At Stanford, I study reliable
-          AI-scientist agents in James Zou's{" "}
+          I am interested in building AI systems that model and engineer the physical world,
+          especially biology, and accelerate scientific discovery without compromising rigor. At
+          Stanford, I study reliable AI-scientist agents in James Zou's{" "}
           <a href="https://www.james-zou.com/" target="_blank" rel="noopener noreferrer">
             Stanford AI for Science Lab
           </a>

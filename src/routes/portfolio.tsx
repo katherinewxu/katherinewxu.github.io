@@ -12,6 +12,7 @@ const brainMriImg = { url: "/projects/public-domain/saliency-painting.webp" };
 const governanceImg = { url: "/projects/public-domain/governance-painting.webp" };
 const olfactoryImg = { url: "/projects/public-domain/olfactory-painting.webp" };
 const rlooLeashImg = { url: "/projects/public-domain/rloo-painting.webp" };
+const ovarianSamImg = { url: "/projects/public-domain/ovarian-sam-painting.webp" };
 
 export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
@@ -48,6 +49,24 @@ type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title:
+      "Parameter-Efficient Adaptation of Segment Anything for Ovarian Tumor Ultrasound Segmentation with Text-Guided Prompting",
+    year: "2026",
+    image: ovarianSamImg.url,
+    imageAlt: "Ephraim Bonus, Jewish Physician by Rembrandt van Rijn",
+    blurb:
+      "Adapted Segment Anything for ovarian tumor ultrasound segmentation using LoRA and text-guided prompting. Built an image-to-diagnosis pipeline combining segmentation, radiomic malignancy classification, and uncertainty estimates, with zero-shot transfer to breast ultrasound.",
+    tags: [
+      "Medical AI",
+      "Computer Vision",
+      "Ultrasound",
+      "Parameter-Efficient Fine-Tuning",
+      "Uncertainty Quantification",
+    ],
+    category: "Computational Projects",
+    href: "https://github.com/katherinewxu/sam-ovarian-segmentation",
+  },
   {
     title: "Tool-Integrated RLOO and Pass@K: Testing the Invisible Leash",
     year: "2025",
@@ -179,6 +198,8 @@ const publications = [
     authors:
       "Heloise M. Hoffmann, Alice Finkelstein, Amanuel Geremew, Katherine Xu, Vanessa Chiprez Meza, Ayushi Mohanty, Maria Fernanda Velásquez, Michael Liu, Alex Engel, Phillip Kyriakakis",
     venue: "bioRxiv",
+    description:
+      "Develops a therapeutic strategy to suppress pathogenic DUX4 target gene activation in facioscapulohumeral muscular dystrophy.",
     href: "https://www.biorxiv.org/content/10.64898/2026.08.04.742607.abstract",
   },
   {
@@ -188,6 +209,8 @@ const publications = [
     title: "Audit Before Design: Failure Modes of SAE-Guided Steering in Genomic Foundation Models",
     authors: "Katherine Xu",
     venue: "The Second Workshop on Language Models for Scientific Discovery",
+    description:
+      "Audits the limits of sparse autoencoder guided steering in genomic foundation models.",
     href: "https://openreview.net/forum?id=Ra1o0e3uMs",
   },
   {
@@ -197,6 +220,8 @@ const publications = [
     title: "AI-driven personalized fall prevention for older adults",
     authors: "Katherine Xu",
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence, 39(28)",
+    description:
+      "Explores how AI can support personalized fall risk assessment and prevention for older adults.",
     href: "https://ojs.aaai.org/index.php/AAAI/article/view/35342",
   },
   {
@@ -208,6 +233,8 @@ const publications = [
     authors:
       "Tejas Devata, Veda Devata, Bianca Chiu, Karen Lin, Gouri Garg, Edward Thomas, Jennifer Lee, Cynthia Tan, Julia Ongking, Katherine Xu, Shreyas Pannase, Dada Dadas",
     venue: "Research Square preprint",
+    description:
+      "Examines how acculturation and immigrant generation relate to eating disorder prevalence among Asian Americans.",
     href: "https://doi.org/10.21203/rs.3.rs-1213536/v1",
   },
 ];
@@ -298,14 +325,7 @@ function Portfolio() {
                 />
                 <div className="min-w-0 pt-0.5">
                   <h3 className="font-bookshelf text-[1.18rem] font-normal leading-[1.18] tracking-[-0.02em] text-foreground sm:text-[1.65rem] sm:tracking-[-0.025em]">
-                    <a
-                      href={publication.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline-offset-4 hover:underline"
-                    >
-                      {publication.title}
-                    </a>
+                    {publication.title}
                   </h3>
                   <p className="mt-2 text-[0.92rem] font-medium leading-snug text-foreground/90">
                     {renderAuthors(publication.authors)}
@@ -313,6 +333,17 @@ function Portfolio() {
                   <p className="mt-2 text-[0.95rem] text-foreground/70">
                     {publication.venue} ({publication.year})
                   </p>
+                  <p className="mt-2 text-[0.95rem] leading-relaxed text-foreground/80">
+                    {publication.description}
+                  </p>
+                  <a
+                    href={publication.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block text-[0.95rem] underline-offset-4 hover:underline"
+                  >
+                    [Paper]
+                  </a>
                 </div>
               </article>
             ))}
