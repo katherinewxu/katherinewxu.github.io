@@ -119,7 +119,7 @@ function Index() {
             <li>
               [09/2026] Our work,{" "}
               <a
-                href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Sli3mxEAAAAJ&citation_for_view=Sli3mxEAAAAJ:9yKSN-GCB0IC"
+                href="https://openreview.net/forum?id=Ra1o0e3uMs"
                 target="_blank"
                 rel="noopener noreferrer"
               >

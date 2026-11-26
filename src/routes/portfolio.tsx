@@ -179,7 +179,7 @@ const publications = [
     authors:
       "Heloise M. Hoffmann, Alice Finkelstein, Amanuel Geremew, Katherine Xu, Vanessa Chiprez Meza, Ayushi Mohanty, Maria Fernanda Velásquez, Michael Liu, Alex Engel, Phillip Kyriakakis",
     venue: "bioRxiv",
-    href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Sli3mxEAAAAJ&citation_for_view=Sli3mxEAAAAJ:u-x6o8ySG0sC",
+    href: "https://www.biorxiv.org/content/10.64898/2026.08.04.742607.abstract",
   },
   {
     year: "2026",
@@ -188,7 +188,7 @@ const publications = [
     title: "Audit Before Design: Failure Modes of SAE-Guided Steering in Genomic Foundation Models",
     authors: "Katherine Xu",
     venue: "The Second Workshop on Language Models for Scientific Discovery",
-    href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Sli3mxEAAAAJ&citation_for_view=Sli3mxEAAAAJ:9yKSN-GCB0IC",
+    href: "https://openreview.net/forum?id=Ra1o0e3uMs",
   },
   {
     year: "2025",
@@ -208,7 +208,7 @@ const publications = [
     authors:
       "Tejas Devata, Veda Devata, Bianca Chiu, Karen Lin, Gouri Garg, Edward Thomas, Jennifer Lee, Cynthia Tan, Julia Ongking, Katherine Xu, Shreyas Pannase, Dada Dadas",
     venue: "Research Square preprint",
-    href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Sli3mxEAAAAJ&citation_for_view=Sli3mxEAAAAJ:d1gkVwhDpl0C",
+    href: "https://doi.org/10.21203/rs.3.rs-1213536/v1",
   },
 ];
 
